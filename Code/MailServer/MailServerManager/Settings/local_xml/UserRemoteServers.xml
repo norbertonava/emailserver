@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <UserRemoteServers>
+    <ServerID>9d9d59bb-a88f-421d-b612-0c5acea24249</ServerID>
+    <UserID>8fbcca52-e56c-43b1-968e-1b204458efa2</UserID>
+    <Description>carebear@merculia.com</Description>
+    <RemoteServer>pop.gmail.com</RemoteServer>
+    <RemotePort>995</RemotePort>
+    <RemoteUserName>carebear@merculia.com</RemoteUserName>
+    <RemotePassword>Hello20171</RemotePassword>
+    <UseSSL>true</UseSSL>
+    <Enabled>true</Enabled>
+  </UserRemoteServers>
+</NewDataSet>

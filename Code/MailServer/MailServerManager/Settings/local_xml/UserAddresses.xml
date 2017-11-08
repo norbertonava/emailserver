@@ -1,0 +1,11 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <UserAddresses>
+    <UserID>8fbcca52-e56c-43b1-968e-1b204458efa2</UserID>
+    <Address>testmer@test2.merculia.com</Address>
+  </UserAddresses>
+  <UserAddresses>
+    <UserID>59eba172-2430-4bc2-be32-edfaceb167b7</UserID>
+    <Address>nnava@test2.merculia.com</Address>
+  </UserAddresses>
+</NewDataSet>

@@ -1,0 +1,1601 @@
+<?xml version="1.0" standalone="yes"?>
+<dsEvents>
+  <Events>
+    <ID>92114cd6-33a7-44b3-a3aa-8f7993151acf</ID>
+    <VirtualServer />
+    <CreateDate>2016-08-08T08:00:52.5914598-05:00</CreateDate>
+    <Type>0</Type>
+    <Text>String was not recognized as a valid DateTime.
+//------------- function: LumiSoft.MailServer.RecycleBinManager.DoCleanUp()  08.08.2016 16:00.52------------//
+   at LumiSoft.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   at LumiSoft.MailServer.Error.DumpError(Exception x, StackTrace stackTrace)
+   at LumiSoft.MailServer.RecycleBinManager.DoCleanUp()
+   at LumiSoft.MailServer.RecycleBinManager.m_pTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   at System.Timers.Timer.MyTimerCallback(Object state)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.TimerQueueTimer.CallCallback()
+   at System.Threading.TimerQueueTimer.Fire()
+   at System.Threading.TimerQueue.FireNextTimers()
+
+//--- Excetption info: -------------------------------------------------
+System.FormatException: String was not recognized as a valid DateTime.
+   at System.DateTimeParse.ParseExact(String s, String format, DateTimeFormatInfo dtfi, DateTimeStyles style)
+   at LumiSoft.MailServer.RecycleBinManager.GetMessagesInfo(String user, DateTime startDate, DateTime endDate) in c:\_Data\LumiSoft\MailServer\ServerAPI\API_xml\RecycleBinManager.cs:line 141
+   at LumiSoft.MailServer.xml_API.GetRecycleBinMessagesInfo(String user, DateTime startDate, DateTime endDate) in c:\_Data\LumiSoft\MailServer\ServerAPI\API_xml\xml_API.cs:line 5647
+   at LumiSoft.MailServer.RecycleBinManager.DoCleanUp() in c:\_Data\LumiSoft\MailServer\MailServer\RecycleBinManager.cs:line 76
+</Text>
+  </Events>
+  <Events>
+    <ID>431b0e0e-e3ad-4f8a-9cc3-3e701fc0ce63</ID>
+    <VirtualServer />
+    <CreateDate>2016-08-08T09:10:28.0900951-05:00</CreateDate>
+    <Type>0</Type>
+    <Text>String was not recognized as a valid DateTime.
+//------------- function: LumiSoft.MailServer.RecycleBinManager.DoCleanUp()  08.08.2016 17:10.28------------//
+   at LumiSoft.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   at LumiSoft.MailServer.Error.DumpError(Exception x, StackTrace stackTrace)
+   at LumiSoft.MailServer.RecycleBinManager.DoCleanUp()
+   at LumiSoft.MailServer.RecycleBinManager.m_pTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   at System.Timers.Timer.MyTimerCallback(Object state)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.TimerQueueTimer.CallCallback()
+   at System.Threading.TimerQueueTimer.Fire()
+   at System.Threading.TimerQueue.FireNextTimers()
+
+//--- Excetption info: -------------------------------------------------
+System.FormatException: String was not recognized as a valid DateTime.
+   at System.DateTimeParse.ParseExact(String s, String format, DateTimeFormatInfo dtfi, DateTimeStyles style)
+   at LumiSoft.MailServer.RecycleBinManager.GetMessagesInfo(String user, DateTime startDate, DateTime endDate) in c:\_Data\LumiSoft\MailServer\ServerAPI\API_xml\RecycleBinManager.cs:line 141
+   at LumiSoft.MailServer.xml_API.GetRecycleBinMessagesInfo(String user, DateTime startDate, DateTime endDate) in c:\_Data\LumiSoft\MailServer\ServerAPI\API_xml\xml_API.cs:line 5647
+   at LumiSoft.MailServer.RecycleBinManager.DoCleanUp() in c:\_Data\LumiSoft\MailServer\MailServer\RecycleBinManager.cs:line 76
+</Text>
+  </Events>
+  <Events>
+    <ID>97556b7b-1f3c-4a6f-92ec-f56e28464a5f</ID>
+    <VirtualServer />
+    <CreateDate>2016-08-08T12:18:40.7343137-05:00</CreateDate>
+    <Type>0</Type>
+    <Text>String was not recognized as a valid DateTime.
+//------------- function: LumiSoft.MailServer.RecycleBinManager.DoCleanUp()  08.08.2016 20:18.40------------//
+   at LumiSoft.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   at LumiSoft.MailServer.Error.DumpError(Exception x, StackTrace stackTrace)
+   at LumiSoft.MailServer.RecycleBinManager.DoCleanUp()
+   at LumiSoft.MailServer.RecycleBinManager.m_pTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   at System.Timers.Timer.MyTimerCallback(Object state)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.TimerQueueTimer.CallCallback()
+   at System.Threading.TimerQueueTimer.Fire()
+   at System.Threading.TimerQueue.FireNextTimers()
+
+//--- Excetption info: -------------------------------------------------
+System.FormatException: String was not recognized as a valid DateTime.
+   at System.DateTimeParse.ParseExact(String s, String format, DateTimeFormatInfo dtfi, DateTimeStyles style)
+   at LumiSoft.MailServer.RecycleBinManager.GetMessagesInfo(String user, DateTime startDate, DateTime endDate) in c:\_Data\LumiSoft\MailServer\ServerAPI\API_xml\RecycleBinManager.cs:line 141
+   at LumiSoft.MailServer.xml_API.GetRecycleBinMessagesInfo(String user, DateTime startDate, DateTime endDate) in c:\_Data\LumiSoft\MailServer\ServerAPI\API_xml\xml_API.cs:line 5647
+   at LumiSoft.MailServer.RecycleBinManager.DoCleanUp() in c:\_Data\LumiSoft\MailServer\MailServer\RecycleBinManager.cs:line 76
+</Text>
+  </Events>
+  <Events>
+    <ID>773d622b-8808-43ba-9324-ecfc250f9e66</ID>
+    <VirtualServer />
+    <CreateDate>2016-08-08T13:20:27.5647907-05:00</CreateDate>
+    <Type>0</Type>
+    <Text>String was not recognized as a valid DateTime.
+//------------- function: LumiSoft.MailServer.RecycleBinManager.DoCleanUp()  08.08.2016 21:20.27------------//
+   at LumiSoft.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   at LumiSoft.MailServer.Error.DumpError(Exception x, StackTrace stackTrace)
+   at LumiSoft.MailServer.RecycleBinManager.DoCleanUp()
+   at LumiSoft.MailServer.RecycleBinManager.m_pTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   at System.Timers.Timer.MyTimerCallback(Object state)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.TimerQueueTimer.CallCallback()
+   at System.Threading.TimerQueueTimer.Fire()
+   at System.Threading.TimerQueue.FireNextTimers()
+
+//--- Excetption info: -------------------------------------------------
+System.FormatException: String was not recognized as a valid DateTime.
+   at System.DateTimeParse.ParseExact(String s, String format, DateTimeFormatInfo dtfi, DateTimeStyles style)
+   at LumiSoft.MailServer.RecycleBinManager.GetMessagesInfo(String user, DateTime startDate, DateTime endDate) in c:\_Data\LumiSoft\MailServer\ServerAPI\API_xml\RecycleBinManager.cs:line 141
+   at LumiSoft.MailServer.xml_API.GetRecycleBinMessagesInfo(String user, DateTime startDate, DateTime endDate) in c:\_Data\LumiSoft\MailServer\ServerAPI\API_xml\xml_API.cs:line 5647
+   at LumiSoft.MailServer.RecycleBinManager.DoCleanUp() in c:\_Data\LumiSoft\MailServer\MailServer\RecycleBinManager.cs:line 76
+</Text>
+  </Events>
+  <Events>
+    <ID>68669393-9e5b-4d2b-b3b6-fbfa6388f005</ID>
+    <VirtualServer />
+    <CreateDate>2017-11-04T23:00:34.0464335-06:00</CreateDate>
+    <Type>0</Type>
+    <Text>Se intentó cargar un ensamblado desde una ubicación de red, por lo que el ensamblado habría sido incluido en un espacio aislado de versiones anteriores de .NET Framework. Esta versión de .NET Framework no habilita la directiva CAS de forma predeterminada, por lo que esta carga puede ser peligrosa. Si esta carga no va a incluir el ensamblado en un espacio aislado, habilite el modificador loadFromRemoteSources. Vea http://go.microsoft.com/fwlink/?LinkId=155569 para obtener más información.
+//------------- function: LumiSoft.MailServer.Server.LoadVirtualServers()  04/11/2017 11:00:33 p. m.------------//
+   en LumiSoft.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   en LumiSoft.MailServer.Error.DumpError(Exception x, StackTrace stackTrace)
+   en LumiSoft.MailServer.Server.LoadVirtualServers()
+   en LumiSoft.MailServer.Server.m_pSettingsTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   en LumiSoft.MailServer.Server.Start()
+   en LumiSoft.MailServer.MailServer_Service.OnStart(String[] args)
+   en System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   en System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   en System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   en System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   en LumiSoft.MailServer.MainX.RunInteractive(ServiceBase[] servicesToRun)
+   en LumiSoft.MailServer.MainX.Main(String[] args)
+
+//--- Excetption info: -------------------------------------------------
+System.NotSupportedException: Se intentó cargar un ensamblado desde una ubicación de red, por lo que el ensamblado habría sido incluido en un espacio aislado de versiones anteriores de .NET Framework. Esta versión de .NET Framework no habilita la directiva CAS de forma predeterminada, por lo que esta carga puede ser peligrosa. Si esta carga no va a incluir el ensamblado en un espacio aislado, habilite el modificador loadFromRemoteSources. Vea http://go.microsoft.com/fwlink/?LinkId=155569 para obtener más información.
+   en System.Reflection.RuntimeAssembly.nLoadFile(String path, Evidence evidence)
+   en System.Reflection.Assembly.LoadFile(String path)
+   en LumiSoft.MailServer.Server.LoadApi(String assembly, String type, String initString) en C:\Freelancer\EmailServer\Samples\Lumisoft_newVersion\MailServer\MailServer\Server.cs:línea 164
+   en LumiSoft.MailServer.Server.LoadVirtualServers() en C:\Freelancer\EmailServer\Samples\Lumisoft_newVersion\MailServer\MailServer\Server.cs:línea 237
+</Text>
+  </Events>
+  <Events>
+    <ID>2e22bb88-5021-4549-9cc7-40d54c1116ea</ID>
+    <VirtualServer />
+    <CreateDate>2017-11-05T15:22:05.4906091-06:00</CreateDate>
+    <Type>0</Type>
+    <Text>Se intentó cargar un ensamblado desde una ubicación de red, por lo que el ensamblado habría sido incluido en un espacio aislado de versiones anteriores de .NET Framework. Esta versión de .NET Framework no habilita la directiva CAS de forma predeterminada, por lo que esta carga puede ser peligrosa. Si esta carga no va a incluir el ensamblado en un espacio aislado, habilite el modificador loadFromRemoteSources. Vea http://go.microsoft.com/fwlink/?LinkId=155569 para obtener más información.
+//------------- function: LumiSoft.MailServer.Server.LoadVirtualServers()  05/11/2017 03:22:05 p. m.------------//
+   en LumiSoft.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   en LumiSoft.MailServer.Error.DumpError(Exception x, StackTrace stackTrace)
+   en LumiSoft.MailServer.Server.LoadVirtualServers()
+   en LumiSoft.MailServer.Server.m_pSettingsTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   en LumiSoft.MailServer.Server.Start()
+   en LumiSoft.MailServer.MailServer_Service.OnStart(String[] args)
+   en System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   en System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   en System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   en System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   en LumiSoft.MailServer.MainX.RunInteractive(ServiceBase[] servicesToRun)
+   en LumiSoft.MailServer.MainX.Main(String[] args)
+
+//--- Excetption info: -------------------------------------------------
+System.NotSupportedException: Se intentó cargar un ensamblado desde una ubicación de red, por lo que el ensamblado habría sido incluido en un espacio aislado de versiones anteriores de .NET Framework. Esta versión de .NET Framework no habilita la directiva CAS de forma predeterminada, por lo que esta carga puede ser peligrosa. Si esta carga no va a incluir el ensamblado en un espacio aislado, habilite el modificador loadFromRemoteSources. Vea http://go.microsoft.com/fwlink/?LinkId=155569 para obtener más información.
+   en System.Reflection.RuntimeAssembly.nLoadFile(String path, Evidence evidence)
+   en System.Reflection.Assembly.LoadFile(String path)
+   en LumiSoft.MailServer.Server.LoadApi(String assembly, String type, String initString) en C:\Freelancer\EmailServer\Samples\Lumisoft_newVersion\MailServer\MailServer\Server.cs:línea 164
+   en LumiSoft.MailServer.Server.LoadVirtualServers() en C:\Freelancer\EmailServer\Samples\Lumisoft_newVersion\MailServer\MailServer\Server.cs:línea 237
+</Text>
+  </Events>
+  <Events>
+    <ID>1904aa96-c817-448e-a3fe-a58f9390dd66</ID>
+    <VirtualServer />
+    <CreateDate>2017-11-05T15:32:59.7475261-06:00</CreateDate>
+    <Type>0</Type>
+    <Text>Se intentó cargar un ensamblado desde una ubicación de red, por lo que el ensamblado habría sido incluido en un espacio aislado de versiones anteriores de .NET Framework. Esta versión de .NET Framework no habilita la directiva CAS de forma predeterminada, por lo que esta carga puede ser peligrosa. Si esta carga no va a incluir el ensamblado en un espacio aislado, habilite el modificador loadFromRemoteSources. Vea http://go.microsoft.com/fwlink/?LinkId=155569 para obtener más información.
+//------------- function: LumiSoft.MailServer.Server.LoadVirtualServers()  05/11/2017 03:32:59 p. m.------------//
+   en LumiSoft.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   en LumiSoft.MailServer.Error.DumpError(Exception x, StackTrace stackTrace)
+   en LumiSoft.MailServer.Server.LoadVirtualServers()
+   en LumiSoft.MailServer.Server.m_pSettingsTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   en LumiSoft.MailServer.Server.Start()
+   en LumiSoft.MailServer.MailServer_Service.OnStart(String[] args)
+   en System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   en System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   en System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   en System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   en LumiSoft.MailServer.MainX.RunInteractive(ServiceBase[] servicesToRun)
+   en LumiSoft.MailServer.MainX.Main(String[] args)
+
+//--- Excetption info: -------------------------------------------------
+System.NotSupportedException: Se intentó cargar un ensamblado desde una ubicación de red, por lo que el ensamblado habría sido incluido en un espacio aislado de versiones anteriores de .NET Framework. Esta versión de .NET Framework no habilita la directiva CAS de forma predeterminada, por lo que esta carga puede ser peligrosa. Si esta carga no va a incluir el ensamblado en un espacio aislado, habilite el modificador loadFromRemoteSources. Vea http://go.microsoft.com/fwlink/?LinkId=155569 para obtener más información.
+   en System.Reflection.RuntimeAssembly.nLoadFile(String path, Evidence evidence)
+   en System.Reflection.Assembly.LoadFile(String path)
+   en LumiSoft.MailServer.Server.LoadApi(String assembly, String type, String initString) en C:\Freelancer\EmailServer\Samples\Lumisoft_newVersion\MailServer\MailServer\Server.cs:línea 164
+   en LumiSoft.MailServer.Server.LoadVirtualServers() en C:\Freelancer\EmailServer\Samples\Lumisoft_newVersion\MailServer\MailServer\Server.cs:línea 237
+</Text>
+  </Events>
+  <Events>
+    <ID>ec76aa66-6b6f-4cb5-a0a6-8830a3434ee4</ID>
+    <VirtualServer />
+    <CreateDate>2017-11-05T15:48:48.7332938-06:00</CreateDate>
+    <Type>0</Type>
+    <Text>Se intentó cargar un ensamblado desde una ubicación de red, por lo que el ensamblado habría sido incluido en un espacio aislado de versiones anteriores de .NET Framework. Esta versión de .NET Framework no habilita la directiva CAS de forma predeterminada, por lo que esta carga puede ser peligrosa. Si esta carga no va a incluir el ensamblado en un espacio aislado, habilite el modificador loadFromRemoteSources. Vea http://go.microsoft.com/fwlink/?LinkId=155569 para obtener más información.
+//------------- function: LumiSoft.MailServer.Server.LoadVirtualServers()  05/11/2017 03:48:47 p. m.------------//
+   en LumiSoft.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   en LumiSoft.MailServer.Error.DumpError(Exception x, StackTrace stackTrace)
+   en LumiSoft.MailServer.Server.LoadVirtualServers()
+   en LumiSoft.MailServer.Server.m_pSettingsTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   en LumiSoft.MailServer.Server.Start()
+   en LumiSoft.MailServer.MailServer_Service.OnStart(String[] args)
+   en System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   en System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   en System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   en System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   en LumiSoft.MailServer.MainX.RunInteractive(ServiceBase[] servicesToRun)
+   en LumiSoft.MailServer.MainX.Main(String[] args)
+
+//--- Excetption info: -------------------------------------------------
+System.NotSupportedException: Se intentó cargar un ensamblado desde una ubicación de red, por lo que el ensamblado habría sido incluido en un espacio aislado de versiones anteriores de .NET Framework. Esta versión de .NET Framework no habilita la directiva CAS de forma predeterminada, por lo que esta carga puede ser peligrosa. Si esta carga no va a incluir el ensamblado en un espacio aislado, habilite el modificador loadFromRemoteSources. Vea http://go.microsoft.com/fwlink/?LinkId=155569 para obtener más información.
+   en System.Reflection.RuntimeAssembly.nLoadFile(String path, Evidence evidence)
+   en System.Reflection.Assembly.LoadFile(String path)
+   en LumiSoft.MailServer.Server.LoadApi(String assembly, String type, String initString) en C:\Freelancer\EmailServer\Samples\Lumisoft_newVersion\MailServer\MailServer\Server.cs:línea 164
+   en LumiSoft.MailServer.Server.LoadVirtualServers() en C:\Freelancer\EmailServer\Samples\Lumisoft_newVersion\MailServer\MailServer\Server.cs:línea 237
+</Text>
+  </Events>
+  <Events>
+    <ID>c9deba25-9c42-431f-b40c-34f45e13bd80</ID>
+    <VirtualServer />
+    <CreateDate>2017-11-05T15:57:52.9126994-06:00</CreateDate>
+    <Type>0</Type>
+    <Text>Se intentó cargar un ensamblado desde una ubicación de red, por lo que el ensamblado habría sido incluido en un espacio aislado de versiones anteriores de .NET Framework. Esta versión de .NET Framework no habilita la directiva CAS de forma predeterminada, por lo que esta carga puede ser peligrosa. Si esta carga no va a incluir el ensamblado en un espacio aislado, habilite el modificador loadFromRemoteSources. Vea http://go.microsoft.com/fwlink/?LinkId=155569 para obtener más información.
+//------------- function: LumiSoft.MailServer.Server.LoadVirtualServers()  05/11/2017 03:57:52 p. m.------------//
+   en LumiSoft.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   en LumiSoft.MailServer.Error.DumpError(Exception x, StackTrace stackTrace)
+   en LumiSoft.MailServer.Server.LoadVirtualServers()
+   en LumiSoft.MailServer.Server.m_pSettingsTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   en LumiSoft.MailServer.Server.Start()
+   en LumiSoft.MailServer.MailServer_Service.OnStart(String[] args)
+   en System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   en System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   en System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   en System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   en LumiSoft.MailServer.MainX.RunInteractive(ServiceBase[] servicesToRun)
+   en LumiSoft.MailServer.MainX.Main(String[] args)
+
+//--- Excetption info: -------------------------------------------------
+System.NotSupportedException: Se intentó cargar un ensamblado desde una ubicación de red, por lo que el ensamblado habría sido incluido en un espacio aislado de versiones anteriores de .NET Framework. Esta versión de .NET Framework no habilita la directiva CAS de forma predeterminada, por lo que esta carga puede ser peligrosa. Si esta carga no va a incluir el ensamblado en un espacio aislado, habilite el modificador loadFromRemoteSources. Vea http://go.microsoft.com/fwlink/?LinkId=155569 para obtener más información.
+   en System.Reflection.RuntimeAssembly.nLoadFile(String path, Evidence evidence)
+   en System.Reflection.Assembly.LoadFile(String path)
+   en LumiSoft.MailServer.Server.LoadApi(String assembly, String type, String initString) en C:\Freelancer\EmailServer\Samples\Lumisoft_newVersion\MailServer\MailServer\Server.cs:línea 164
+   en LumiSoft.MailServer.Server.LoadVirtualServers() en C:\Freelancer\EmailServer\Samples\Lumisoft_newVersion\MailServer\MailServer\Server.cs:línea 237
+</Text>
+  </Events>
+  <Events>
+    <ID>4df160bc-a868-40ed-afcf-ed7c54c4b277</ID>
+    <VirtualServer />
+    <CreateDate>2017-11-05T16:01:04.9361275-06:00</CreateDate>
+    <Type>0</Type>
+    <Text>Se intentó cargar un ensamblado desde una ubicación de red, por lo que el ensamblado habría sido incluido en un espacio aislado de versiones anteriores de .NET Framework. Esta versión de .NET Framework no habilita la directiva CAS de forma predeterminada, por lo que esta carga puede ser peligrosa. Si esta carga no va a incluir el ensamblado en un espacio aislado, habilite el modificador loadFromRemoteSources. Vea http://go.microsoft.com/fwlink/?LinkId=155569 para obtener más información.
+//------------- function: LumiSoft.MailServer.Server.LoadVirtualServers()  05/11/2017 04:01:04 p. m.------------//
+   en LumiSoft.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   en LumiSoft.MailServer.Error.DumpError(Exception x, StackTrace stackTrace)
+   en LumiSoft.MailServer.Server.LoadVirtualServers()
+   en LumiSoft.MailServer.Server.m_pSettingsTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   en LumiSoft.MailServer.Server.Start()
+   en LumiSoft.MailServer.MailServer_Service.OnStart(String[] args)
+   en System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   en System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   en System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   en System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   en LumiSoft.MailServer.MainX.RunInteractive(ServiceBase[] servicesToRun)
+   en LumiSoft.MailServer.MainX.Main(String[] args)
+
+//--- Excetption info: -------------------------------------------------
+System.NotSupportedException: Se intentó cargar un ensamblado desde una ubicación de red, por lo que el ensamblado habría sido incluido en un espacio aislado de versiones anteriores de .NET Framework. Esta versión de .NET Framework no habilita la directiva CAS de forma predeterminada, por lo que esta carga puede ser peligrosa. Si esta carga no va a incluir el ensamblado en un espacio aislado, habilite el modificador loadFromRemoteSources. Vea http://go.microsoft.com/fwlink/?LinkId=155569 para obtener más información.
+   en System.Reflection.RuntimeAssembly.nLoadFile(String path, Evidence evidence)
+   en System.Reflection.Assembly.LoadFile(String path)
+   en LumiSoft.MailServer.Server.LoadApi(String assembly, String type, String initString) en C:\Freelancer\EmailServer\Samples\Lumisoft_newVersion\MailServer\MailServer\Server.cs:línea 164
+   en LumiSoft.MailServer.Server.LoadVirtualServers() en C:\Freelancer\EmailServer\Samples\Lumisoft_newVersion\MailServer\MailServer\Server.cs:línea 237
+</Text>
+  </Events>
+  <Events>
+    <ID>c95e2fa4-9d69-4f04-8f1c-e8c40731fd96</ID>
+    <VirtualServer />
+    <CreateDate>2017-11-05T16:04:51.4512741-06:00</CreateDate>
+    <Type>0</Type>
+    <Text>Se intentó cargar un ensamblado desde una ubicación de red, por lo que el ensamblado habría sido incluido en un espacio aislado de versiones anteriores de .NET Framework. Esta versión de .NET Framework no habilita la directiva CAS de forma predeterminada, por lo que esta carga puede ser peligrosa. Si esta carga no va a incluir el ensamblado en un espacio aislado, habilite el modificador loadFromRemoteSources. Vea http://go.microsoft.com/fwlink/?LinkId=155569 para obtener más información.
+//------------- function: LumiSoft.MailServer.Server.LoadVirtualServers()  05/11/2017 04:04:51 p. m.------------//
+   en LumiSoft.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   en LumiSoft.MailServer.Error.DumpError(Exception x, StackTrace stackTrace)
+   en LumiSoft.MailServer.Server.LoadVirtualServers()
+   en LumiSoft.MailServer.Server.m_pSettingsTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   en LumiSoft.MailServer.Server.Start()
+   en LumiSoft.MailServer.MailServer_Service.OnStart(String[] args)
+   en System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   en System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   en System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   en System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   en LumiSoft.MailServer.MainX.RunInteractive(ServiceBase[] servicesToRun)
+   en LumiSoft.MailServer.MainX.Main(String[] args)
+
+//--- Excetption info: -------------------------------------------------
+System.NotSupportedException: Se intentó cargar un ensamblado desde una ubicación de red, por lo que el ensamblado habría sido incluido en un espacio aislado de versiones anteriores de .NET Framework. Esta versión de .NET Framework no habilita la directiva CAS de forma predeterminada, por lo que esta carga puede ser peligrosa. Si esta carga no va a incluir el ensamblado en un espacio aislado, habilite el modificador loadFromRemoteSources. Vea http://go.microsoft.com/fwlink/?LinkId=155569 para obtener más información.
+   en System.Reflection.RuntimeAssembly.nLoadFile(String path, Evidence evidence)
+   en System.Reflection.Assembly.LoadFile(String path)
+   en LumiSoft.MailServer.Server.LoadApi(String assembly, String type, String initString) en C:\Freelancer\EmailServer\Samples\Lumisoft_newVersion\MailServer\MailServer\Server.cs:línea 164
+   en LumiSoft.MailServer.Server.LoadVirtualServers() en C:\Freelancer\EmailServer\Samples\Lumisoft_newVersion\MailServer\MailServer\Server.cs:línea 237
+</Text>
+  </Events>
+  <Events>
+    <ID>884243b8-39b8-46f5-931e-bc3576ea5720</ID>
+    <VirtualServer />
+    <CreateDate>2017-11-05T16:08:43.1444224-06:00</CreateDate>
+    <Type>0</Type>
+    <Text>Se intentó cargar un ensamblado desde una ubicación de red, por lo que el ensamblado habría sido incluido en un espacio aislado de versiones anteriores de .NET Framework. Esta versión de .NET Framework no habilita la directiva CAS de forma predeterminada, por lo que esta carga puede ser peligrosa. Si esta carga no va a incluir el ensamblado en un espacio aislado, habilite el modificador loadFromRemoteSources. Vea http://go.microsoft.com/fwlink/?LinkId=155569 para obtener más información.
+//------------- function: LumiSoft.MailServer.Server.LoadVirtualServers()  05/11/2017 04:08:43 p. m.------------//
+   en LumiSoft.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   en LumiSoft.MailServer.Error.DumpError(Exception x, StackTrace stackTrace)
+   en LumiSoft.MailServer.Server.LoadVirtualServers()
+   en LumiSoft.MailServer.Server.m_pSettingsTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   en LumiSoft.MailServer.Server.Start()
+   en LumiSoft.MailServer.MailServer_Service.OnStart(String[] args)
+   en System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   en System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   en System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   en System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   en LumiSoft.MailServer.MainX.RunInteractive(ServiceBase[] servicesToRun)
+   en LumiSoft.MailServer.MainX.Main(String[] args)
+
+//--- Excetption info: -------------------------------------------------
+System.NotSupportedException: Se intentó cargar un ensamblado desde una ubicación de red, por lo que el ensamblado habría sido incluido en un espacio aislado de versiones anteriores de .NET Framework. Esta versión de .NET Framework no habilita la directiva CAS de forma predeterminada, por lo que esta carga puede ser peligrosa. Si esta carga no va a incluir el ensamblado en un espacio aislado, habilite el modificador loadFromRemoteSources. Vea http://go.microsoft.com/fwlink/?LinkId=155569 para obtener más información.
+   en System.Reflection.RuntimeAssembly.nLoadFile(String path, Evidence evidence)
+   en System.Reflection.Assembly.LoadFile(String path)
+   en LumiSoft.MailServer.Server.LoadApi(String assembly, String type, String initString) en C:\Freelancer\EmailServer\Samples\Lumisoft_newVersion\MailServer\MailServer\Server.cs:línea 164
+   en LumiSoft.MailServer.Server.LoadVirtualServers() en C:\Freelancer\EmailServer\Samples\Lumisoft_newVersion\MailServer\MailServer\Server.cs:línea 237
+</Text>
+  </Events>
+  <Events>
+    <ID>78c41ab4-d169-408d-a2b8-ee9ec3993041</ID>
+    <VirtualServer />
+    <CreateDate>2017-11-05T16:09:41.9453171-06:00</CreateDate>
+    <Type>0</Type>
+    <Text>Se intentó cargar un ensamblado desde una ubicación de red, por lo que el ensamblado habría sido incluido en un espacio aislado de versiones anteriores de .NET Framework. Esta versión de .NET Framework no habilita la directiva CAS de forma predeterminada, por lo que esta carga puede ser peligrosa. Si esta carga no va a incluir el ensamblado en un espacio aislado, habilite el modificador loadFromRemoteSources. Vea http://go.microsoft.com/fwlink/?LinkId=155569 para obtener más información.
+//------------- function: LumiSoft.MailServer.Server.LoadVirtualServers()  05/11/2017 04:09:41 p. m.------------//
+   en LumiSoft.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   en LumiSoft.MailServer.Error.DumpError(Exception x, StackTrace stackTrace)
+   en LumiSoft.MailServer.Server.LoadVirtualServers()
+   en LumiSoft.MailServer.Server.m_pSettingsTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   en LumiSoft.MailServer.Server.Start()
+   en LumiSoft.MailServer.MailServer_Service.OnStart(String[] args)
+   en System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   en System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   en System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   en System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   en LumiSoft.MailServer.MainX.RunInteractive(ServiceBase[] servicesToRun)
+   en LumiSoft.MailServer.MainX.Main(String[] args)
+
+//--- Excetption info: -------------------------------------------------
+System.NotSupportedException: Se intentó cargar un ensamblado desde una ubicación de red, por lo que el ensamblado habría sido incluido en un espacio aislado de versiones anteriores de .NET Framework. Esta versión de .NET Framework no habilita la directiva CAS de forma predeterminada, por lo que esta carga puede ser peligrosa. Si esta carga no va a incluir el ensamblado en un espacio aislado, habilite el modificador loadFromRemoteSources. Vea http://go.microsoft.com/fwlink/?LinkId=155569 para obtener más información.
+   en System.Reflection.RuntimeAssembly.nLoadFile(String path, Evidence evidence)
+   en System.Reflection.Assembly.LoadFile(String path)
+   en LumiSoft.MailServer.Server.LoadApi(String assembly, String type, String initString) en C:\Freelancer\EmailServer\Samples\Lumisoft_newVersion\MailServer\MailServer\Server.cs:línea 164
+   en LumiSoft.MailServer.Server.LoadVirtualServers() en C:\Freelancer\EmailServer\Samples\Lumisoft_newVersion\MailServer\MailServer\Server.cs:línea 237
+</Text>
+  </Events>
+  <Events>
+    <ID>405ed4b6-b73e-4adf-9f7d-4850ecbf0585</ID>
+    <VirtualServer />
+    <CreateDate>2017-11-05T16:12:19.2324811-06:00</CreateDate>
+    <Type>0</Type>
+    <Text>Se intentó cargar un ensamblado desde una ubicación de red, por lo que el ensamblado habría sido incluido en un espacio aislado de versiones anteriores de .NET Framework. Esta versión de .NET Framework no habilita la directiva CAS de forma predeterminada, por lo que esta carga puede ser peligrosa. Si esta carga no va a incluir el ensamblado en un espacio aislado, habilite el modificador loadFromRemoteSources. Vea http://go.microsoft.com/fwlink/?LinkId=155569 para obtener más información.
+//------------- function: LumiSoft.MailServer.Server.LoadVirtualServers()  05/11/2017 04:12:19 p. m.------------//
+   en LumiSoft.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   en LumiSoft.MailServer.Error.DumpError(Exception x, StackTrace stackTrace)
+   en LumiSoft.MailServer.Server.LoadVirtualServers()
+   en LumiSoft.MailServer.Server.m_pSettingsTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   en LumiSoft.MailServer.Server.Start()
+   en LumiSoft.MailServer.MailServer_Service.OnStart(String[] args)
+   en System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   en System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   en System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   en System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   en LumiSoft.MailServer.MainX.RunInteractive(ServiceBase[] servicesToRun)
+   en LumiSoft.MailServer.MainX.Main(String[] args)
+
+//--- Excetption info: -------------------------------------------------
+System.NotSupportedException: Se intentó cargar un ensamblado desde una ubicación de red, por lo que el ensamblado habría sido incluido en un espacio aislado de versiones anteriores de .NET Framework. Esta versión de .NET Framework no habilita la directiva CAS de forma predeterminada, por lo que esta carga puede ser peligrosa. Si esta carga no va a incluir el ensamblado en un espacio aislado, habilite el modificador loadFromRemoteSources. Vea http://go.microsoft.com/fwlink/?LinkId=155569 para obtener más información.
+   en System.Reflection.RuntimeAssembly.nLoadFile(String path, Evidence evidence)
+   en System.Reflection.Assembly.LoadFile(String path)
+   en LumiSoft.MailServer.Server.LoadApi(String assembly, String type, String initString) en C:\Freelancer\EmailServer\Samples\Lumisoft_newVersion\MailServer\MailServer\Server.cs:línea 164
+   en LumiSoft.MailServer.Server.LoadVirtualServers() en C:\Freelancer\EmailServer\Samples\Lumisoft_newVersion\MailServer\MailServer\Server.cs:línea 237
+</Text>
+  </Events>
+  <Events>
+    <ID>b1c8f03b-563b-4f80-bd25-7a4c94173ada</ID>
+    <VirtualServer />
+    <CreateDate>2017-11-05T16:14:40.4066221-06:00</CreateDate>
+    <Type>0</Type>
+    <Text>Se intentó cargar un ensamblado desde una ubicación de red, por lo que el ensamblado habría sido incluido en un espacio aislado de versiones anteriores de .NET Framework. Esta versión de .NET Framework no habilita la directiva CAS de forma predeterminada, por lo que esta carga puede ser peligrosa. Si esta carga no va a incluir el ensamblado en un espacio aislado, habilite el modificador loadFromRemoteSources. Vea http://go.microsoft.com/fwlink/?LinkId=155569 para obtener más información.
+//------------- function: LumiSoft.MailServer.Server.LoadVirtualServers()  05/11/2017 04:14:40 p. m.------------//
+   en LumiSoft.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   en LumiSoft.MailServer.Error.DumpError(Exception x, StackTrace stackTrace)
+   en LumiSoft.MailServer.Server.LoadVirtualServers()
+   en LumiSoft.MailServer.Server.m_pSettingsTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   en LumiSoft.MailServer.Server.Start()
+   en LumiSoft.MailServer.MailServer_Service.OnStart(String[] args)
+   en System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   en System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   en System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   en System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   en LumiSoft.MailServer.MainX.RunInteractive(ServiceBase[] servicesToRun)
+   en LumiSoft.MailServer.MainX.Main(String[] args)
+
+//--- Excetption info: -------------------------------------------------
+System.NotSupportedException: Se intentó cargar un ensamblado desde una ubicación de red, por lo que el ensamblado habría sido incluido en un espacio aislado de versiones anteriores de .NET Framework. Esta versión de .NET Framework no habilita la directiva CAS de forma predeterminada, por lo que esta carga puede ser peligrosa. Si esta carga no va a incluir el ensamblado en un espacio aislado, habilite el modificador loadFromRemoteSources. Vea http://go.microsoft.com/fwlink/?LinkId=155569 para obtener más información.
+   en System.Reflection.RuntimeAssembly.nLoadFile(String path, Evidence evidence)
+   en System.Reflection.Assembly.LoadFile(String path)
+   en LumiSoft.MailServer.Server.LoadApi(String assembly, String type, String initString) en C:\Freelancer\EmailServer\Samples\Lumisoft_newVersion\MailServer\MailServer\Server.cs:línea 164
+   en LumiSoft.MailServer.Server.LoadVirtualServers() en C:\Freelancer\EmailServer\Samples\Lumisoft_newVersion\MailServer\MailServer\Server.cs:línea 237
+</Text>
+  </Events>
+  <Events>
+    <ID>09b57d7c-046e-4260-a7aa-901cc52281b1</ID>
+    <VirtualServer />
+    <CreateDate>2017-11-05T16:27:38.7963695-06:00</CreateDate>
+    <Type>0</Type>
+    <Text>Se intentó cargar un ensamblado desde una ubicación de red, por lo que el ensamblado habría sido incluido en un espacio aislado de versiones anteriores de .NET Framework. Esta versión de .NET Framework no habilita la directiva CAS de forma predeterminada, por lo que esta carga puede ser peligrosa. Si esta carga no va a incluir el ensamblado en un espacio aislado, habilite el modificador loadFromRemoteSources. Vea http://go.microsoft.com/fwlink/?LinkId=155569 para obtener más información.
+//------------- function: LumiSoft.MailServer.Server.LoadVirtualServers()  05/11/2017 04:27:38 p. m.------------//
+   en LumiSoft.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   en LumiSoft.MailServer.Error.DumpError(Exception x, StackTrace stackTrace)
+   en LumiSoft.MailServer.Server.LoadVirtualServers()
+   en LumiSoft.MailServer.Server.m_pSettingsTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   en LumiSoft.MailServer.Server.Start()
+   en LumiSoft.MailServer.MailServer_Service.OnStart(String[] args)
+   en System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   en System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   en System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   en System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   en LumiSoft.MailServer.MainX.RunInteractive(ServiceBase[] servicesToRun)
+   en LumiSoft.MailServer.MainX.Main(String[] args)
+
+//--- Excetption info: -------------------------------------------------
+System.NotSupportedException: Se intentó cargar un ensamblado desde una ubicación de red, por lo que el ensamblado habría sido incluido en un espacio aislado de versiones anteriores de .NET Framework. Esta versión de .NET Framework no habilita la directiva CAS de forma predeterminada, por lo que esta carga puede ser peligrosa. Si esta carga no va a incluir el ensamblado en un espacio aislado, habilite el modificador loadFromRemoteSources. Vea http://go.microsoft.com/fwlink/?LinkId=155569 para obtener más información.
+   en System.Reflection.RuntimeAssembly.nLoadFile(String path, Evidence evidence)
+   en System.Reflection.Assembly.LoadFile(String path)
+   en LumiSoft.MailServer.Server.LoadApi(String assembly, String type, String initString) en C:\Freelancer\EmailServer\Samples\Lumisoft_newVersion\MailServer\MailServer\Server.cs:línea 164
+   en LumiSoft.MailServer.Server.LoadVirtualServers() en C:\Freelancer\EmailServer\Samples\Lumisoft_newVersion\MailServer\MailServer\Server.cs:línea 237
+</Text>
+  </Events>
+  <Events>
+    <ID>fbd9995b-a357-4343-952f-f5da79520e6e</ID>
+    <VirtualServer />
+    <CreateDate>2017-11-07T00:43:49.825472-06:00</CreateDate>
+    <Type>0</Type>
+    <Text>Parameter 'p_DomainName' not found in the collection.
+//------------- function: Merculia.MailServer.Error.DumpError()  07/11/2017 12:43:49 a. m.------------//
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x)
+   en Merculia.MailServer.FetchPop3.StartFetching()
+   en Merculia.MailServer.FetchPop3.m_pTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   en System.Timers.Timer.MyTimerCallback(Object state)
+   en System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.TimerQueueTimer.CallCallback()
+   en System.Threading.TimerQueueTimer.Fire()
+   en System.Threading.TimerQueue.FireNextTimers()
+
+//--- Excetption info: -------------------------------------------------
+System.ArgumentException: Parameter 'p_DomainName' not found in the collection.
+   en MySql.Data.MySqlClient.MySqlParameterCollection.GetParameterFlexible(String parameterName, Boolean throwOnNotFound)
+   en MySql.Data.MySqlClient.StoredProcedure.GetAndFixParameter(String spName, MySqlSchemaRow param, Boolean realAsFloat, MySqlParameter returnParameter)
+   en MySql.Data.MySqlClient.StoredProcedure.CheckParameters(String spName)
+   en MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   en MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   en Merculia.MailServer.WSqlCommand.Execute() en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\WSqlCommand.cs:línea 87
+   en Merculia.MailServer.mssql_API.GetUsers(String domainName) en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\mssql_API.cs:línea 254
+   en Merculia.MailServer.FetchPop3.StartFetching() en C:\Freelancer\EmailServer\CodeNew\MailServer\MailServer\Fetch\FetchPop3.cs:línea 105
+</Text>
+  </Events>
+  <Events>
+    <ID>27dedc3b-9c11-4a0f-b4b3-00b9c9b911bd</ID>
+    <VirtualServer />
+    <CreateDate>2017-11-07T00:44:04.2607044-06:00</CreateDate>
+    <Type>0</Type>
+    <Text>Parameter 'p_DomainName' not found in the collection.
+//------------- function: Merculia.MailServer.Error.DumpError()  07/11/2017 12:44:04 a. m.------------//
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x)
+   en Merculia.MailServer.FetchPop3.StartFetching()
+   en Merculia.MailServer.FetchPop3.m_pTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   en System.Timers.Timer.MyTimerCallback(Object state)
+   en System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.TimerQueueTimer.CallCallback()
+   en System.Threading.TimerQueueTimer.Fire()
+   en System.Threading.TimerQueue.FireNextTimers()
+
+//--- Excetption info: -------------------------------------------------
+System.ArgumentException: Parameter 'p_DomainName' not found in the collection.
+   en MySql.Data.MySqlClient.MySqlParameterCollection.GetParameterFlexible(String parameterName, Boolean throwOnNotFound)
+   en MySql.Data.MySqlClient.StoredProcedure.GetAndFixParameter(String spName, MySqlSchemaRow param, Boolean realAsFloat, MySqlParameter returnParameter)
+   en MySql.Data.MySqlClient.StoredProcedure.CheckParameters(String spName)
+   en MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   en MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   en Merculia.MailServer.WSqlCommand.Execute() en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\WSqlCommand.cs:línea 87
+   en Merculia.MailServer.mssql_API.GetUsers(String domainName) en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\mssql_API.cs:línea 254
+   en Merculia.MailServer.FetchPop3.StartFetching() en C:\Freelancer\EmailServer\CodeNew\MailServer\MailServer\Fetch\FetchPop3.cs:línea 105
+</Text>
+  </Events>
+  <Events>
+    <ID>9332e70f-6573-42ca-a565-c0f463219b07</ID>
+    <VirtualServer />
+    <CreateDate>2017-11-07T00:44:19.246987-06:00</CreateDate>
+    <Type>0</Type>
+    <Text>Parameter 'p_DomainName' not found in the collection.
+//------------- function: Merculia.MailServer.Error.DumpError()  07/11/2017 12:44:19 a. m.------------//
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x)
+   en Merculia.MailServer.FetchPop3.StartFetching()
+   en Merculia.MailServer.FetchPop3.m_pTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   en System.Timers.Timer.MyTimerCallback(Object state)
+   en System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.TimerQueueTimer.CallCallback()
+   en System.Threading.TimerQueueTimer.Fire()
+   en System.Threading.TimerQueue.FireNextTimers()
+
+//--- Excetption info: -------------------------------------------------
+System.ArgumentException: Parameter 'p_DomainName' not found in the collection.
+   en MySql.Data.MySqlClient.MySqlParameterCollection.GetParameterFlexible(String parameterName, Boolean throwOnNotFound)
+   en MySql.Data.MySqlClient.StoredProcedure.GetAndFixParameter(String spName, MySqlSchemaRow param, Boolean realAsFloat, MySqlParameter returnParameter)
+   en MySql.Data.MySqlClient.StoredProcedure.CheckParameters(String spName)
+   en MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   en MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   en Merculia.MailServer.WSqlCommand.Execute() en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\WSqlCommand.cs:línea 87
+   en Merculia.MailServer.mssql_API.GetUsers(String domainName) en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\mssql_API.cs:línea 254
+   en Merculia.MailServer.FetchPop3.StartFetching() en C:\Freelancer\EmailServer\CodeNew\MailServer\MailServer\Fetch\FetchPop3.cs:línea 105
+</Text>
+  </Events>
+  <Events>
+    <ID>5cef9ee4-01d7-4ecc-a189-55e0bba667b8</ID>
+    <VirtualServer />
+    <CreateDate>2017-11-07T00:44:34.252829-06:00</CreateDate>
+    <Type>0</Type>
+    <Text>Parameter 'p_DomainName' not found in the collection.
+//------------- function: Merculia.MailServer.Error.DumpError()  07/11/2017 12:44:34 a. m.------------//
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x)
+   en Merculia.MailServer.FetchPop3.StartFetching()
+   en Merculia.MailServer.FetchPop3.m_pTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   en System.Timers.Timer.MyTimerCallback(Object state)
+   en System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.TimerQueueTimer.CallCallback()
+   en System.Threading.TimerQueueTimer.Fire()
+   en System.Threading.TimerQueue.FireNextTimers()
+
+//--- Excetption info: -------------------------------------------------
+System.ArgumentException: Parameter 'p_DomainName' not found in the collection.
+   en MySql.Data.MySqlClient.MySqlParameterCollection.GetParameterFlexible(String parameterName, Boolean throwOnNotFound)
+   en MySql.Data.MySqlClient.StoredProcedure.GetAndFixParameter(String spName, MySqlSchemaRow param, Boolean realAsFloat, MySqlParameter returnParameter)
+   en MySql.Data.MySqlClient.StoredProcedure.CheckParameters(String spName)
+   en MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   en MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   en Merculia.MailServer.WSqlCommand.Execute() en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\WSqlCommand.cs:línea 87
+   en Merculia.MailServer.mssql_API.GetUsers(String domainName) en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\mssql_API.cs:línea 254
+   en Merculia.MailServer.FetchPop3.StartFetching() en C:\Freelancer\EmailServer\CodeNew\MailServer\MailServer\Fetch\FetchPop3.cs:línea 105
+</Text>
+  </Events>
+  <Events>
+    <ID>ea07fbac-cb16-4d6f-9d1d-c90be5b239ff</ID>
+    <VirtualServer />
+    <CreateDate>2017-11-07T00:44:49.260226-06:00</CreateDate>
+    <Type>0</Type>
+    <Text>Parameter 'p_DomainName' not found in the collection.
+//------------- function: Merculia.MailServer.Error.DumpError()  07/11/2017 12:44:49 a. m.------------//
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x)
+   en Merculia.MailServer.FetchPop3.StartFetching()
+   en Merculia.MailServer.FetchPop3.m_pTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   en System.Timers.Timer.MyTimerCallback(Object state)
+   en System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.TimerQueueTimer.CallCallback()
+   en System.Threading.TimerQueueTimer.Fire()
+   en System.Threading.TimerQueue.FireNextTimers()
+
+//--- Excetption info: -------------------------------------------------
+System.ArgumentException: Parameter 'p_DomainName' not found in the collection.
+   en MySql.Data.MySqlClient.MySqlParameterCollection.GetParameterFlexible(String parameterName, Boolean throwOnNotFound)
+   en MySql.Data.MySqlClient.StoredProcedure.GetAndFixParameter(String spName, MySqlSchemaRow param, Boolean realAsFloat, MySqlParameter returnParameter)
+   en MySql.Data.MySqlClient.StoredProcedure.CheckParameters(String spName)
+   en MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   en MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   en Merculia.MailServer.WSqlCommand.Execute() en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\WSqlCommand.cs:línea 87
+   en Merculia.MailServer.mssql_API.GetUsers(String domainName) en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\mssql_API.cs:línea 254
+   en Merculia.MailServer.FetchPop3.StartFetching() en C:\Freelancer\EmailServer\CodeNew\MailServer\MailServer\Fetch\FetchPop3.cs:línea 105
+</Text>
+  </Events>
+  <Events>
+    <ID>a4b0f10d-f9d1-4a07-bfc3-f83b050b614b</ID>
+    <VirtualServer />
+    <CreateDate>2017-11-07T00:45:04.2749669-06:00</CreateDate>
+    <Type>0</Type>
+    <Text>Parameter 'p_DomainName' not found in the collection.
+//------------- function: Merculia.MailServer.Error.DumpError()  07/11/2017 12:45:04 a. m.------------//
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x)
+   en Merculia.MailServer.FetchPop3.StartFetching()
+   en Merculia.MailServer.FetchPop3.m_pTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   en System.Timers.Timer.MyTimerCallback(Object state)
+   en System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.TimerQueueTimer.CallCallback()
+   en System.Threading.TimerQueueTimer.Fire()
+   en System.Threading.TimerQueue.FireNextTimers()
+
+//--- Excetption info: -------------------------------------------------
+System.ArgumentException: Parameter 'p_DomainName' not found in the collection.
+   en MySql.Data.MySqlClient.MySqlParameterCollection.GetParameterFlexible(String parameterName, Boolean throwOnNotFound)
+   en MySql.Data.MySqlClient.StoredProcedure.GetAndFixParameter(String spName, MySqlSchemaRow param, Boolean realAsFloat, MySqlParameter returnParameter)
+   en MySql.Data.MySqlClient.StoredProcedure.CheckParameters(String spName)
+   en MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   en MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   en Merculia.MailServer.WSqlCommand.Execute() en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\WSqlCommand.cs:línea 87
+   en Merculia.MailServer.mssql_API.GetUsers(String domainName) en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\mssql_API.cs:línea 254
+   en Merculia.MailServer.FetchPop3.StartFetching() en C:\Freelancer\EmailServer\CodeNew\MailServer\MailServer\Fetch\FetchPop3.cs:línea 105
+</Text>
+  </Events>
+  <Events>
+    <ID>0fcdeac5-0798-45a1-9b79-6ac38cef9bfe</ID>
+    <VirtualServer />
+    <CreateDate>2017-11-07T00:45:19.2794684-06:00</CreateDate>
+    <Type>0</Type>
+    <Text>Parameter 'p_DomainName' not found in the collection.
+//------------- function: Merculia.MailServer.Error.DumpError()  07/11/2017 12:45:19 a. m.------------//
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x)
+   en Merculia.MailServer.FetchPop3.StartFetching()
+   en Merculia.MailServer.FetchPop3.m_pTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   en System.Timers.Timer.MyTimerCallback(Object state)
+   en System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.TimerQueueTimer.CallCallback()
+   en System.Threading.TimerQueueTimer.Fire()
+   en System.Threading.TimerQueue.FireNextTimers()
+
+//--- Excetption info: -------------------------------------------------
+System.ArgumentException: Parameter 'p_DomainName' not found in the collection.
+   en MySql.Data.MySqlClient.MySqlParameterCollection.GetParameterFlexible(String parameterName, Boolean throwOnNotFound)
+   en MySql.Data.MySqlClient.StoredProcedure.GetAndFixParameter(String spName, MySqlSchemaRow param, Boolean realAsFloat, MySqlParameter returnParameter)
+   en MySql.Data.MySqlClient.StoredProcedure.CheckParameters(String spName)
+   en MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   en MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   en Merculia.MailServer.WSqlCommand.Execute() en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\WSqlCommand.cs:línea 87
+   en Merculia.MailServer.mssql_API.GetUsers(String domainName) en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\mssql_API.cs:línea 254
+   en Merculia.MailServer.FetchPop3.StartFetching() en C:\Freelancer\EmailServer\CodeNew\MailServer\MailServer\Fetch\FetchPop3.cs:línea 105
+</Text>
+  </Events>
+  <Events>
+    <ID>a91fb7b7-e9bc-4953-a8bf-39245dfbb7f0</ID>
+    <VirtualServer />
+    <CreateDate>2017-11-07T00:45:34.286964-06:00</CreateDate>
+    <Type>0</Type>
+    <Text>Parameter 'p_DomainName' not found in the collection.
+//------------- function: Merculia.MailServer.Error.DumpError()  07/11/2017 12:45:34 a. m.------------//
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x)
+   en Merculia.MailServer.FetchPop3.StartFetching()
+   en Merculia.MailServer.FetchPop3.m_pTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   en System.Timers.Timer.MyTimerCallback(Object state)
+   en System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.TimerQueueTimer.CallCallback()
+   en System.Threading.TimerQueueTimer.Fire()
+   en System.Threading.TimerQueue.FireNextTimers()
+
+//--- Excetption info: -------------------------------------------------
+System.ArgumentException: Parameter 'p_DomainName' not found in the collection.
+   en MySql.Data.MySqlClient.MySqlParameterCollection.GetParameterFlexible(String parameterName, Boolean throwOnNotFound)
+   en MySql.Data.MySqlClient.StoredProcedure.GetAndFixParameter(String spName, MySqlSchemaRow param, Boolean realAsFloat, MySqlParameter returnParameter)
+   en MySql.Data.MySqlClient.StoredProcedure.CheckParameters(String spName)
+   en MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   en MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   en Merculia.MailServer.WSqlCommand.Execute() en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\WSqlCommand.cs:línea 87
+   en Merculia.MailServer.mssql_API.GetUsers(String domainName) en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\mssql_API.cs:línea 254
+   en Merculia.MailServer.FetchPop3.StartFetching() en C:\Freelancer\EmailServer\CodeNew\MailServer\MailServer\Fetch\FetchPop3.cs:línea 105
+</Text>
+  </Events>
+  <Events>
+    <ID>79176ef5-331c-4b14-b910-73cc9340d60a</ID>
+    <VirtualServer />
+    <CreateDate>2017-11-07T00:45:49.3420092-06:00</CreateDate>
+    <Type>0</Type>
+    <Text>Parameter 'p_DomainName' not found in the collection.
+//------------- function: Merculia.MailServer.Error.DumpError()  07/11/2017 12:45:49 a. m.------------//
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x)
+   en Merculia.MailServer.FetchPop3.StartFetching()
+   en Merculia.MailServer.FetchPop3.m_pTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   en System.Timers.Timer.MyTimerCallback(Object state)
+   en System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.TimerQueueTimer.CallCallback()
+   en System.Threading.TimerQueueTimer.Fire()
+   en System.Threading.TimerQueue.FireNextTimers()
+
+//--- Excetption info: -------------------------------------------------
+System.ArgumentException: Parameter 'p_DomainName' not found in the collection.
+   en MySql.Data.MySqlClient.MySqlParameterCollection.GetParameterFlexible(String parameterName, Boolean throwOnNotFound)
+   en MySql.Data.MySqlClient.StoredProcedure.GetAndFixParameter(String spName, MySqlSchemaRow param, Boolean realAsFloat, MySqlParameter returnParameter)
+   en MySql.Data.MySqlClient.StoredProcedure.CheckParameters(String spName)
+   en MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   en MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   en Merculia.MailServer.WSqlCommand.Execute() en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\WSqlCommand.cs:línea 87
+   en Merculia.MailServer.mssql_API.GetUsers(String domainName) en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\mssql_API.cs:línea 254
+   en Merculia.MailServer.FetchPop3.StartFetching() en C:\Freelancer\EmailServer\CodeNew\MailServer\MailServer\Fetch\FetchPop3.cs:línea 105
+</Text>
+  </Events>
+  <Events>
+    <ID>539f0af2-38de-4887-b6b0-dcc26fe32ad0</ID>
+    <VirtualServer />
+    <CreateDate>2017-11-07T00:46:04.3525257-06:00</CreateDate>
+    <Type>0</Type>
+    <Text>Parameter 'p_DomainName' not found in the collection.
+//------------- function: Merculia.MailServer.Error.DumpError()  07/11/2017 12:46:04 a. m.------------//
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x)
+   en Merculia.MailServer.FetchPop3.StartFetching()
+   en Merculia.MailServer.FetchPop3.m_pTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   en System.Timers.Timer.MyTimerCallback(Object state)
+   en System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.TimerQueueTimer.CallCallback()
+   en System.Threading.TimerQueueTimer.Fire()
+   en System.Threading.TimerQueue.FireNextTimers()
+
+//--- Excetption info: -------------------------------------------------
+System.ArgumentException: Parameter 'p_DomainName' not found in the collection.
+   en MySql.Data.MySqlClient.MySqlParameterCollection.GetParameterFlexible(String parameterName, Boolean throwOnNotFound)
+   en MySql.Data.MySqlClient.StoredProcedure.GetAndFixParameter(String spName, MySqlSchemaRow param, Boolean realAsFloat, MySqlParameter returnParameter)
+   en MySql.Data.MySqlClient.StoredProcedure.CheckParameters(String spName)
+   en MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   en MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   en Merculia.MailServer.WSqlCommand.Execute() en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\WSqlCommand.cs:línea 87
+   en Merculia.MailServer.mssql_API.GetUsers(String domainName) en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\mssql_API.cs:línea 254
+   en Merculia.MailServer.FetchPop3.StartFetching() en C:\Freelancer\EmailServer\CodeNew\MailServer\MailServer\Fetch\FetchPop3.cs:línea 105
+</Text>
+  </Events>
+  <Events>
+    <ID>ad6e47d3-2275-4c01-9d3a-44737e603059</ID>
+    <VirtualServer />
+    <CreateDate>2017-11-07T00:46:19.361023-06:00</CreateDate>
+    <Type>0</Type>
+    <Text>Parameter 'p_DomainName' not found in the collection.
+//------------- function: Merculia.MailServer.Error.DumpError()  07/11/2017 12:46:19 a. m.------------//
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x)
+   en Merculia.MailServer.FetchPop3.StartFetching()
+   en Merculia.MailServer.FetchPop3.m_pTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   en System.Timers.Timer.MyTimerCallback(Object state)
+   en System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.TimerQueueTimer.CallCallback()
+   en System.Threading.TimerQueueTimer.Fire()
+   en System.Threading.TimerQueue.FireNextTimers()
+
+//--- Excetption info: -------------------------------------------------
+System.ArgumentException: Parameter 'p_DomainName' not found in the collection.
+   en MySql.Data.MySqlClient.MySqlParameterCollection.GetParameterFlexible(String parameterName, Boolean throwOnNotFound)
+   en MySql.Data.MySqlClient.StoredProcedure.GetAndFixParameter(String spName, MySqlSchemaRow param, Boolean realAsFloat, MySqlParameter returnParameter)
+   en MySql.Data.MySqlClient.StoredProcedure.CheckParameters(String spName)
+   en MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   en MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   en Merculia.MailServer.WSqlCommand.Execute() en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\WSqlCommand.cs:línea 87
+   en Merculia.MailServer.mssql_API.GetUsers(String domainName) en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\mssql_API.cs:línea 254
+   en Merculia.MailServer.FetchPop3.StartFetching() en C:\Freelancer\EmailServer\CodeNew\MailServer\MailServer\Fetch\FetchPop3.cs:línea 105
+</Text>
+  </Events>
+  <Events>
+    <ID>eb6fcfa8-c777-41af-a89c-c61d94c825de</ID>
+    <VirtualServer />
+    <CreateDate>2017-11-07T00:46:34.3384992-06:00</CreateDate>
+    <Type>0</Type>
+    <Text>Parameter 'p_DomainName' not found in the collection.
+//------------- function: Merculia.MailServer.Error.DumpError()  07/11/2017 12:46:34 a. m.------------//
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x)
+   en Merculia.MailServer.FetchPop3.StartFetching()
+   en Merculia.MailServer.FetchPop3.m_pTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   en System.Timers.Timer.MyTimerCallback(Object state)
+   en System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.TimerQueueTimer.CallCallback()
+   en System.Threading.TimerQueueTimer.Fire()
+   en System.Threading.TimerQueue.FireNextTimers()
+
+//--- Excetption info: -------------------------------------------------
+System.ArgumentException: Parameter 'p_DomainName' not found in the collection.
+   en MySql.Data.MySqlClient.MySqlParameterCollection.GetParameterFlexible(String parameterName, Boolean throwOnNotFound)
+   en MySql.Data.MySqlClient.StoredProcedure.GetAndFixParameter(String spName, MySqlSchemaRow param, Boolean realAsFloat, MySqlParameter returnParameter)
+   en MySql.Data.MySqlClient.StoredProcedure.CheckParameters(String spName)
+   en MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   en MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   en Merculia.MailServer.WSqlCommand.Execute() en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\WSqlCommand.cs:línea 87
+   en Merculia.MailServer.mssql_API.GetUsers(String domainName) en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\mssql_API.cs:línea 254
+   en Merculia.MailServer.FetchPop3.StartFetching() en C:\Freelancer\EmailServer\CodeNew\MailServer\MailServer\Fetch\FetchPop3.cs:línea 105
+</Text>
+  </Events>
+  <Events>
+    <ID>454713c8-d0f3-43fb-8c57-5c22d44b0308</ID>
+    <VirtualServer />
+    <CreateDate>2017-11-07T00:46:49.3895241-06:00</CreateDate>
+    <Type>0</Type>
+    <Text>Parameter 'p_DomainName' not found in the collection.
+//------------- function: Merculia.MailServer.Error.DumpError()  07/11/2017 12:46:49 a. m.------------//
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x)
+   en Merculia.MailServer.FetchPop3.StartFetching()
+   en Merculia.MailServer.FetchPop3.m_pTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   en System.Timers.Timer.MyTimerCallback(Object state)
+   en System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.TimerQueueTimer.CallCallback()
+   en System.Threading.TimerQueueTimer.Fire()
+   en System.Threading.TimerQueue.FireNextTimers()
+
+//--- Excetption info: -------------------------------------------------
+System.ArgumentException: Parameter 'p_DomainName' not found in the collection.
+   en MySql.Data.MySqlClient.MySqlParameterCollection.GetParameterFlexible(String parameterName, Boolean throwOnNotFound)
+   en MySql.Data.MySqlClient.StoredProcedure.GetAndFixParameter(String spName, MySqlSchemaRow param, Boolean realAsFloat, MySqlParameter returnParameter)
+   en MySql.Data.MySqlClient.StoredProcedure.CheckParameters(String spName)
+   en MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   en MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   en Merculia.MailServer.WSqlCommand.Execute() en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\WSqlCommand.cs:línea 87
+   en Merculia.MailServer.mssql_API.GetUsers(String domainName) en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\mssql_API.cs:línea 254
+   en Merculia.MailServer.FetchPop3.StartFetching() en C:\Freelancer\EmailServer\CodeNew\MailServer\MailServer\Fetch\FetchPop3.cs:línea 105
+</Text>
+  </Events>
+  <Events>
+    <ID>567b09e2-1e8e-49a0-a26b-504b9e4167a3</ID>
+    <VirtualServer />
+    <CreateDate>2017-11-07T00:47:04.401032-06:00</CreateDate>
+    <Type>0</Type>
+    <Text>Parameter 'p_DomainName' not found in the collection.
+//------------- function: Merculia.MailServer.Error.DumpError()  07/11/2017 12:47:04 a. m.------------//
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x)
+   en Merculia.MailServer.FetchPop3.StartFetching()
+   en Merculia.MailServer.FetchPop3.m_pTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   en System.Timers.Timer.MyTimerCallback(Object state)
+   en System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.TimerQueueTimer.CallCallback()
+   en System.Threading.TimerQueueTimer.Fire()
+   en System.Threading.TimerQueue.FireNextTimers()
+
+//--- Excetption info: -------------------------------------------------
+System.ArgumentException: Parameter 'p_DomainName' not found in the collection.
+   en MySql.Data.MySqlClient.MySqlParameterCollection.GetParameterFlexible(String parameterName, Boolean throwOnNotFound)
+   en MySql.Data.MySqlClient.StoredProcedure.GetAndFixParameter(String spName, MySqlSchemaRow param, Boolean realAsFloat, MySqlParameter returnParameter)
+   en MySql.Data.MySqlClient.StoredProcedure.CheckParameters(String spName)
+   en MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   en MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   en Merculia.MailServer.WSqlCommand.Execute() en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\WSqlCommand.cs:línea 87
+   en Merculia.MailServer.mssql_API.GetUsers(String domainName) en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\mssql_API.cs:línea 254
+   en Merculia.MailServer.FetchPop3.StartFetching() en C:\Freelancer\EmailServer\CodeNew\MailServer\MailServer\Fetch\FetchPop3.cs:línea 105
+</Text>
+  </Events>
+  <Events>
+    <ID>4bc1e1a9-b017-4dac-b185-ccb74db2c179</ID>
+    <VirtualServer />
+    <CreateDate>2017-11-07T00:47:19.3755142-06:00</CreateDate>
+    <Type>0</Type>
+    <Text>Parameter 'p_DomainName' not found in the collection.
+//------------- function: Merculia.MailServer.Error.DumpError()  07/11/2017 12:47:19 a. m.------------//
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x)
+   en Merculia.MailServer.FetchPop3.StartFetching()
+   en Merculia.MailServer.FetchPop3.m_pTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   en System.Timers.Timer.MyTimerCallback(Object state)
+   en System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.TimerQueueTimer.CallCallback()
+   en System.Threading.TimerQueueTimer.Fire()
+   en System.Threading.TimerQueue.FireNextTimers()
+
+//--- Excetption info: -------------------------------------------------
+System.ArgumentException: Parameter 'p_DomainName' not found in the collection.
+   en MySql.Data.MySqlClient.MySqlParameterCollection.GetParameterFlexible(String parameterName, Boolean throwOnNotFound)
+   en MySql.Data.MySqlClient.StoredProcedure.GetAndFixParameter(String spName, MySqlSchemaRow param, Boolean realAsFloat, MySqlParameter returnParameter)
+   en MySql.Data.MySqlClient.StoredProcedure.CheckParameters(String spName)
+   en MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   en MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   en Merculia.MailServer.WSqlCommand.Execute() en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\WSqlCommand.cs:línea 87
+   en Merculia.MailServer.mssql_API.GetUsers(String domainName) en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\mssql_API.cs:línea 254
+   en Merculia.MailServer.FetchPop3.StartFetching() en C:\Freelancer\EmailServer\CodeNew\MailServer\MailServer\Fetch\FetchPop3.cs:línea 105
+</Text>
+  </Events>
+  <Events>
+    <ID>c2658b22-5354-4291-a459-6b577543d739</ID>
+    <VirtualServer />
+    <CreateDate>2017-11-07T00:47:34.378007-06:00</CreateDate>
+    <Type>0</Type>
+    <Text>Parameter 'p_DomainName' not found in the collection.
+//------------- function: Merculia.MailServer.Error.DumpError()  07/11/2017 12:47:34 a. m.------------//
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x)
+   en Merculia.MailServer.FetchPop3.StartFetching()
+   en Merculia.MailServer.FetchPop3.m_pTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   en System.Timers.Timer.MyTimerCallback(Object state)
+   en System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.TimerQueueTimer.CallCallback()
+   en System.Threading.TimerQueueTimer.Fire()
+   en System.Threading.TimerQueue.FireNextTimers()
+
+//--- Excetption info: -------------------------------------------------
+System.ArgumentException: Parameter 'p_DomainName' not found in the collection.
+   en MySql.Data.MySqlClient.MySqlParameterCollection.GetParameterFlexible(String parameterName, Boolean throwOnNotFound)
+   en MySql.Data.MySqlClient.StoredProcedure.GetAndFixParameter(String spName, MySqlSchemaRow param, Boolean realAsFloat, MySqlParameter returnParameter)
+   en MySql.Data.MySqlClient.StoredProcedure.CheckParameters(String spName)
+   en MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   en MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   en Merculia.MailServer.WSqlCommand.Execute() en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\WSqlCommand.cs:línea 87
+   en Merculia.MailServer.mssql_API.GetUsers(String domainName) en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\mssql_API.cs:línea 254
+   en Merculia.MailServer.FetchPop3.StartFetching() en C:\Freelancer\EmailServer\CodeNew\MailServer\MailServer\Fetch\FetchPop3.cs:línea 105
+</Text>
+  </Events>
+  <Events>
+    <ID>ffe5ad4e-4997-4246-a8fc-a171ca9c592b</ID>
+    <VirtualServer />
+    <CreateDate>2017-11-07T00:47:49.3790082-06:00</CreateDate>
+    <Type>0</Type>
+    <Text>Parameter 'p_DomainName' not found in the collection.
+//------------- function: Merculia.MailServer.Error.DumpError()  07/11/2017 12:47:49 a. m.------------//
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x)
+   en Merculia.MailServer.FetchPop3.StartFetching()
+   en Merculia.MailServer.FetchPop3.m_pTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   en System.Timers.Timer.MyTimerCallback(Object state)
+   en System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.TimerQueueTimer.CallCallback()
+   en System.Threading.TimerQueueTimer.Fire()
+   en System.Threading.TimerQueue.FireNextTimers()
+
+//--- Excetption info: -------------------------------------------------
+System.ArgumentException: Parameter 'p_DomainName' not found in the collection.
+   en MySql.Data.MySqlClient.MySqlParameterCollection.GetParameterFlexible(String parameterName, Boolean throwOnNotFound)
+   en MySql.Data.MySqlClient.StoredProcedure.GetAndFixParameter(String spName, MySqlSchemaRow param, Boolean realAsFloat, MySqlParameter returnParameter)
+   en MySql.Data.MySqlClient.StoredProcedure.CheckParameters(String spName)
+   en MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   en MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   en Merculia.MailServer.WSqlCommand.Execute() en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\WSqlCommand.cs:línea 87
+   en Merculia.MailServer.mssql_API.GetUsers(String domainName) en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\mssql_API.cs:línea 254
+   en Merculia.MailServer.FetchPop3.StartFetching() en C:\Freelancer\EmailServer\CodeNew\MailServer\MailServer\Fetch\FetchPop3.cs:línea 105
+</Text>
+  </Events>
+  <Events>
+    <ID>369f39e2-46e2-4b89-a175-ff6eec373f0e</ID>
+    <VirtualServer />
+    <CreateDate>2017-11-07T00:48:04.5361197-06:00</CreateDate>
+    <Type>0</Type>
+    <Text>Parameter 'p_DomainName' not found in the collection.
+//------------- function: Merculia.MailServer.Error.DumpError()  07/11/2017 12:48:04 a. m.------------//
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x)
+   en Merculia.MailServer.FetchPop3.StartFetching()
+   en Merculia.MailServer.FetchPop3.m_pTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   en System.Timers.Timer.MyTimerCallback(Object state)
+   en System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.TimerQueueTimer.CallCallback()
+   en System.Threading.TimerQueueTimer.Fire()
+   en System.Threading.TimerQueue.FireNextTimers()
+
+//--- Excetption info: -------------------------------------------------
+System.ArgumentException: Parameter 'p_DomainName' not found in the collection.
+   en MySql.Data.MySqlClient.MySqlParameterCollection.GetParameterFlexible(String parameterName, Boolean throwOnNotFound)
+   en MySql.Data.MySqlClient.StoredProcedure.GetAndFixParameter(String spName, MySqlSchemaRow param, Boolean realAsFloat, MySqlParameter returnParameter)
+   en MySql.Data.MySqlClient.StoredProcedure.CheckParameters(String spName)
+   en MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   en MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   en Merculia.MailServer.WSqlCommand.Execute() en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\WSqlCommand.cs:línea 87
+   en Merculia.MailServer.mssql_API.GetUsers(String domainName) en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\mssql_API.cs:línea 254
+   en Merculia.MailServer.FetchPop3.StartFetching() en C:\Freelancer\EmailServer\CodeNew\MailServer\MailServer\Fetch\FetchPop3.cs:línea 105
+</Text>
+  </Events>
+  <Events>
+    <ID>d2adced0-6c0f-4adb-84b4-b3a7e0d8f7cf</ID>
+    <VirtualServer />
+    <CreateDate>2017-11-07T00:48:19.5641395-06:00</CreateDate>
+    <Type>0</Type>
+    <Text>Parameter 'p_DomainName' not found in the collection.
+//------------- function: Merculia.MailServer.Error.DumpError()  07/11/2017 12:48:19 a. m.------------//
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x)
+   en Merculia.MailServer.FetchPop3.StartFetching()
+   en Merculia.MailServer.FetchPop3.m_pTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   en System.Timers.Timer.MyTimerCallback(Object state)
+   en System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.TimerQueueTimer.CallCallback()
+   en System.Threading.TimerQueueTimer.Fire()
+   en System.Threading.TimerQueue.FireNextTimers()
+
+//--- Excetption info: -------------------------------------------------
+System.ArgumentException: Parameter 'p_DomainName' not found in the collection.
+   en MySql.Data.MySqlClient.MySqlParameterCollection.GetParameterFlexible(String parameterName, Boolean throwOnNotFound)
+   en MySql.Data.MySqlClient.StoredProcedure.GetAndFixParameter(String spName, MySqlSchemaRow param, Boolean realAsFloat, MySqlParameter returnParameter)
+   en MySql.Data.MySqlClient.StoredProcedure.CheckParameters(String spName)
+   en MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   en MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   en Merculia.MailServer.WSqlCommand.Execute() en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\WSqlCommand.cs:línea 87
+   en Merculia.MailServer.mssql_API.GetUsers(String domainName) en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\mssql_API.cs:línea 254
+   en Merculia.MailServer.FetchPop3.StartFetching() en C:\Freelancer\EmailServer\CodeNew\MailServer\MailServer\Fetch\FetchPop3.cs:línea 105
+</Text>
+  </Events>
+  <Events>
+    <ID>62b480bf-2aff-4ba4-b51b-a4ce8770e062</ID>
+    <VirtualServer />
+    <CreateDate>2017-11-07T00:48:34.4975858-06:00</CreateDate>
+    <Type>0</Type>
+    <Text>Parameter 'p_DomainName' not found in the collection.
+//------------- function: Merculia.MailServer.Error.DumpError()  07/11/2017 12:48:34 a. m.------------//
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x)
+   en Merculia.MailServer.FetchPop3.StartFetching()
+   en Merculia.MailServer.FetchPop3.m_pTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   en System.Timers.Timer.MyTimerCallback(Object state)
+   en System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.TimerQueueTimer.CallCallback()
+   en System.Threading.TimerQueueTimer.Fire()
+   en System.Threading.TimerQueue.FireNextTimers()
+
+//--- Excetption info: -------------------------------------------------
+System.ArgumentException: Parameter 'p_DomainName' not found in the collection.
+   en MySql.Data.MySqlClient.MySqlParameterCollection.GetParameterFlexible(String parameterName, Boolean throwOnNotFound)
+   en MySql.Data.MySqlClient.StoredProcedure.GetAndFixParameter(String spName, MySqlSchemaRow param, Boolean realAsFloat, MySqlParameter returnParameter)
+   en MySql.Data.MySqlClient.StoredProcedure.CheckParameters(String spName)
+   en MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   en MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   en Merculia.MailServer.WSqlCommand.Execute() en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\WSqlCommand.cs:línea 87
+   en Merculia.MailServer.mssql_API.GetUsers(String domainName) en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\mssql_API.cs:línea 254
+   en Merculia.MailServer.FetchPop3.StartFetching() en C:\Freelancer\EmailServer\CodeNew\MailServer\MailServer\Fetch\FetchPop3.cs:línea 105
+</Text>
+  </Events>
+  <Events>
+    <ID>f8e55ffa-ce18-4688-8bb3-58ed8d03a183</ID>
+    <VirtualServer />
+    <CreateDate>2017-11-07T00:48:49.5090858-06:00</CreateDate>
+    <Type>0</Type>
+    <Text>Parameter 'p_DomainName' not found in the collection.
+//------------- function: Merculia.MailServer.Error.DumpError()  07/11/2017 12:48:49 a. m.------------//
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x)
+   en Merculia.MailServer.FetchPop3.StartFetching()
+   en Merculia.MailServer.FetchPop3.m_pTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   en System.Timers.Timer.MyTimerCallback(Object state)
+   en System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.TimerQueueTimer.CallCallback()
+   en System.Threading.TimerQueueTimer.Fire()
+   en System.Threading.TimerQueue.FireNextTimers()
+
+//--- Excetption info: -------------------------------------------------
+System.ArgumentException: Parameter 'p_DomainName' not found in the collection.
+   en MySql.Data.MySqlClient.MySqlParameterCollection.GetParameterFlexible(String parameterName, Boolean throwOnNotFound)
+   en MySql.Data.MySqlClient.StoredProcedure.GetAndFixParameter(String spName, MySqlSchemaRow param, Boolean realAsFloat, MySqlParameter returnParameter)
+   en MySql.Data.MySqlClient.StoredProcedure.CheckParameters(String spName)
+   en MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   en MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   en Merculia.MailServer.WSqlCommand.Execute() en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\WSqlCommand.cs:línea 87
+   en Merculia.MailServer.mssql_API.GetUsers(String domainName) en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\mssql_API.cs:línea 254
+   en Merculia.MailServer.FetchPop3.StartFetching() en C:\Freelancer\EmailServer\CodeNew\MailServer\MailServer\Fetch\FetchPop3.cs:línea 105
+</Text>
+  </Events>
+  <Events>
+    <ID>9fb47ed6-f331-4fa9-aea2-f322069036b0</ID>
+    <VirtualServer />
+    <CreateDate>2017-11-07T00:49:04.5067771-06:00</CreateDate>
+    <Type>0</Type>
+    <Text>Parameter 'p_DomainName' not found in the collection.
+//------------- function: Merculia.MailServer.Error.DumpError()  07/11/2017 12:49:04 a. m.------------//
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x)
+   en Merculia.MailServer.FetchPop3.StartFetching()
+   en Merculia.MailServer.FetchPop3.m_pTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   en System.Timers.Timer.MyTimerCallback(Object state)
+   en System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.TimerQueueTimer.CallCallback()
+   en System.Threading.TimerQueueTimer.Fire()
+   en System.Threading.TimerQueue.FireNextTimers()
+
+//--- Excetption info: -------------------------------------------------
+System.ArgumentException: Parameter 'p_DomainName' not found in the collection.
+   en MySql.Data.MySqlClient.MySqlParameterCollection.GetParameterFlexible(String parameterName, Boolean throwOnNotFound)
+   en MySql.Data.MySqlClient.StoredProcedure.GetAndFixParameter(String spName, MySqlSchemaRow param, Boolean realAsFloat, MySqlParameter returnParameter)
+   en MySql.Data.MySqlClient.StoredProcedure.CheckParameters(String spName)
+   en MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   en MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   en Merculia.MailServer.WSqlCommand.Execute() en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\WSqlCommand.cs:línea 87
+   en Merculia.MailServer.mssql_API.GetUsers(String domainName) en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\mssql_API.cs:línea 254
+   en Merculia.MailServer.FetchPop3.StartFetching() en C:\Freelancer\EmailServer\CodeNew\MailServer\MailServer\Fetch\FetchPop3.cs:línea 105
+</Text>
+  </Events>
+  <Events>
+    <ID>6a3d36e1-c5d8-48f9-ac4a-880668dcfea2</ID>
+    <VirtualServer />
+    <CreateDate>2017-11-07T00:49:19.5029159-06:00</CreateDate>
+    <Type>0</Type>
+    <Text>Parameter 'p_DomainName' not found in the collection.
+//------------- function: Merculia.MailServer.Error.DumpError()  07/11/2017 12:49:19 a. m.------------//
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x)
+   en Merculia.MailServer.FetchPop3.StartFetching()
+   en Merculia.MailServer.FetchPop3.m_pTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   en System.Timers.Timer.MyTimerCallback(Object state)
+   en System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.TimerQueueTimer.CallCallback()
+   en System.Threading.TimerQueueTimer.Fire()
+   en System.Threading.TimerQueue.FireNextTimers()
+
+//--- Excetption info: -------------------------------------------------
+System.ArgumentException: Parameter 'p_DomainName' not found in the collection.
+   en MySql.Data.MySqlClient.MySqlParameterCollection.GetParameterFlexible(String parameterName, Boolean throwOnNotFound)
+   en MySql.Data.MySqlClient.StoredProcedure.GetAndFixParameter(String spName, MySqlSchemaRow param, Boolean realAsFloat, MySqlParameter returnParameter)
+   en MySql.Data.MySqlClient.StoredProcedure.CheckParameters(String spName)
+   en MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   en MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   en Merculia.MailServer.WSqlCommand.Execute() en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\WSqlCommand.cs:línea 87
+   en Merculia.MailServer.mssql_API.GetUsers(String domainName) en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\mssql_API.cs:línea 254
+   en Merculia.MailServer.FetchPop3.StartFetching() en C:\Freelancer\EmailServer\CodeNew\MailServer\MailServer\Fetch\FetchPop3.cs:línea 105
+</Text>
+  </Events>
+  <Events>
+    <ID>064fc145-995b-48cf-a728-48d5eb492241</ID>
+    <VirtualServer />
+    <CreateDate>2017-11-07T00:49:34.5820124-06:00</CreateDate>
+    <Type>0</Type>
+    <Text>Parameter 'p_DomainName' not found in the collection.
+//------------- function: Merculia.MailServer.Error.DumpError()  07/11/2017 12:49:34 a. m.------------//
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x)
+   en Merculia.MailServer.FetchPop3.StartFetching()
+   en Merculia.MailServer.FetchPop3.m_pTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   en System.Timers.Timer.MyTimerCallback(Object state)
+   en System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.TimerQueueTimer.CallCallback()
+   en System.Threading.TimerQueueTimer.Fire()
+   en System.Threading.TimerQueue.FireNextTimers()
+
+//--- Excetption info: -------------------------------------------------
+System.ArgumentException: Parameter 'p_DomainName' not found in the collection.
+   en MySql.Data.MySqlClient.MySqlParameterCollection.GetParameterFlexible(String parameterName, Boolean throwOnNotFound)
+   en MySql.Data.MySqlClient.StoredProcedure.GetAndFixParameter(String spName, MySqlSchemaRow param, Boolean realAsFloat, MySqlParameter returnParameter)
+   en MySql.Data.MySqlClient.StoredProcedure.CheckParameters(String spName)
+   en MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   en MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   en Merculia.MailServer.WSqlCommand.Execute() en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\WSqlCommand.cs:línea 87
+   en Merculia.MailServer.mssql_API.GetUsers(String domainName) en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\mssql_API.cs:línea 254
+   en Merculia.MailServer.FetchPop3.StartFetching() en C:\Freelancer\EmailServer\CodeNew\MailServer\MailServer\Fetch\FetchPop3.cs:línea 105
+</Text>
+  </Events>
+  <Events>
+    <ID>b0603014-3e82-4ae4-9101-2e1eb93ee20e</ID>
+    <VirtualServer />
+    <CreateDate>2017-11-07T00:49:49.5150487-06:00</CreateDate>
+    <Type>0</Type>
+    <Text>Parameter 'p_DomainName' not found in the collection.
+//------------- function: Merculia.MailServer.Error.DumpError()  07/11/2017 12:49:49 a. m.------------//
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x)
+   en Merculia.MailServer.FetchPop3.StartFetching()
+   en Merculia.MailServer.FetchPop3.m_pTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   en System.Timers.Timer.MyTimerCallback(Object state)
+   en System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.TimerQueueTimer.CallCallback()
+   en System.Threading.TimerQueueTimer.Fire()
+   en System.Threading.TimerQueue.FireNextTimers()
+
+//--- Excetption info: -------------------------------------------------
+System.ArgumentException: Parameter 'p_DomainName' not found in the collection.
+   en MySql.Data.MySqlClient.MySqlParameterCollection.GetParameterFlexible(String parameterName, Boolean throwOnNotFound)
+   en MySql.Data.MySqlClient.StoredProcedure.GetAndFixParameter(String spName, MySqlSchemaRow param, Boolean realAsFloat, MySqlParameter returnParameter)
+   en MySql.Data.MySqlClient.StoredProcedure.CheckParameters(String spName)
+   en MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   en MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   en Merculia.MailServer.WSqlCommand.Execute() en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\WSqlCommand.cs:línea 87
+   en Merculia.MailServer.mssql_API.GetUsers(String domainName) en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\mssql_API.cs:línea 254
+   en Merculia.MailServer.FetchPop3.StartFetching() en C:\Freelancer\EmailServer\CodeNew\MailServer\MailServer\Fetch\FetchPop3.cs:línea 105
+</Text>
+  </Events>
+  <Events>
+    <ID>104ad760-6673-43f8-ac83-30e732596b86</ID>
+    <VirtualServer />
+    <CreateDate>2017-11-07T00:50:04.6624609-06:00</CreateDate>
+    <Type>0</Type>
+    <Text>Parameter 'p_DomainName' not found in the collection.
+//------------- function: Merculia.MailServer.Error.DumpError()  07/11/2017 12:50:04 a. m.------------//
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x)
+   en Merculia.MailServer.FetchPop3.StartFetching()
+   en Merculia.MailServer.FetchPop3.m_pTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   en System.Timers.Timer.MyTimerCallback(Object state)
+   en System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.TimerQueueTimer.CallCallback()
+   en System.Threading.TimerQueueTimer.Fire()
+   en System.Threading.TimerQueue.FireNextTimers()
+
+//--- Excetption info: -------------------------------------------------
+System.ArgumentException: Parameter 'p_DomainName' not found in the collection.
+   en MySql.Data.MySqlClient.MySqlParameterCollection.GetParameterFlexible(String parameterName, Boolean throwOnNotFound)
+   en MySql.Data.MySqlClient.StoredProcedure.GetAndFixParameter(String spName, MySqlSchemaRow param, Boolean realAsFloat, MySqlParameter returnParameter)
+   en MySql.Data.MySqlClient.StoredProcedure.CheckParameters(String spName)
+   en MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   en MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   en Merculia.MailServer.WSqlCommand.Execute() en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\WSqlCommand.cs:línea 87
+   en Merculia.MailServer.mssql_API.GetUsers(String domainName) en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\mssql_API.cs:línea 254
+   en Merculia.MailServer.FetchPop3.StartFetching() en C:\Freelancer\EmailServer\CodeNew\MailServer\MailServer\Fetch\FetchPop3.cs:línea 105
+</Text>
+  </Events>
+  <Events>
+    <ID>5f493fff-0584-4d4d-b9bc-16dba2cf93b7</ID>
+    <VirtualServer />
+    <CreateDate>2017-11-07T00:50:19.6771162-06:00</CreateDate>
+    <Type>0</Type>
+    <Text>Parameter 'p_DomainName' not found in the collection.
+//------------- function: Merculia.MailServer.Error.DumpError()  07/11/2017 12:50:19 a. m.------------//
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x)
+   en Merculia.MailServer.FetchPop3.StartFetching()
+   en Merculia.MailServer.FetchPop3.m_pTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   en System.Timers.Timer.MyTimerCallback(Object state)
+   en System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.TimerQueueTimer.CallCallback()
+   en System.Threading.TimerQueueTimer.Fire()
+   en System.Threading.TimerQueue.FireNextTimers()
+
+//--- Excetption info: -------------------------------------------------
+System.ArgumentException: Parameter 'p_DomainName' not found in the collection.
+   en MySql.Data.MySqlClient.MySqlParameterCollection.GetParameterFlexible(String parameterName, Boolean throwOnNotFound)
+   en MySql.Data.MySqlClient.StoredProcedure.GetAndFixParameter(String spName, MySqlSchemaRow param, Boolean realAsFloat, MySqlParameter returnParameter)
+   en MySql.Data.MySqlClient.StoredProcedure.CheckParameters(String spName)
+   en MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   en MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   en Merculia.MailServer.WSqlCommand.Execute() en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\WSqlCommand.cs:línea 87
+   en Merculia.MailServer.mssql_API.GetUsers(String domainName) en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\mssql_API.cs:línea 254
+   en Merculia.MailServer.FetchPop3.StartFetching() en C:\Freelancer\EmailServer\CodeNew\MailServer\MailServer\Fetch\FetchPop3.cs:línea 105
+</Text>
+  </Events>
+  <Events>
+    <ID>6fd30acd-1356-4920-af77-a34c1637877c</ID>
+    <VirtualServer />
+    <CreateDate>2017-11-07T22:45:27.5894305-06:00</CreateDate>
+    <Type>0</Type>
+    <Text>Parameter 'p_UserName' not found in the collection.
+//------------- function: Merculia.MailServer.Error.DumpError()  07/11/2017 10:45:27 p. m.------------//
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x)
+   en Merculia.MailServer.FetchPop3.StartFetching()
+   en Merculia.MailServer.FetchPop3.m_pTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   en System.Timers.Timer.MyTimerCallback(Object state)
+   en System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.TimerQueueTimer.CallCallback()
+   en System.Threading.TimerQueueTimer.Fire()
+   en System.Threading.TimerQueue.FireNextTimers()
+
+//--- Excetption info: -------------------------------------------------
+System.ArgumentException: Parameter 'p_UserName' not found in the collection.
+   en MySql.Data.MySqlClient.MySqlParameterCollection.GetParameterFlexible(String parameterName, Boolean throwOnNotFound)
+   en MySql.Data.MySqlClient.StoredProcedure.GetAndFixParameter(String spName, MySqlSchemaRow param, Boolean realAsFloat, MySqlParameter returnParameter)
+   en MySql.Data.MySqlClient.StoredProcedure.CheckParameters(String spName)
+   en MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   en MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   en Merculia.MailServer.WSqlCommand.Execute() en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\WSqlCommand.cs:línea 87
+   en Merculia.MailServer.mssql_API.GetUserRemoteServers(String userName) en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\mssql_API.cs:línea 626
+   en Merculia.MailServer.FetchPop3.StartFetching() en C:\Freelancer\EmailServer\CodeNew\MailServer\MailServer\Fetch\FetchPop3.cs:línea 107
+</Text>
+  </Events>
+  <Events>
+    <ID>b6a5a994-7bf3-498e-9a1f-82260f5e292d</ID>
+    <VirtualServer />
+    <CreateDate>2017-11-07T22:45:41.8400173-06:00</CreateDate>
+    <Type>0</Type>
+    <Text>Parameter 'p_UserName' not found in the collection.
+//------------- function: Merculia.MailServer.Error.DumpError()  07/11/2017 10:45:41 p. m.------------//
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x)
+   en Merculia.MailServer.FetchPop3.StartFetching()
+   en Merculia.MailServer.FetchPop3.m_pTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   en System.Timers.Timer.MyTimerCallback(Object state)
+   en System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.TimerQueueTimer.CallCallback()
+   en System.Threading.TimerQueueTimer.Fire()
+   en System.Threading.QueueUserWorkItemCallback.System.Threading.IThreadPoolWorkItem.ExecuteWorkItem()
+   en System.Threading.ThreadPoolWorkQueue.Dispatch()
+
+//--- Excetption info: -------------------------------------------------
+System.ArgumentException: Parameter 'p_UserName' not found in the collection.
+   en MySql.Data.MySqlClient.MySqlParameterCollection.GetParameterFlexible(String parameterName, Boolean throwOnNotFound)
+   en MySql.Data.MySqlClient.StoredProcedure.GetAndFixParameter(String spName, MySqlSchemaRow param, Boolean realAsFloat, MySqlParameter returnParameter)
+   en MySql.Data.MySqlClient.StoredProcedure.CheckParameters(String spName)
+   en MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   en MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   en Merculia.MailServer.WSqlCommand.Execute() en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\WSqlCommand.cs:línea 87
+   en Merculia.MailServer.mssql_API.GetUserRemoteServers(String userName) en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\mssql_API.cs:línea 626
+   en Merculia.MailServer.FetchPop3.StartFetching() en C:\Freelancer\EmailServer\CodeNew\MailServer\MailServer\Fetch\FetchPop3.cs:línea 107
+</Text>
+  </Events>
+  <Events>
+    <ID>6d3eca0b-c465-4202-b290-9ff203000f62</ID>
+    <VirtualServer />
+    <CreateDate>2017-11-07T22:45:56.8022509-06:00</CreateDate>
+    <Type>0</Type>
+    <Text>Parameter 'p_UserName' not found in the collection.
+//------------- function: Merculia.MailServer.Error.DumpError()  07/11/2017 10:45:56 p. m.------------//
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x)
+   en Merculia.MailServer.FetchPop3.StartFetching()
+   en Merculia.MailServer.FetchPop3.m_pTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   en System.Timers.Timer.MyTimerCallback(Object state)
+   en System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.TimerQueueTimer.CallCallback()
+   en System.Threading.TimerQueueTimer.Fire()
+   en System.Threading.TimerQueue.FireNextTimers()
+
+//--- Excetption info: -------------------------------------------------
+System.ArgumentException: Parameter 'p_UserName' not found in the collection.
+   en MySql.Data.MySqlClient.MySqlParameterCollection.GetParameterFlexible(String parameterName, Boolean throwOnNotFound)
+   en MySql.Data.MySqlClient.StoredProcedure.GetAndFixParameter(String spName, MySqlSchemaRow param, Boolean realAsFloat, MySqlParameter returnParameter)
+   en MySql.Data.MySqlClient.StoredProcedure.CheckParameters(String spName)
+   en MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   en MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   en Merculia.MailServer.WSqlCommand.Execute() en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\WSqlCommand.cs:línea 87
+   en Merculia.MailServer.mssql_API.GetUserRemoteServers(String userName) en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\mssql_API.cs:línea 626
+   en Merculia.MailServer.FetchPop3.StartFetching() en C:\Freelancer\EmailServer\CodeNew\MailServer\MailServer\Fetch\FetchPop3.cs:línea 107
+</Text>
+  </Events>
+  <Events>
+    <ID>560a1032-c4e9-4673-b46d-453c5d205715</ID>
+    <VirtualServer />
+    <CreateDate>2017-11-07T22:46:11.7997404-06:00</CreateDate>
+    <Type>0</Type>
+    <Text>Parameter 'p_UserName' not found in the collection.
+//------------- function: Merculia.MailServer.Error.DumpError()  07/11/2017 10:46:11 p. m.------------//
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x)
+   en Merculia.MailServer.FetchPop3.StartFetching()
+   en Merculia.MailServer.FetchPop3.m_pTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   en System.Timers.Timer.MyTimerCallback(Object state)
+   en System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.TimerQueueTimer.CallCallback()
+   en System.Threading.TimerQueueTimer.Fire()
+   en System.Threading.QueueUserWorkItemCallback.System.Threading.IThreadPoolWorkItem.ExecuteWorkItem()
+   en System.Threading.ThreadPoolWorkQueue.Dispatch()
+
+//--- Excetption info: -------------------------------------------------
+System.ArgumentException: Parameter 'p_UserName' not found in the collection.
+   en MySql.Data.MySqlClient.MySqlParameterCollection.GetParameterFlexible(String parameterName, Boolean throwOnNotFound)
+   en MySql.Data.MySqlClient.StoredProcedure.GetAndFixParameter(String spName, MySqlSchemaRow param, Boolean realAsFloat, MySqlParameter returnParameter)
+   en MySql.Data.MySqlClient.StoredProcedure.CheckParameters(String spName)
+   en MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   en MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   en Merculia.MailServer.WSqlCommand.Execute() en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\WSqlCommand.cs:línea 87
+   en Merculia.MailServer.mssql_API.GetUserRemoteServers(String userName) en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\mssql_API.cs:línea 626
+   en Merculia.MailServer.FetchPop3.StartFetching() en C:\Freelancer\EmailServer\CodeNew\MailServer\MailServer\Fetch\FetchPop3.cs:línea 107
+</Text>
+  </Events>
+  <Events>
+    <ID>d4588180-7b9d-46d3-aeb5-461314c233a5</ID>
+    <VirtualServer />
+    <CreateDate>2017-11-07T22:46:26.7781197-06:00</CreateDate>
+    <Type>0</Type>
+    <Text>Parameter 'p_UserName' not found in the collection.
+//------------- function: Merculia.MailServer.Error.DumpError()  07/11/2017 10:46:26 p. m.------------//
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x)
+   en Merculia.MailServer.FetchPop3.StartFetching()
+   en Merculia.MailServer.FetchPop3.m_pTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   en System.Timers.Timer.MyTimerCallback(Object state)
+   en System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.TimerQueueTimer.CallCallback()
+   en System.Threading.TimerQueueTimer.Fire()
+   en System.Threading.TimerQueue.FireNextTimers()
+
+//--- Excetption info: -------------------------------------------------
+System.ArgumentException: Parameter 'p_UserName' not found in the collection.
+   en MySql.Data.MySqlClient.MySqlParameterCollection.GetParameterFlexible(String parameterName, Boolean throwOnNotFound)
+   en MySql.Data.MySqlClient.StoredProcedure.GetAndFixParameter(String spName, MySqlSchemaRow param, Boolean realAsFloat, MySqlParameter returnParameter)
+   en MySql.Data.MySqlClient.StoredProcedure.CheckParameters(String spName)
+   en MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   en MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   en Merculia.MailServer.WSqlCommand.Execute() en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\WSqlCommand.cs:línea 87
+   en Merculia.MailServer.mssql_API.GetUserRemoteServers(String userName) en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\mssql_API.cs:línea 626
+   en Merculia.MailServer.FetchPop3.StartFetching() en C:\Freelancer\EmailServer\CodeNew\MailServer\MailServer\Fetch\FetchPop3.cs:línea 107
+</Text>
+  </Events>
+  <Events>
+    <ID>a89c6a60-a50f-4f7c-92d1-a4cc965c9021</ID>
+    <VirtualServer />
+    <CreateDate>2017-11-07T22:46:41.773617-06:00</CreateDate>
+    <Type>0</Type>
+    <Text>Parameter 'p_UserName' not found in the collection.
+//------------- function: Merculia.MailServer.Error.DumpError()  07/11/2017 10:46:41 p. m.------------//
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x)
+   en Merculia.MailServer.FetchPop3.StartFetching()
+   en Merculia.MailServer.FetchPop3.m_pTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   en System.Timers.Timer.MyTimerCallback(Object state)
+   en System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.TimerQueueTimer.CallCallback()
+   en System.Threading.TimerQueueTimer.Fire()
+   en System.Threading.QueueUserWorkItemCallback.System.Threading.IThreadPoolWorkItem.ExecuteWorkItem()
+   en System.Threading.ThreadPoolWorkQueue.Dispatch()
+
+//--- Excetption info: -------------------------------------------------
+System.ArgumentException: Parameter 'p_UserName' not found in the collection.
+   en MySql.Data.MySqlClient.MySqlParameterCollection.GetParameterFlexible(String parameterName, Boolean throwOnNotFound)
+   en MySql.Data.MySqlClient.StoredProcedure.GetAndFixParameter(String spName, MySqlSchemaRow param, Boolean realAsFloat, MySqlParameter returnParameter)
+   en MySql.Data.MySqlClient.StoredProcedure.CheckParameters(String spName)
+   en MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   en MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   en Merculia.MailServer.WSqlCommand.Execute() en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\WSqlCommand.cs:línea 87
+   en Merculia.MailServer.mssql_API.GetUserRemoteServers(String userName) en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\mssql_API.cs:línea 626
+   en Merculia.MailServer.FetchPop3.StartFetching() en C:\Freelancer\EmailServer\CodeNew\MailServer\MailServer\Fetch\FetchPop3.cs:línea 107
+</Text>
+  </Events>
+  <Events>
+    <ID>6e6bc242-e0b5-4e79-9af5-52d067369ec1</ID>
+    <VirtualServer />
+    <CreateDate>2017-11-07T22:46:56.7791112-06:00</CreateDate>
+    <Type>0</Type>
+    <Text>Parameter 'p_UserName' not found in the collection.
+//------------- function: Merculia.MailServer.Error.DumpError()  07/11/2017 10:46:56 p. m.------------//
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x)
+   en Merculia.MailServer.FetchPop3.StartFetching()
+   en Merculia.MailServer.FetchPop3.m_pTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   en System.Timers.Timer.MyTimerCallback(Object state)
+   en System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.TimerQueueTimer.CallCallback()
+   en System.Threading.TimerQueueTimer.Fire()
+   en System.Threading.TimerQueue.FireNextTimers()
+
+//--- Excetption info: -------------------------------------------------
+System.ArgumentException: Parameter 'p_UserName' not found in the collection.
+   en MySql.Data.MySqlClient.MySqlParameterCollection.GetParameterFlexible(String parameterName, Boolean throwOnNotFound)
+   en MySql.Data.MySqlClient.StoredProcedure.GetAndFixParameter(String spName, MySqlSchemaRow param, Boolean realAsFloat, MySqlParameter returnParameter)
+   en MySql.Data.MySqlClient.StoredProcedure.CheckParameters(String spName)
+   en MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   en MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   en Merculia.MailServer.WSqlCommand.Execute() en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\WSqlCommand.cs:línea 87
+   en Merculia.MailServer.mssql_API.GetUserRemoteServers(String userName) en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\mssql_API.cs:línea 626
+   en Merculia.MailServer.FetchPop3.StartFetching() en C:\Freelancer\EmailServer\CodeNew\MailServer\MailServer\Fetch\FetchPop3.cs:línea 107
+</Text>
+  </Events>
+  <Events>
+    <ID>1d3c6b6f-6ea1-46ab-b608-7a61e9e00f55</ID>
+    <VirtualServer />
+    <CreateDate>2017-11-07T22:48:48.4953422-06:00</CreateDate>
+    <Type>0</Type>
+    <Text>Parameter 'p_UserName' not found in the collection.
+//------------- function: Merculia.MailServer.Error.DumpError()  07/11/2017 10:48:48 p. m.------------//
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x, StackTrace stackTrace)
+   en Merculia.MailServer.Error.DumpError(String virtualServer, Exception x)
+   en Merculia.MailServer.FetchPop3.StartFetching()
+   en Merculia.MailServer.FetchPop3.m_pTimer_Elapsed(Object sender, ElapsedEventArgs e)
+   en System.Timers.Timer.MyTimerCallback(Object state)
+   en System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   en System.Threading.TimerQueueTimer.CallCallback()
+   en System.Threading.TimerQueueTimer.Fire()
+   en System.Threading.TimerQueue.FireNextTimers()
+
+//--- Excetption info: -------------------------------------------------
+System.ArgumentException: Parameter 'p_UserName' not found in the collection.
+   en MySql.Data.MySqlClient.MySqlParameterCollection.GetParameterFlexible(String parameterName, Boolean throwOnNotFound)
+   en MySql.Data.MySqlClient.StoredProcedure.GetAndFixParameter(String spName, MySqlSchemaRow param, Boolean realAsFloat, MySqlParameter returnParameter)
+   en MySql.Data.MySqlClient.StoredProcedure.CheckParameters(String spName)
+   en MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   en MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   en Merculia.MailServer.WSqlCommand.Execute() en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\WSqlCommand.cs:línea 87
+   en Merculia.MailServer.mssql_API.GetUserRemoteServers(String userName) en C:\Freelancer\EmailServer\CodeNew\MailServer\ServerAPI\API_mssql\mssql_API.cs:línea 626
+   en Merculia.MailServer.FetchPop3.StartFetching() en C:\Freelancer\EmailServer\CodeNew\MailServer\MailServer\Fetch\FetchPop3.cs:línea 107
+</Text>
+  </Events>
+</dsEvents>
