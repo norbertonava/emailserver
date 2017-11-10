@@ -2301,8 +2301,9 @@ namespace Merculia.MailServer
         /// <param name="folderOwnerUser">User who's folder it is.</param>
         /// <param name="folder">Folder what messages info to get. For example: Inbox,Public Folders/Documnets .</param>
         /// <param name="messages">IMAP_Messages collection where to store folder messages info.</param>
-        public void GetMessagesInfo(string accessingUser,string folderOwnerUser,string folder,IMAP_MessageCollection messages)
-		{
+        //public void GetMessagesInfo(string accessingUser, string folderOwnerUser, string folder,IMAP_MessageCollection messages)
+        public void GetMessagesInfo(string accessingUser, string folderOwnerUser, string folder, List<IMAP_MessageInfo> messages)
+        {
             /* Implementation notes:
                 *) Validate values. Throw ArgumnetExcetion if invalid values.
                 *) Ensure that user exists.
@@ -2362,42 +2363,52 @@ namespace Merculia.MailServer
 				DataSet ds = sqlCmd.Execute();
 				ds.Tables[0].TableName = "lsMailStore";
 
-				foreach(DataRow dr in ds.Tables["lsMailStore"].Rows){
+				foreach(DataRow dr in ds.Tables["lsMailStore"].Rows)
+                {
 					string   messageID = dr["MessageID"].ToString();
 					int      size      = Convert.ToInt32(dr["Size"]);
-					DateTime date      = Convert.ToDateTime(dr["Date"]); 
-					int      flags     = Convert.ToInt32(dr["MessageFlags"]);
-					int      uid       = Convert.ToInt32(dr["UID"]);
+					DateTime date      = Convert.ToDateTime(dr["Date"]);
+                    //NNAVA
+                    //int      flags     = Convert.ToInt32(dr["MessageFlags"]);
+                    string flags = dr["MessageFlags"].ToString();
+                    //NNAVA
+                    int uid = -1;
+                    if (dr["UID"] != DBNull.Value)
+                        uid = Convert.ToInt32(dr["UID"]);
 
-                    messages.Add(
-                        messageID,
-                        uid,
-                        date,
-                        size,
-                        (IMAP_MessageFlags)flags
-                    );
+                    messages.Add(new IMAP_MessageInfo(messageID, uid, flags.Split(' '), size, date));
+
+                    //messages.Add(
+                    //    messageID,
+                    //    uid,
+                    //    date,
+                    //    size,
+                    //    (IMAP_MessageFlags)flags
+                    //);
 				}
 			}
 		}
-		
-		#endregion
-                
 
-		#region function StoreMessage
+        #endregion
 
-		/// <summary>
-		/// Stores message to specified folder.
-		/// </summary>
+
+        #region function StoreMessage
+
+        /// <summary>
+        /// Stores message to specified folder.
+        /// </summary>
         /// <param name="accessingUser">User who accesses this method. 
         /// User needs r permission to call this method or Exception is thrown. 
         /// There is special user 'system' for which permission check is skipped.</param>
         /// <param name="folderOwnerUser">User who's folder it is.</param>
         /// <param name="folder">Folder where to store message. For example: Inbox,Public Folders/Documnets .</param>
-		/// <param name="msgStream">Stream where message has stored. Stream position must be at the beginning of the message.</param>
-		/// <param name="date">Recieve date.</param>
-		/// <param name="flags">Message flags.</param>
-		public void StoreMessage(string accessingUser,string folderOwnerUser,string folder,Stream msgStream,DateTime date,IMAP_MessageFlags flags)
-		{
+        /// <param name="msgStream">Stream where message has stored. Stream position must be at the beginning of the message.</param>
+        /// <param name="date">Recieve date.</param>
+        /// <param name="flags">Message flags.</param>
+        //
+        //public void StoreMessage(string accessingUser, string folderOwnerUser, string folder,Stream msgStream, DateTime date, IMAP_MessageFlags flags)
+        public void StoreMessage(string accessingUser, string folderOwnerUser, string folder, Stream msgStream, DateTime date, string[] flags)
+        {
             /* Implementation notes:
                 *) Validate values. Throw ArgumnetExcetion if invalid values.
                 *) Ensure that user exists.
@@ -2463,31 +2474,35 @@ namespace Merculia.MailServer
 				sqlCmd.AddParameter("p_Size"         ,MySqlDbType.Int64   ,msgMemStream.Length);
 				sqlCmd.AddParameter("p_TopLines"     ,MySqlDbType.LongBlob    ,topLines);
 				sqlCmd.AddParameter("p_Date"         ,MySqlDbType.DateTime ,date);
-				sqlCmd.AddParameter("p_MessageFlags" ,MySqlDbType.UInt32      ,(int)flags);
+                //NNAVA
+                //sqlCmd.AddParameter("p_MessageFlags" ,MySqlDbType.UInt32      ,(int)flags);
+                sqlCmd.AddParameter("p_MessageFlags", MySqlDbType.VarChar, Net_Utils.ArrayToString(flags, " "));
 
-				DataSet ds = sqlCmd.Execute();
+                DataSet ds = sqlCmd.Execute();
 
 				if(ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0){
 					throw new Exception(ds.Tables[0].Rows[0]["ErrorText"].ToString());
 				}
 			}
 		}
-		
-		#endregion
 
-		#region function StoreMessageFlags
+        #endregion
 
-		/// <summary>
-		/// Stores IMAP message flags (\seen,\draft, ...).
-		/// </summary>
+        #region function StoreMessageFlags
+
+        /// <summary>
+        /// Stores IMAP message flags (\seen,\draft, ...).
+        /// </summary>
         /// <param name="accessingUser">User who accesses this method. 
         /// User needs r permission to call this method or Exception is thrown. 
         /// There is special user 'system' for which permission check is skipped.</param>
         /// <param name="folderOwnerUser">User who's folder it is.</param>
         /// <param name="folder">Folder which message flags to store. For example: Inbox,Public Folders/Documnets .</param>
-		/// <param name="message">Fix ME: ???</param>
-		/// <param name="msgFlags">Message flags to store.</param>
-		public void StoreMessageFlags(string accessingUser,string folderOwnerUser,string folder,Merculia.Net.IMAP.Server.IMAP_Message message,IMAP_MessageFlags msgFlags)
+        /// <param name="message">Fix ME: ???</param>
+        /// <param name="flags">Message flags to store.</param>
+        public void StoreMessageFlags(string accessingUser, string folderOwnerUser, string folder, IMAP_MessageInfo message, string[] flags)
+        //NNAVA
+        //public void StoreMessageFlags(string accessingUser,string folderOwnerUser,string folder,Merculia.Net.IMAP.Server.IMAP_Message message,IMAP_MessageFlags msgFlags)
 		{
            /* Implementation notes:
                 *) Validate values. Throw ArgumnetExcetion if invalid values.
@@ -2531,25 +2546,43 @@ namespace Merculia.MailServer
             }
 
             // Remove all message flags which permissions user doesn't have.
-            if(accessingUser != "system"){
-			    IMAP_ACL_Flags userACL = GetUserACL(folderOwnerUser,folder,accessingUser);					
-			    if((userACL & IMAP_ACL_Flags.s) == 0){
-    				msgFlags &= ~IMAP_MessageFlags.Seen;
-			    }
-			    else if((userACL & IMAP_ACL_Flags.d) == 0){
-				    msgFlags &= ~IMAP_MessageFlags.Deleted;
-			    }				
-			    else if((userACL & IMAP_ACL_Flags.s) == 0){
-				    msgFlags &= (~IMAP_MessageFlags.Answered | ~IMAP_MessageFlags.Draft | ~IMAP_MessageFlags.Flagged);
-			    }
+            //NNAVA
+            /* if(accessingUser != "system"){
+                 IMAP_ACL_Flags userACL = GetUserACL(folderOwnerUser,folder,accessingUser);					
+                 if((userACL & IMAP_ACL_Flags.s) == 0){
+                     msgFlags &= ~IMAP_MessageFlags.Seen;
+                 }
+                 else if((userACL & IMAP_ACL_Flags.d) == 0){
+                     msgFlags &= ~IMAP_MessageFlags.Deleted;
+                 }				
+                 else if((userACL & IMAP_ACL_Flags.s) == 0){
+                     msgFlags &= (~IMAP_MessageFlags.Answered | ~IMAP_MessageFlags.Draft | ~IMAP_MessageFlags.Flagged);
+                 }
+             }*/
+            // Remove all message flags which permissions user doesn't have.
+            if (accessingUser != "system")
+            {
+                IMAP_ACL_Flags userACL = GetUserACL(folderOwnerUser, folder, accessingUser);
+                if ((userACL & IMAP_ACL_Flags.s) == 0)
+                {
+                    flags = IMAP_Utils.MessageFlagsRemove(flags, new string[] { "Seen" });
+                }
+                else if ((userACL & IMAP_ACL_Flags.d) == 0)
+                {
+                    flags = IMAP_Utils.MessageFlagsRemove(flags, new string[] { "Deleted" });
+                }
+                else if ((userACL & IMAP_ACL_Flags.s) == 0)
+                {
+                    flags = IMAP_Utils.MessageFlagsRemove(flags, new string[] { "Answered", "Draft", "Flagged" });
+                }
             }
 
             //--- Store message flags
-			using(WSqlCommand sqlCmd = new WSqlCommand(m_ConStr,"lspr_StoreMessageFlags")){
+            using (WSqlCommand sqlCmd = new WSqlCommand(m_ConStr,"lspr_StoreMessageFlags")){
 				sqlCmd.AddParameter("p_MessageID"    ,MySqlDbType.VarChar,message.ID);
 				sqlCmd.AddParameter("p_Mailbox"      ,MySqlDbType.VarChar,folderOwnerUser);
 				sqlCmd.AddParameter("p_Folder"       ,MySqlDbType.VarChar,folder);
-				sqlCmd.AddParameter("p_MessageFalgs" ,MySqlDbType.UInt32     ,(int)message.Flags);
+                sqlCmd.AddParameter("p_MessageFalgs", MySqlDbType.UInt32, Net_Utils.ArrayToString(flags, " "));
 
 				DataSet ds = sqlCmd.Execute();
 			}
@@ -2867,23 +2900,25 @@ namespace Merculia.MailServer
 				return topLines;
 			}
 		}
-		
-		#endregion
 
-		#region function CopyMessage
+        #endregion
 
-		/// <summary>
-		/// Creates copy of message to destination IMAP folder.
-		/// </summary>
+        #region function CopyMessage
+
+        /// <summary>
+        /// Creates copy of message to destination IMAP folder.
+        /// </summary>
         /// <param name="accessingUser">User who accesses this method. 
         /// User needs r permission to call this method or Exception is thrown. 
         /// There is special user 'system' for which permission check is skipped.</param>
         /// <param name="folderOwnerUser">User who's folder it is.</param>
         /// <param name="folder">Folder what contains message to copy. For example: Inbox,Public Folders/Documnets .</param>
-		/// <param name="destFolderUser">Destination IMAP folder owner user name.</param>
-		/// <param name="destFolder">Destination IMAP folder name.</param>
-		/// <param name="message">IMAP message which to copy.</param>
-		public void CopyMessage(string accessingUser,string folderOwnerUser,string folder,string destFolderUser,string destFolder,Merculia.Net.IMAP.Server.IMAP_Message message)
+        /// <param name="destFolderUser">Destination IMAP folder owner user name.</param>
+        /// <param name="destFolder">Destination IMAP folder name.</param>
+        /// <param name="message">IMAP message which to copy.</param>
+        public void CopyMessage(string accessingUser, string folderOwnerUser, string folder, string destFolderUser, string destFolder, IMAP_MessageInfo message)
+        //NNAVA
+        //public void CopyMessage(string accessingUser,string folderOwnerUser,string folder,string destFolderUser,string destFolder,Merculia.Net.IMAP.Server.IMAP_Message message)
 		{
            /* Implementation notes:
                 *) Validate values. Throw ArgumnetExcetion if invalid values.
@@ -2902,7 +2937,10 @@ namespace Merculia.MailServer
             //--- Copy message
             EmailMessageItems msgItems = new EmailMessageItems(message.ID,IMAP_MessageItems_enum.Message);            
             GetMessageItems(accessingUser,folderOwnerUser,folder,msgItems);
-            StoreMessage("system",destFolderUser,destFolder,msgItems.MessageStream,message.InternalDate,message.Flags);
+            //NNAVA
+            //StoreMessage("system",destFolderUser,destFolder,msgItems.MessageStream,message.InternalDate,message.Flags);
+            StoreMessage("system", destFolderUser, destFolder, msgItems.MessageStream, message.InternalDate, new string[] { });
+
             msgItems.MessageStream.Dispose();
 		}
 		
@@ -3257,35 +3295,43 @@ namespace Merculia.MailServer
 
 
             //--- Recycle bin handling ----------------------------------------------------------------------//
-            if(GetRecycleBinSettings().Rows[0]["DeleteToRecycleBin"].ToString().Equals("1"))
+            if (GetRecycleBinSettings().Rows[0]["DeleteToRecycleBin"].ToString().Equals("1"))
             {
-                IMAP_MessageCollection messages = new IMAP_MessageCollection();
-                GetMessagesInfo("system",folderOwnerUser,folder,messages);
-                foreach(IMAP_Message message in messages){
-                    EmailMessageItems msgItems = new EmailMessageItems(message.ID,IMAP_MessageItems_enum.Message);
-                    GetMessageItems("system",folderOwnerUser,folder,msgItems);
-                    if(msgItems.MessageExists){
+                //NNAVA
+                //IMAP_MessageCollection messages = new IMAP_MessageCollection();
+                List<IMAP_MessageInfo> messages = new List<IMAP_MessageInfo>();
+                GetMessagesInfo("system", folderOwnerUser, folder, messages);
+                foreach (IMAP_MessageInfo message in messages)
+                {
+                    //foreach(IMAP_Message message in messages){
+                    EmailMessageItems msgItems = new EmailMessageItems(message.ID, IMAP_MessageItems_enum.Message);
+                    GetMessageItems("system", folderOwnerUser, folder, msgItems);
+                    if (msgItems.MessageExists)
+                    {
                         string subject = "<none>";
-                        try{
-                            subject = MIME_Utils.ParseHeaderField("Subject:",msgItems.MessageStream);
-                            subject = subject.Replace("\r","");
-                            subject = subject.Replace("\n","");                        
+                        try
+                        {
+                            subject = MIME_Utils.ParseHeaderField("Subject:", msgItems.MessageStream);
+                            subject = subject.Replace("\r", "");
+                            subject = subject.Replace("\n", "");
                         }
-                        catch{
+                        catch
+                        {
                         }
                         msgItems.MessageStream.Position = 0;
                         byte[] data = new byte[msgItems.MessageStream.Length];
-                        msgItems.MessageStream.Read(data,0,data.Length);
+                        msgItems.MessageStream.Read(data, 0, data.Length);
 
-                        using(WSqlCommand sqlCmd = new WSqlCommand(m_ConStr,"lspr_StoreRecycleBinMessage")){
-                            sqlCmd.AddParameter("p_messageID" ,MySqlDbType.VarChar,Guid.NewGuid().ToString());
-                            sqlCmd.AddParameter("p_user"      ,MySqlDbType.VarChar,folderOwnerUser);
-                            sqlCmd.AddParameter("p_folder"    ,MySqlDbType.VarChar,folder);
-                            sqlCmd.AddParameter("p_subject"   ,MySqlDbType.VarChar,subject);
-                            sqlCmd.AddParameter("p_data"      ,MySqlDbType.LongBlob   ,data);				        
+                        using (WSqlCommand sqlCmd = new WSqlCommand(m_ConStr, "lspr_StoreRecycleBinMessage"))
+                        {
+                            sqlCmd.AddParameter("p_messageID", MySqlDbType.VarChar, Guid.NewGuid().ToString());
+                            sqlCmd.AddParameter("p_user", MySqlDbType.VarChar, folderOwnerUser);
+                            sqlCmd.AddParameter("p_folder", MySqlDbType.VarChar, folder);
+                            sqlCmd.AddParameter("p_subject", MySqlDbType.VarChar, subject);
+                            sqlCmd.AddParameter("p_data", MySqlDbType.LongBlob, data);
 
-        				    DataSet ds = sqlCmd.Execute();
-			            }
+                            DataSet ds = sqlCmd.Execute();
+                        }
                     }
                 }
             }
@@ -4353,7 +4399,9 @@ namespace Merculia.MailServer
                         folder,
                         new MemoryStream(((byte[])ds.Tables["RecycleBin"].Rows[0]["Data"])),
                         DateTime.Now,
-                        IMAP_MessageFlags.Recent
+                        //NNAVA
+                        //IMAP_MessageFlags.Recent
+                        new string[] { "Recent" }
                     );
                 }
 			}
@@ -4901,79 +4949,111 @@ namespace Merculia.MailServer
 
 		private byte[] GetTopLines(Stream strm,int nrLines)
 		{
-			TextReader reader = (TextReader)new StreamReader(strm);
-			
-			strm.Position = 0;
+            StringBuilder strBuilder = new StringBuilder();
 
-			int  lCounter = 0;
-			int  msgLine  = -1;
-			bool msgLines = false;
-			StringBuilder strBuilder = new StringBuilder();
-			while(true){
-				string line = reader.ReadLine();
+            try
+            {
+                TextReader reader = (TextReader)new StreamReader(strm);
+                //Nnava
+                //strm.Position = 0;
 
-				// Reached end of message
-				if(line == null){
-					break;
-				}
-				else{
-					// End of header reached
-					if(!msgLines && line.Length == 0){
-						// Set flag, that message lines reading start.
-						msgLines = true;
-					}
+                int lCounter = 0;
+                int msgLine = -1;
+                bool msgLines = false;
+                while (true)
+                {
+                    string line = reader.ReadLine();
 
-					// Check that wanted message lines count isn't exceeded
-					if(msgLines){
-						if(msgLine > nrLines){
-							break;
-						}
-						msgLine++;
-					}
+                    // Reached end of message
+                    if (line == null)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        // End of header reached
+                        if (!msgLines && line.Length == 0)
+                        {
+                            // Set flag, that message lines reading start.
+                            msgLines = true;
+                        }
 
-					strBuilder.Append(line + "\r\n");
-				}
+                        // Check that wanted message lines count isn't exceeded
+                        if (msgLines)
+                        {
+                            if (msgLine > nrLines)
+                            {
+                                break;
+                            }
+                            msgLine++;
+                        }
 
-				lCounter++;
-			}
-	
+                        strBuilder.Append(line + "\r\n");
+                    }
+
+                    lCounter++;
+                }
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
 			return System.Text.Encoding.ASCII.GetBytes(strBuilder.ToString());			
 		}
-
+        /*
         public void GetMessagesInfo(string accessingUser, string folderOwnerUser, string folder, List<IMAP_MessageInfo> messageInfos)
         {
-            throw new NotImplementedException();
-        }
+            using (WSqlCommand sqlCmd = new WSqlCommand(m_ConStr, "lspr_GetMessageList"))
+            {
+                sqlCmd.AddParameter("p_Mailbox", MySqlDbType.VarChar, folderOwnerUser);
+                sqlCmd.AddParameter("p_Folder", MySqlDbType.VarChar, folder);
 
+                DataSet ds = sqlCmd.Execute();
+                ds.Tables[0].TableName = "lsMailStore";
+
+                foreach (DataRow dr in ds.Tables["lsMailStore"].Rows)
+                {
+                    string messageID = dr["MessageID"].ToString();
+                    int size = Convert.ToInt32(dr["Size"]);
+                    DateTime date = Convert.ToDateTime(dr["Date"]);
+                    string flags = dr["MessageFlags"].ToString();
+                    //NNAVA
+                    int uid = 0;//Convert.ToInt32(dr["UID"]);
+                    IMAP_MessageInfo info = new IMAP_MessageInfo(messageID, uid, flags.Split(' '), size, date);
+                    messageInfos.Add(info);
+                }
+            }
+            //throw new NotImplementedException();
+        }
+        */
+        /*
         public void StoreMessage(string accessingUser, string folderOwnerUser, string folder, Stream msgStream, DateTime date, string[] flags)
         {
 
             byte[] topLines = null;
             topLines = GetTopLines(msgStream, 50);
 
-            //using (WSqlCommand sqlCmd = new WSqlCommand(m_ConStr, "lspr_StoreMessage"))
-            //{
-            //    sqlCmd.AddParameter("p_Mailbox", MySqlDbType.VarChar, mailbox);
-            //    sqlCmd.AddParameter("p_Folder", MySqlDbType.VarChar, folder);
-            //    sqlCmd.AddParameter("p_Data", MySqlDbType.LongBlob, msgStream.ToArray());
-            //    sqlCmd.AddParameter("p_Size", MySqlDbType.Int64, msgStream.Length);
-            //    sqlCmd.AddParameter("p_TopLines", MySqlDbType.LongBlob, topLines);
-            //    sqlCmd.AddParameter("p_Date", MySqlDbType.DateTime, date);
-            //    sqlCmd.AddParameter("p_MessageFlags", MySqlDbType.Int32, (int)flags);
+            try
+            {
+                using (WSqlCommand sqlCmd = new WSqlCommand(m_ConStr, "lspr_StoreMessage"))
+                {
+                    sqlCmd.AddParameter("p_Mailbox", MySqlDbType.VarChar, folderOwnerUser);
+                    sqlCmd.AddParameter("p_Folder", MySqlDbType.VarChar, folder);
+                    sqlCmd.AddParameter("p_Data", MySqlDbType.LongBlob, Net_Utils.StreamToArray(msgStream));
+                    sqlCmd.AddParameter("p_Size", MySqlDbType.Int64, msgStream.Length);
+                    sqlCmd.AddParameter("p_TopLines", MySqlDbType.LongBlob, topLines);
+                    sqlCmd.AddParameter("p_Date", MySqlDbType.DateTime, date);
+                    sqlCmd.AddParameter("p_MessageFlags", MySqlDbType.VarChar, Net_Utils.ArrayToString(flags, " "));
 
-            //    DataSet ds = sqlCmd.Execute();
-            //}
+                    DataSet ds = sqlCmd.Execute();
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
-
-        public void StoreMessageFlags(string accessingUser, string folderOwnerUser, string folder, IMAP_MessageInfo messageInfo, string[] flags)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void CopyMessage(string accessingUser, string folderOwnerUser, string folder, string destFolderUser, string destFolder, IMAP_MessageInfo messageInfo)
-        {
-            throw new NotImplementedException();
-        }
+        */
 
         public void Search(string accessingUser, string folderOwnerUser, string folder, IMAP_e_Search e)
         {

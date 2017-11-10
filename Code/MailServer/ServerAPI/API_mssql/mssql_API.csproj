@@ -84,10 +84,6 @@
       <HintPath>..\..\Application\Debug\Merculia.MailServerAPI.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Merculia.Net">
-      <Name>Merculia.Net</Name>
-      <HintPath>..\..\Application\Debug\Merculia.Net.dll</HintPath>
-    </Reference>
     <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System">
       <Name>System</Name>
@@ -128,6 +124,12 @@
     <None Include="Scripts\Tables.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Net\Net.csproj">
+      <Project>{7ab36ccf-5ffd-4780-a54e-a102eca028b5}</Project>
+      <Name>Net</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

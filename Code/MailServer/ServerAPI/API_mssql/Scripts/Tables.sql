@@ -138,7 +138,7 @@ Create table lsMailStore(
 	Data         longblob      ,
 	Size         bigint        Default 0,
 	TopLines     longblob,
-	MessageFlags bigint        Default 0,
+	MessageFlags nvarchar(1000),
 	Date         datetime      Default CURRENT_TIMESTAMP,
 	UID          int           /*Auto_increment*/
 );

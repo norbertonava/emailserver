@@ -855,9 +855,6 @@
     <Compile Include="_Obsolete\StreamLineReader.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="license.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="SPF\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

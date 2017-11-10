@@ -558,7 +558,7 @@
             <param name="action">Specifies route action.</param>
             <param name="actionData">Route action data.</param>
         </member>
-        <member name="M:Merculia.MailServer.mssql_API.GetMessagesInfo(System.String,System.String,System.String,Merculia.Net.IMAP.Server.IMAP_MessageCollection)">
+        <member name="M:Merculia.MailServer.mssql_API.GetMessagesInfo(System.String,System.String,System.String,System.Collections.Generic.List{Merculia.Net.IMAP.Server.IMAP_MessageInfo})">
             <summary>
             Gets specified IMAP folder messages info. 
             </summary>
@@ -569,7 +569,7 @@
             <param name="folder">Folder what messages info to get. For example: Inbox,Public Folders/Documnets .</param>
             <param name="messages">IMAP_Messages collection where to store folder messages info.</param>
         </member>
-        <member name="M:Merculia.MailServer.mssql_API.StoreMessage(System.String,System.String,System.String,System.IO.Stream,System.DateTime,Merculia.Net.IMAP.IMAP_MessageFlags)">
+        <member name="M:Merculia.MailServer.mssql_API.StoreMessage(System.String,System.String,System.String,System.IO.Stream,System.DateTime,System.String[])">
             <summary>
             Stores message to specified folder.
             </summary>
@@ -582,7 +582,7 @@
             <param name="date">Recieve date.</param>
             <param name="flags">Message flags.</param>
         </member>
-        <member name="M:Merculia.MailServer.mssql_API.StoreMessageFlags(System.String,System.String,System.String,Merculia.Net.IMAP.Server.IMAP_Message,Merculia.Net.IMAP.IMAP_MessageFlags)">
+        <member name="M:Merculia.MailServer.mssql_API.StoreMessageFlags(System.String,System.String,System.String,Merculia.Net.IMAP.Server.IMAP_MessageInfo,System.String[])">
             <summary>
             Stores IMAP message flags (\seen,\draft, ...).
             </summary>
@@ -592,7 +592,7 @@
             <param name="folderOwnerUser">User who's folder it is.</param>
             <param name="folder">Folder which message flags to store. For example: Inbox,Public Folders/Documnets .</param>
             <param name="message">Fix ME: ???</param>
-            <param name="msgFlags">Message flags to store.</param>
+            <param name="flags">Message flags to store.</param>
         </member>
         <member name="M:Merculia.MailServer.mssql_API.DeleteMessage(System.String,System.String,System.String,System.String,System.Int32)">
             <summary>
@@ -630,7 +630,7 @@
             <param name="nrLines">Number of lines to retrieve. NOTE: line counting starts at the end of header.</param>
             <returns>Returns message header + number of specified lines.</returns>
         </member>
-        <member name="M:Merculia.MailServer.mssql_API.CopyMessage(System.String,System.String,System.String,System.String,System.String,Merculia.Net.IMAP.Server.IMAP_Message)">
+        <member name="M:Merculia.MailServer.mssql_API.CopyMessage(System.String,System.String,System.String,System.String,System.String,Merculia.Net.IMAP.Server.IMAP_MessageInfo)">
             <summary>
             Creates copy of message to destination IMAP folder.
             </summary>

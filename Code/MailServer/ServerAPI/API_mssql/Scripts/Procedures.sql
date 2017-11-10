@@ -2181,7 +2181,7 @@ CREATE PROCEDURE lspr_StoreMessage (
 	p_Size          bigint        /* = 0 */,
 	p_TopLines      longblob         /* = NULL */,
 	p_Date          DateTime(3)	     /* = NULL */,
-	p_MessageFlags int            /* = 0 */)
+	p_MessageFlags nvarchar(1000)            /* = 0 */)
 sp_lbl:
 BEGIN
 
@@ -2199,7 +2199,7 @@ then
 	end if;
 end if;
 
-insert lsMailStore (MessageID,Mailbox,Folder,Data,Size,TopLines,Date,MessageFlags) select (uuid(),p_Mailbox,p_Folder,p_Data,p_Size,p_TopLines,p_Date,p_MessageFlags);
+insert lsMailStore (MessageID,Mailbox,Folder,Data,Size,TopLines,Date,MessageFlags) values (uuid(),p_Mailbox,p_Folder,p_Data,p_Size,p_TopLines,p_Date,p_MessageFlags);
 
 
 
@@ -3040,6 +3040,23 @@ BEGIN
     else
       select 0  as Validated;
     end if;
+END;
+//
+
+DELIMITER ;
+
+
+DELIMITER //
+
+CREATE PROCEDURE lspr_GetMessageList (
+
+p_Mailbox	nvarchar(100)	/* =NULL */,
+p_Folder	nvarchar(100)	/* =NULL */)
+BEGIN
+
+select MessageID,Size,Date,MessageFlags,UID  from lsMailStore where MAILBOX = p_Mailbox AND Folder = p_Folder;
+
+
 END;
 //
 
