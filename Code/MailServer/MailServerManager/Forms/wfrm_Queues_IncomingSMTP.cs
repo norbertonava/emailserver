@@ -1,12 +1,6 @@
 using System;
-using System.IO;
-using System.Collections.Generic;
-using System.Text;
-using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
-
-using Merculia.Net;
 using Merculia.Net.MIME;
 using Merculia.MailServer.API.UserAPI;
 

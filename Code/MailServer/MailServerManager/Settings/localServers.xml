@@ -2,20 +2,11 @@
 <NewDataSet>
   <Servers>
     <ID>2542dg</ID>
-    <Enabled>False</Enabled>
+    <Enabled>True</Enabled>
     <Name>[local XML]</Name>
     <API_assembly>xml_API.dll</API_assembly>
     <API_class>Merculia.MailServer.xml_API</API_class>
     <API_initstring>datapath=Settings\local_xml\
 mailstorepath=c:\MailStore\</API_initstring>
-  </Servers>
-  <Servers>    
-    <ID>65008d12-a1c8-466e-a5f0-cbea44c5daf9</ID>
-    <Enabled>True</Enabled>
-    <Name>local_Mysql</Name>
-    <API_assembly>mssql_API.dll</API_assembly>
-    <API_class>Merculia.MailServer.mssql_API</API_class>
-    <API_initstring>connectionstring=Database=merculia_mail;Data Source=localhost;User Id=root;Password=D1jkstr4!
-mailstorepath=C:\Mailstoremysql</API_initstring>
   </Servers>
 </NewDataSet>

@@ -1,9 +1,6 @@
 ﻿using System;
 using System.IO;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-
 using Merculia.Net.MIME;
 using Merculia.Net.Mail;
 using Merculia.Net.SMTP;

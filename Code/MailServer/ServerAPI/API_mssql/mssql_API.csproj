@@ -114,18 +114,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\procedures.sql" />
-    <EmbeddedResource Include="Resources\tables.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Scripts\Procedures.sql">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Scripts\Tables.sql">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\..\..\Net\Net.csproj">
       <Project>{7ab36ccf-5ffd-4780-a54e-a102eca028b5}</Project>
       <Name>Net</Name>

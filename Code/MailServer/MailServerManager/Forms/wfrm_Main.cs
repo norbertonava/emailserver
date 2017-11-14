@@ -1,11 +1,8 @@
 using System;
 using System.IO;
-using System.Collections.Generic;
-using System.Text;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Data;
-
 using Merculia.MailServer.API.UserAPI;
 using Merculia.UI.Controls;
 using Merculia.MailServer.UI.Resources;
@@ -673,17 +670,17 @@ namespace Merculia.MailServer.UI
 				    node_Monitoring_Sessions.Tag = new TreeNodeTag(server,NodeType.LocalMachineMonitoring,null);
 				    node_Monitoring.Nodes.Add(node_Monitoring_Sessions);
 
-                    TreeNode node_Monitoring_SIP = new TreeNode("SIP",0,0);
-				    //node_Monitoring_SIP.Tag = new TreeNodeTag(server,NodeType.LocalMachineMonitoring,null);
-				    node_Monitoring.Nodes.Add(node_Monitoring_SIP);
+        //            TreeNode node_Monitoring_SIP = new TreeNode("SIP",0,0);
+				    ////node_Monitoring_SIP.Tag = new TreeNodeTag(server,NodeType.LocalMachineMonitoring,null);
+				    //node_Monitoring.Nodes.Add(node_Monitoring_SIP);
 
-                        TreeNode node_Monitoring_SIP_Registrations = new TreeNode("Registrations",0,0);
-				        node_Monitoring_SIP_Registrations.Tag = new TreeNodeTag(server,NodeType.Monitoring_SipRegistrations,null);
-				        node_Monitoring_SIP.Nodes.Add(node_Monitoring_SIP_Registrations);
+            //            TreeNode node_Monitoring_SIP_Registrations = new TreeNode("Registrations",0,0);
+				        //node_Monitoring_SIP_Registrations.Tag = new TreeNodeTag(server,NodeType.Monitoring_SipRegistrations,null);
+				        //node_Monitoring_SIP.Nodes.Add(node_Monitoring_SIP_Registrations);
 
-                        TreeNode node_Monitoring_SIP_Calls = new TreeNode("Calls",0,0);
-				        node_Monitoring_SIP_Calls.Tag = new TreeNodeTag(server,NodeType.Monitoring_SipCalls,null);
-				        node_Monitoring_SIP.Nodes.Add(node_Monitoring_SIP_Calls);
+            //            TreeNode node_Monitoring_SIP_Calls = new TreeNode("Calls",0,0);
+				        //node_Monitoring_SIP_Calls.Tag = new TreeNodeTag(server,NodeType.Monitoring_SipCalls,null);
+				        //node_Monitoring_SIP.Nodes.Add(node_Monitoring_SIP_Calls);
 
                 TreeNode node_LogsAndEvents = new TreeNode("Logs and Events",13,13);
 				//node_LogsAndEvents.Tag = new NodeData(NodeType.Dummy);
@@ -766,9 +763,9 @@ namespace Merculia.MailServer.UI
 				            node_Services_FetchPOP3.Tag = new TreeNodeTag(server,NodeType.System_Services_FetchPOP3,vServer);
 				            node_Services.Nodes.Add(node_Services_FetchPOP3);
 
-                            TreeNode node_Services_SIP = new TreeNode("SIP",14,14);
-				            node_Services_SIP.Tag = new TreeNodeTag(server,NodeType.System_Services_SIP,vServer);
-				            node_Services.Nodes.Add(node_Services_SIP);
+                //            TreeNode node_Services_SIP = new TreeNode("SIP",14,14);
+				            //node_Services_SIP.Tag = new TreeNodeTag(server,NodeType.System_Services_SIP,vServer);
+				            //node_Services.Nodes.Add(node_Services_SIP);
 
                         TreeNode node_Sys_Logging = new TreeNode("Logging",13,13);
 				        node_Sys_Logging.Tag = new TreeNodeTag(server,NodeType.System_Logging,vServer);

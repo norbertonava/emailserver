@@ -1019,6 +1019,15 @@
             <param name="group">User group name.</param>
             <returns></returns>
         </member>
+        <member name="M:Merculia.MailServer.mssql_API.SearchCriteriaToSql(Merculia.Net.IMAP.IMAP_Search_Key,System.Collections.Generic.Dictionary{System.Int64,System.Int64})">
+            <summary>
+            Converts IMAP search criteria to "sql where" filter.
+            </summary>
+            <param name="key">IMAP search key.</param>
+            <param name="seqNo_to_UID">Sequence number to UI map table.</param>
+            <returns>Returns "sql where" filter.</returns>
+            <exception cref="T:System.ArgumentNullException">Is raised when <b>key</b> is null reference.</exception>
+        </member>
         <member name="T:Merculia.MailServer.ResManager">
             <summary>
             Resource manager.

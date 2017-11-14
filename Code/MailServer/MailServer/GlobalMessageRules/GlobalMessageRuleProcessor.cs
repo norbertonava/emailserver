@@ -4,14 +4,12 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.IO;
 using System.Data;
-
 using Merculia.Net;
 using Merculia.Net.IO;
 using Merculia.Net.MIME;
 using Merculia.Net.Mail;
 using Merculia.Net.SMTP;
 using Merculia.Net.SMTP.Server;
-using Merculia.Net.FTP.Client;
 
 namespace Merculia.MailServer
 {

@@ -1,16 +1,13 @@
 using System;
 using System.IO;
-using System.Collections.Generic;
 using System.Text;
 using System.Threading;
-
 using Merculia.Net;
 using Merculia.Net.SMTP;
 using Merculia.Net.SMTP.Client;
 using Merculia.Net.SMTP.Relay;
 using Merculia.Net.MIME;
 using Merculia.Net.Mail;
-using Merculia.MailServer;
 
 namespace Merculia.MailServer.Relay
 {

@@ -13,7 +13,17 @@ namespace Merculia.MailServer
 	{
 		private MySqlCommand m_SqlCmd  = null;
 		private string     m_connStr = "";
-		
+
+        public WSqlCommand(string connectionString, string commandText, bool isStoredProcedure)
+        {
+            m_connStr = connectionString;
+
+            m_SqlCmd = new MySqlCommand(commandText);
+            if(isStoredProcedure)
+                m_SqlCmd.CommandType = CommandType.StoredProcedure;
+            m_SqlCmd.CommandTimeout = 180;
+        }
+
 		/// <summary>
 		/// Default constructor.
 		/// </summary>

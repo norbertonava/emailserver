@@ -24,23 +24,26 @@ namespace Merculia.MailServer
 		public static void Main(string[] args)
 		{
             try{
-                if(args.Length > 0 && args[0].ToLower() == "-install"){
-                    ManagedInstallerClass.InstallHelper(new string[]{"MailServerService.exe"});
+                if (args.Length > 0 && args[0].ToLower() == "-install")
+                {
+                    ManagedInstallerClass.InstallHelper(new string[] { "MailServerService.exe" });
 
-                    ServiceController c = new ServiceController("Merculia Mail Server");                
+                    ServiceController c = new ServiceController("Merculia Mail Server");
                     c.Start();
                 }
-                else if(args.Length > 0 && args[0].ToLower() == "-uninstall"){
-                    ManagedInstallerClass.InstallHelper(new string[]{"/u","MailServerService.exe"});
+                else if (args.Length > 0 && args[0].ToLower() == "-uninstall")
+                {
+                    ManagedInstallerClass.InstallHelper(new string[] { "/u", "MailServerService.exe" });
                 }
-                else{                
-                    System.ServiceProcess.ServiceBase[] servicesToRun = new System.ServiceProcess.ServiceBase[]{new MailServer_Service()};
-			        //System.ServiceProcess.ServiceBase.Run(servicesToRun);
-
-
-                    //System.ServiceProcess.ServiceBase.Run(ServicesToRun);
-                    //Use this line to debug
+                else if (args.Length > 0 && args[0].ToLower() == "-debug")
+                {
+                    System.ServiceProcess.ServiceBase[] servicesToRun = new System.ServiceProcess.ServiceBase[] { new MailServer_Service() };
                     RunInteractive(servicesToRun);
+                }
+                else
+                {
+                    System.ServiceProcess.ServiceBase[] servicesToRun = new System.ServiceProcess.ServiceBase[] { new MailServer_Service() };
+                    System.ServiceProcess.ServiceBase.Run(servicesToRun);
                 }
             }
             catch(Exception x){

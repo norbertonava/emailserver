@@ -1,9 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 using Merculia.Net;
 using Merculia.Net.SMTP;
+using System;
 
 namespace Merculia.MailServer.Relay
 {

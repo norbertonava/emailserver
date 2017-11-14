@@ -38,18 +38,27 @@ namespace Merculia.MailServer
 
 			// ServiceName must equal those on ServiceBase derived classes.            
 			serviceInstaller.ServiceName = "Merculia Mail Server";
-			
+
 			// Add installers to collection. Order is not important.
 			Installers.Add(serviceInstaller);
 			Installers.Add(processInstaller);
+            this.AfterInstall += MailServer_Service_Installer_AfterInstall;
 		}
 
-		#region Component Designer generated code
-		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
-		/// </summary>
-		private void InitializeComponent()
+        private void MailServer_Service_Installer_AfterInstall(object sender, InstallEventArgs e)
+        {
+            using (ServiceController sc = new ServiceController(serviceInstaller.ServiceName))
+            {
+                sc.Start();
+            }
+        }
+
+        #region Component Designer generated code
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
 		{
 			components = new System.ComponentModel.Container();
 		}

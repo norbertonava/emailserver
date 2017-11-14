@@ -1,10 +1,6 @@
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Data;
 using System.Timers;
-
-using Merculia;
 
 namespace Merculia.MailServer
 {

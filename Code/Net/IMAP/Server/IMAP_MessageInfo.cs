@@ -17,6 +17,13 @@ namespace Merculia.Net.IMAP.Server
         private int      m_SeqNo  = 1;
 
         /// <summary>
+        /// Constructor to compile for webservice
+        /// </summary>
+        public IMAP_MessageInfo()
+        {
+        }
+
+        /// <summary>
         /// Default constructor.
         /// </summary>
         /// <param name="id">Message ID.</param>

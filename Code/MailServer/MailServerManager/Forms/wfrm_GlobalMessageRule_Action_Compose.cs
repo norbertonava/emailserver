@@ -1,9 +1,7 @@
 using System;
-using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
-
 using Merculia.Net.MIME;
 using Merculia.Net.Mail;
 

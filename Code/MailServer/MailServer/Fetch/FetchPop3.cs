@@ -2,12 +2,8 @@ using System;
 using System.IO;
 using System.Data;
 using System.Timers;
-
-using Merculia.MailServer;
-using Merculia.Net;
 using Merculia.Net.Log;
 using Merculia.Net.POP3.Client;
-using Merculia.Net.IMAP.Server;
 
 namespace Merculia.MailServer
 {

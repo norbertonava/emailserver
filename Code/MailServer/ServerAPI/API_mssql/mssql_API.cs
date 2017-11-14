@@ -15,6 +15,7 @@ using Merculia.Net.IMAP.Server;
 using Merculia.Net.IMAP;
 using Merculia.Net.MIME;
 using Merculia.Net.Mail;
+using System.Text.RegularExpressions;
 
 namespace Merculia.MailServer
 {
@@ -34,10 +35,14 @@ namespace Merculia.MailServer
 			// connectionstring=
 			string[] parameters = intitString.Replace("\r\n","\n").Split('\n');
 			foreach(string param in parameters){
-				if(param.ToLower().IndexOf("connectionstring=") > -1){
-					m_ConStr = param.Substring(17);
-				}
+                if (param.ToLower().IndexOf("connectionstring=") > -1)
+                {
+                    m_ConStr = param.Substring(17);
+                }
 			}
+
+            if (string.IsNullOrEmpty(m_ConStr))
+                m_ConStr = intitString;
           
             MySqlConnectionStringBuilder b = new MySqlConnectionStringBuilder(m_ConStr);
             string database = b.Database;
@@ -453,9 +458,9 @@ namespace Merculia.MailServer
 		public DataView GetUserAddresses(string userName)
 		{
 			using(WSqlCommand sqlCmd = new WSqlCommand(m_ConStr,"lspr_GetUserAddresses")){
-				if(userName.Length > 0){
+				//if(userName.Length > 0){
 					sqlCmd.AddParameter("p_UserName",MySqlDbType.VarChar,userName);
-				}
+				//}
 
 				DataSet ds = sqlCmd.Execute();
 				ds.Tables[0].TableName = "UserAddresses";
@@ -619,9 +624,9 @@ namespace Merculia.MailServer
 		public DataView GetUserRemoteServers(string userName)
 		{
 			using(WSqlCommand sqlCmd = new WSqlCommand(m_ConStr,"lspr_GetUserRemoteServers")){
-				if(userName.Length > 0){
+				//if(userName.Length > 0){
 					sqlCmd.AddParameter("p_UserName",MySqlDbType.VarChar,userName);
-				}
+				//}
 
 				DataSet ds = sqlCmd.Execute();
 				ds.Tables[0].TableName = "UserRemoteServers";
@@ -752,9 +757,9 @@ namespace Merculia.MailServer
 		public DataView GetUserMessageRules(string userName)
 		{
 			using(WSqlCommand sqlCmd = new WSqlCommand(m_ConStr,"lspr_GetUserMessageRules")){
-				if(userName.Length > 0){
+				//if(userName.Length > 0){
 					sqlCmd.AddParameter("p_UserName",MySqlDbType.VarChar,userName);
-				}
+				//}
 
 				DataSet ds = sqlCmd.Execute();
 				ds.Tables[0].TableName = "UserMessageRules";
@@ -1548,8 +1553,10 @@ namespace Merculia.MailServer
 				if(domainName != "ALL"){
 					sqlCmd.AddParameter("p_DomainName",MySqlDbType.VarChar,domainName);
 				}
+                else
+                    sqlCmd.AddParameter("p_DomainName", MySqlDbType.VarChar, string.Empty);
 
-				DataSet ds = sqlCmd.Execute();
+                DataSet ds = sqlCmd.Execute();
 				ds.Tables[0].TableName = "MailingLists";
 
 				return ds.Tables["MailingLists"].DefaultView;
@@ -1712,9 +1719,9 @@ namespace Merculia.MailServer
 		public DataView GetMailingListAddresses(string mailingListName)
 		{
 			using(WSqlCommand sqlCmd = new WSqlCommand(m_ConStr,"lspr_GetMailingListAddresses")){
-				if(mailingListName.Length > 0){
+				//if(mailingListName.Length > 0){
 					sqlCmd.AddParameter("p_MailingListName",MySqlDbType.VarChar,mailingListName);
-				}
+				//}
 
 				DataSet ds = sqlCmd.Execute();
 				ds.Tables[0].TableName = "MailingListAddresses";
@@ -2372,7 +2379,7 @@ namespace Merculia.MailServer
                     //int      flags     = Convert.ToInt32(dr["MessageFlags"]);
                     string flags = dr["MessageFlags"].ToString();
                     //NNAVA
-                    int uid = -1;
+                    int uid = 1;
                     if (dr["UID"] != DBNull.Value)
                         uid = Convert.ToInt32(dr["UID"]);
 
@@ -2582,7 +2589,7 @@ namespace Merculia.MailServer
 				sqlCmd.AddParameter("p_MessageID"    ,MySqlDbType.VarChar,message.ID);
 				sqlCmd.AddParameter("p_Mailbox"      ,MySqlDbType.VarChar,folderOwnerUser);
 				sqlCmd.AddParameter("p_Folder"       ,MySqlDbType.VarChar,folder);
-                sqlCmd.AddParameter("p_MessageFalgs", MySqlDbType.UInt32, Net_Utils.ArrayToString(flags, " "));
+                sqlCmd.AddParameter("p_MessageFalgs", MySqlDbType.VarChar, Net_Utils.ArrayToString(flags, " "));
 
 				DataSet ds = sqlCmd.Execute();
 			}
@@ -3795,9 +3802,9 @@ namespace Merculia.MailServer
             }
 
 			using(WSqlCommand sqlCmd = new WSqlCommand(m_ConStr,"lspr_GetFolderACL")){
-				if(folder.Length > 0){
+				//if(folder.Length > 0){
 					sqlCmd.AddParameter("p_FolderName",MySqlDbType.VarChar,folderOwnerUser + "/" + folder);
-				}
+				//}
 
 				DataSet ds = sqlCmd.Execute();
 				ds.Tables[0].TableName = "ACL";
@@ -4180,7 +4187,7 @@ namespace Merculia.MailServer
 
             using(WSqlCommand sqlCmd = new WSqlCommand(m_ConStr,"lspr_AddUsersDefaultFolder")){
 				sqlCmd.AddParameter("p_folderName" ,MySqlDbType.VarChar,folderName);
-				sqlCmd.AddParameter("p_permanent  ",MySqlDbType.Bit     ,permanent);
+                sqlCmd.AddParameter("p_permanent", MySqlDbType.Int16, permanent ? 1 : 0);
 							
 				DataSet ds = sqlCmd.Execute();
 				ds.Tables[0].TableName = "UsersDefaultFolders";
@@ -5000,66 +5007,408 @@ namespace Merculia.MailServer
             }
 			return System.Text.Encoding.ASCII.GetBytes(strBuilder.ToString());			
 		}
-        /*
-        public void GetMessagesInfo(string accessingUser, string folderOwnerUser, string folder, List<IMAP_MessageInfo> messageInfos)
-        {
-            using (WSqlCommand sqlCmd = new WSqlCommand(m_ConStr, "lspr_GetMessageList"))
-            {
-                sqlCmd.AddParameter("p_Mailbox", MySqlDbType.VarChar, folderOwnerUser);
-                sqlCmd.AddParameter("p_Folder", MySqlDbType.VarChar, folder);
-
-                DataSet ds = sqlCmd.Execute();
-                ds.Tables[0].TableName = "lsMailStore";
-
-                foreach (DataRow dr in ds.Tables["lsMailStore"].Rows)
-                {
-                    string messageID = dr["MessageID"].ToString();
-                    int size = Convert.ToInt32(dr["Size"]);
-                    DateTime date = Convert.ToDateTime(dr["Date"]);
-                    string flags = dr["MessageFlags"].ToString();
-                    //NNAVA
-                    int uid = 0;//Convert.ToInt32(dr["UID"]);
-                    IMAP_MessageInfo info = new IMAP_MessageInfo(messageID, uid, flags.Split(' '), size, date);
-                    messageInfos.Add(info);
-                }
-            }
-            //throw new NotImplementedException();
-        }
-        */
-        /*
-        public void StoreMessage(string accessingUser, string folderOwnerUser, string folder, Stream msgStream, DateTime date, string[] flags)
-        {
-
-            byte[] topLines = null;
-            topLines = GetTopLines(msgStream, 50);
-
-            try
-            {
-                using (WSqlCommand sqlCmd = new WSqlCommand(m_ConStr, "lspr_StoreMessage"))
-                {
-                    sqlCmd.AddParameter("p_Mailbox", MySqlDbType.VarChar, folderOwnerUser);
-                    sqlCmd.AddParameter("p_Folder", MySqlDbType.VarChar, folder);
-                    sqlCmd.AddParameter("p_Data", MySqlDbType.LongBlob, Net_Utils.StreamToArray(msgStream));
-                    sqlCmd.AddParameter("p_Size", MySqlDbType.Int64, msgStream.Length);
-                    sqlCmd.AddParameter("p_TopLines", MySqlDbType.LongBlob, topLines);
-                    sqlCmd.AddParameter("p_Date", MySqlDbType.DateTime, date);
-                    sqlCmd.AddParameter("p_MessageFlags", MySqlDbType.VarChar, Net_Utils.ArrayToString(flags, " "));
-
-                    DataSet ds = sqlCmd.Execute();
-                }
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
-        }
-        */
 
         public void Search(string accessingUser, string folderOwnerUser, string folder, IMAP_e_Search e)
         {
-            throw new NotImplementedException();
+            /* Implementation notes:
+                *) Validate values. Throw ArgumnetExcetion if invalid values.
+                *) Ensure that user exists.
+                *) Normalize folder. Remove '/' from folder start and end, ... .
+                *) Do Shared Folders mapping.
+                *) Ensure that folder exists. Throw Exception if don't.
+                *) See if user has sufficient permissions. User requires 'r' permission.
+                    There is builtin user system, skip ACL for it.
+                *) Search messages.
+            */
+
+            //--- Validate values -------------------//
+            ArgsValidator.ValidateUserName(folderOwnerUser);
+            ArgsValidator.ValidateFolder(folder);
+            ArgsValidator.ValidateNotNull(e);
+            //---------------------------------------//
+
+            // Ensure that user exists.
+            if (!UserExists(folderOwnerUser))
+            {
+                throw new Exception("User '" + folderOwnerUser + "' doesn't exist !");
+            }
+
+            // Normalize folder. Remove '/' from folder start and end.
+            folder = API_Utlis.NormalizeFolder(folder);
+
+            // Do Shared Folders mapping.
+            string originalFolder = folder;
+            SharedFolderMapInfo mappedFolder = MapSharedFolder(originalFolder);
+            if (mappedFolder.IsSharedFolder)
+            {
+                folderOwnerUser = mappedFolder.FolderOnwer;
+                folder = mappedFolder.Folder;
+
+                if (folderOwnerUser == "" || folder == "")
+                {
+                    throw new ArgumentException("Specified root folder '" + originalFolder + "' isn't accessible !");
+                }
+            }
+
+            // Ensure that folder exists. Throw Exception if don't.
+            if (!FolderExists(folderOwnerUser + "/" + folder))
+            {
+                throw new Exception("Folder '" + folder + "' doesn't exist !");
+            }
+
+            // See if user has sufficient permissions. User requires 'r' permission.
+            //  There is builtin user system, skip ACL for it.
+            if (accessingUser.ToLower() != "system")
+            {
+                IMAP_ACL_Flags acl = GetUserACL(folderOwnerUser, folder, accessingUser);
+                if ((acl & IMAP_ACL_Flags.r) == 0)
+                {
+                    throw new InsufficientPermissionsException("Insufficient permissions for folder '" + accessingUser + "/" + folder + "' !");
+                }
+            }
+
+            Dictionary<long, long> seqNo_to_UID = new Dictionary<long, long>();
+
+            using (WSqlCommand sqlCmd = new WSqlCommand(m_ConStr, "SELECT UID FROM merculia_mail.lsmailstore ORDER BY Date ASC;", false))
+            //using (SQLiteConnection sqlCon = GetMessagesInfoSqlCon(folderOwnerUser, folder))
+            {
+                // -------- Create sequence-number to UI map table. -------------------------
+                //using (SQLiteCommand cmd = sqlCon.CreateCommand())
+                //{
+                //cmd.CommandText = "select UID from MessagesInfo ORDER by UID ASC;";
+
+                //using (SQLiteDataAdapter ad = new SQLiteDataAdapter(cmd))
+                //{
+                //DataSet dsUids = new DataSet();
+                //ad.Fill(dsUids);
+
+                DataSet dsUids = sqlCmd.Execute();
+
+                for (int i = 0; i < dsUids.Tables[0].Rows.Count; i++)
+                {
+                    seqNo_to_UID.Add(i + 1, Convert.ToInt64(dsUids.Tables[0].Rows[i]["UID"]));
+                }
+                //}
+            }
+
+            string command =  "SELECT UID FROM merculia_mail.lsmailstore WHERE " + SearchCriteriaToSql(e.Criteria, seqNo_to_UID) + ";";
+
+
+            using (WSqlCommand sqlCmd = new WSqlCommand(m_ConStr, command, false))
+            {
+                //DataSet ds = new DataSet("dsMessagesInfo");
+                //cmd2.CommandText = "select UID from MessagesInfo where " + SearchCriteriaToSql(e.Criteria, seqNo_to_UID) + ";";
+
+                DataSet ds  = sqlCmd.Execute();
+                ds.DataSetName = "dsMessagesInfo";
+
+                //using (SQLiteDataAdapter ad = new SQLiteDataAdapter(cmd2))
+                //{
+                //    ad.Fill(ds);
+                //}
+
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    e.AddMessage(Convert.ToInt64(dr["UID"]));
+                }
+            }
+            //}
+            //}
         }
 
+        /// <summary>
+        /// Converts IMAP search criteria to "sql where" filter.
+        /// </summary>
+        /// <param name="key">IMAP search key.</param>
+        /// <param name="seqNo_to_UID">Sequence number to UI map table.</param>
+        /// <returns>Returns "sql where" filter.</returns>
+        /// <exception cref="ArgumentNullException">Is raised when <b>key</b> is null reference.</exception>
+        private string SearchCriteriaToSql(IMAP_Search_Key key, Dictionary<long, long> seqNo_to_UID)
+        {
+            if (key == null)
+            {
+                throw new ArgumentNullException("key");
+            }
+
+            StringBuilder retVal = new StringBuilder();
+
+            // KEY GROUP
+            if (key is IMAP_Search_Key_Group)
+            {
+                retVal.Append("(");
+
+                IMAP_Search_Key_Group group = ((IMAP_Search_Key_Group)key);
+                for (int i = 0; i < group.Keys.Count; i++)
+                {
+                    if (i > 0)
+                    {
+                        retVal.Append(" AND ");
+                    }
+
+                    retVal.Append(SearchCriteriaToSql(group.Keys[i], seqNo_to_UID));
+                }
+
+                retVal.Append(")");
+            }
+            // ALL
+            else if (key is IMAP_Search_Key_All)
+            {
+                // Just dummy true expression.
+                retVal.Append("UID > -1");
+            }
+            // ANSWERED
+            else if (key is IMAP_Search_Key_Answered)
+            {
+                retVal.Append("MessageFlags like '%Answered%'");
+            }
+            // BEFORE
+            else if (key is IMAP_Search_Key_Before)
+            {
+                //retVal.Append("InternalDate < " + ((IMAP_Search_Key_Before)key).Date.ToString("yyyyMMdd"));
+                retVal.Append("Date < " + ((IMAP_Search_Key_Before)key).Date.ToString("yyyyMMdd"));
+
+            }
+            //// BCC
+            //else if (key is IMAP_Search_Key_Bcc)
+            //{
+            //    retVal.Append("Header_Bcc like '%" + ((IMAP_Search_Key_Bcc)key).Value + "%'");
+            //}
+            //// BODY
+            //else if (key is IMAP_Search_Key_Body)
+            //{
+            //    retVal.Append("TextParts like '%" + ((IMAP_Search_Key_Body)key).Value + "%'");
+            //}
+            //// CC
+            //else if (key is IMAP_Search_Key_Cc)
+            //{
+            //    retVal.Append("Header_Cc like '%" + ((IMAP_Search_Key_Cc)key).Value + "%'");
+            //}
+            // DELETED
+            else if (key is IMAP_Search_Key_Deleted)
+            {
+                retVal.Append("MessageFlags like '%Deleted%'");
+            }
+            // DRAFT
+            else if (key is IMAP_Search_Key_Draft)
+            {
+                retVal.Append("MessageFlags like '%Draft%'");
+            }
+            // FLAGGED
+            else if (key is IMAP_Search_Key_Flagged)
+            {
+                retVal.Append("MessageFlags like '%Flagged%'");
+            }
+            // FROM
+            //else if (key is IMAP_Search_Key_From)
+            //{
+            //    retVal.Append("Header_From like '%" + ((IMAP_Search_Key_From)key).Value + "%'");
+            //}
+            // HEADER
+            else if (key is IMAP_Search_Key_Header)
+            {
+                IMAP_Search_Key_Header k = (IMAP_Search_Key_Header)key;
+                if (string.IsNullOrEmpty(k.Value))
+                {
+                    retVal.Append("HeaderDecoded REGEXP '(\\n)*" + Regex.Escape(k.FieldName) + "\\s*:{1}.*'");
+                }
+                else
+                {
+                    retVal.Append("HeaderDecoded REGEXP '(\\n)*" + Regex.Escape(k.FieldName) + "\\s*:{1}.*(\\r\\n\\s|\\n\\s)*.*" + Regex.Escape(k.Value) + ".*'");
+                }
+            }
+            // KEYWORD
+            else if (key is IMAP_Search_Key_Keyword)
+            {
+                retVal.Append("MessageFlags like '%" + ((IMAP_Search_Key_Keyword)key).Value + "%'");
+            }
+            // LARGER
+            else if (key is IMAP_Search_Key_Larger)
+            {
+                retVal.Append("Size > " + ((IMAP_Search_Key_Larger)key).Value);
+            }
+            // NEW
+            else if (key is IMAP_Search_Key_New)
+            {
+                retVal.Append("(Flags like '%Recent%' and Flags not like '%Seen%')");
+            }
+            // NOT
+            else if (key is IMAP_Search_Key_Not)
+            {
+                retVal.Append("not " + SearchCriteriaToSql(((IMAP_Search_Key_Not)key).SearchKey, seqNo_to_UID));
+            }
+            // OLD
+            else if (key is IMAP_Search_Key_Old)
+            {
+                retVal.Append("MessageFlags not like '%Recent%'");
+            }
+            // ON
+            else if (key is IMAP_Search_Key_On)
+            {
+                //retVal.Append("InternalDate = " + ((IMAP_Search_Key_On)key).Date.ToString("yyyyMMdd"));
+                retVal.Append("Date = " + ((IMAP_Search_Key_On)key).Date.ToString("yyyyMMdd"));
+
+            }
+            // OR
+            else if (key is IMAP_Search_Key_Or)
+            {
+                retVal.Append("(" + SearchCriteriaToSql(((IMAP_Search_Key_Or)key).SearchKey1, seqNo_to_UID) + " or " + SearchCriteriaToSql(((IMAP_Search_Key_Or)key).SearchKey2, seqNo_to_UID) + ")");
+            }
+            // RECENT
+            else if (key is IMAP_Search_Key_Recent)
+            {
+                retVal.Append("MessageFlags like '%Recent%'");
+            }
+            // SEEN
+            else if (key is IMAP_Search_Key_Seen)
+            {
+                retVal.Append("MessageFlags like '%Seen%'");
+            }
+            // SENTBEFORE
+            else if (key is IMAP_Search_Key_SentBefore)
+            {
+                //retVal.Append("Header_Date < " + ((IMAP_Search_Key_SentBefore)key).Date.ToString("yyyyMMdd"));
+                retVal.Append("Date < " + ((IMAP_Search_Key_SentBefore)key).Date.ToString("yyyyMMdd"));
+            }
+            // SENTON
+            else if (key is IMAP_Search_Key_SentOn)
+            {
+                //retVal.Append("Header_Date = " + ((IMAP_Search_Key_SentOn)key).Date.ToString("yyyyMMdd"));
+                retVal.Append("Date = " + ((IMAP_Search_Key_SentOn)key).Date.ToString("yyyyMMdd"));
+            }
+            // SENTSINCE
+            else if (key is IMAP_Search_Key_SentSince)
+            {
+                //retVal.Append("Header_Date >= " + ((IMAP_Search_Key_SentSince)key).Date.ToString("yyyyMMdd"));
+                retVal.Append("Date >= " + ((IMAP_Search_Key_SentSince)key).Date.ToString("yyyyMMdd"));
+            }
+            // SINCE
+            else if (key is IMAP_Search_Key_Since)
+            {
+                //retVal.Append("InternalDate >= " + ((IMAP_Search_Key_Since)key).Date.ToString("yyyyMMdd"));
+                retVal.Append("Date >= " + ((IMAP_Search_Key_Since)key).Date.ToString("yyyyMMdd"));
+            }
+            // SMALLER
+            else if (key is IMAP_Search_Key_Smaller)
+            {
+                retVal.Append("Size < " + ((IMAP_Search_Key_Smaller)key).Value);
+            }
+            // SUBJECT
+            //else if (key is IMAP_Search_Key_Subject)
+            //{
+            //    retVal.Append("Header_Subject like '%" + ((IMAP_Search_Key_Subject)key).Value + "%'");
+            //}
+            // TEXT
+            //else if (key is IMAP_Search_Key_Text)
+            //{
+                //retVal.Append("(StructureDecoded like '%" + ((IMAP_Search_Key_Text)key).Value + "%' OR TextParts like '%" + ((IMAP_Search_Key_Text)key).Value + "%')");
+            //}
+            // TO
+            //else if (key is IMAP_Search_Key_To)
+            //{
+            //    retVal.Append("Header_To like '%" + ((IMAP_Search_Key_To)key).Value + "%'");
+            //}
+            else if (key is IMAP_Search_Key_SeqSet)
+            {
+                retVal.Append("(");
+
+                IMAP_t_SeqSet seqSet = ((IMAP_Search_Key_SeqSet)key).Value;
+                for (int i = 0; i < seqSet.Items.Length; i++)
+                {
+                    Range_long range = seqSet.Items[i];
+
+                    if (i > 0)
+                    {
+                        retVal.Append(" OR ");
+                    }
+
+                    long start = 0;
+                    long end = 0;
+                    if (!seqNo_to_UID.TryGetValue(range.Start, out start))
+                    {
+                        start = int.MaxValue;
+                    }
+                    if (!seqNo_to_UID.TryGetValue(range.End, out end))
+                    {
+                        end = int.MaxValue;
+                    }
+
+                    if (start == end)
+                    {
+                        retVal.Append("UID = " + start);
+                    }
+                    else
+                    {
+                        retVal.Append("UID >= " + start + " AND UID <= " + end);
+                    }
+                }
+
+                retVal.Append(")");
+            }
+            // UID
+            else if (key is IMAP_Search_Key_Uid)
+            {
+                retVal.Append("(");
+
+                IMAP_t_SeqSet seqSet = ((IMAP_Search_Key_Uid)key).Value;
+                for (int i = 0; i < seqSet.Items.Length; i++)
+                {
+                    Range_long range = seqSet.Items[i];
+
+                    if (i > 0)
+                    {
+                        retVal.Append(" OR ");
+                    }
+
+                    if (range.Start == range.End)
+                    {
+                        retVal.Append("UID = " + range.Start);
+                    }
+                    else
+                    {
+                        retVal.Append("UID >= " + range.Start + " AND UID <= " + range.End);
+                    }
+                }
+
+                retVal.Append(")");
+            }
+            // UNANSWERED
+            else if (key is IMAP_Search_Key_Unanswered)
+            {
+                retVal.Append("MessageFlags not like '%Answered%'");
+            }
+            // UNDELETED
+            else if (key is IMAP_Search_Key_Undeleted)
+            {
+                retVal.Append("MessageFlags not like '%Deleted%'");
+            }
+            // UNDRAFT
+            else if (key is IMAP_Search_Key_Undraft)
+            {
+                retVal.Append("MessageFlags not like '%Draft%'");
+            }
+            // UNFLAGGED
+            else if (key is IMAP_Search_Key_Unflagged)
+            {
+                retVal.Append("MessageFlags not like '%Flagged%'");
+            }
+            // UNKEYWORD
+            else if (key is IMAP_Search_Key_Keyword)
+            {
+                retVal.Append("MessageFlags not like '%" + ((IMAP_Search_Key_Unkeyword)key).Value + "%'");
+            }
+            // UNSEEN
+            else if (key is IMAP_Search_Key_Unseen)
+            {
+                retVal.Append("MessageFlags not like '%Seen%'");
+            }
+            else
+            {
+                // Because SQL lite won't allow empty (), add some true-condition.
+                retVal.Append("'' = ''");
+            }
+
+            return retVal.ToString();
+        }
         #endregion
 
     }

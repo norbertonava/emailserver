@@ -1,7 +1,5 @@
 using System;
 using System.IO;
-
-using Merculia.MailServer;
 using Merculia.MailServer.UI;
 
 namespace Merculia.MailServer
