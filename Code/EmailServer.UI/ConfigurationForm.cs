@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using EmailServer.Core;
 
@@ -37,6 +31,9 @@ namespace EmailServer.UI
             this.numPOP3Port.Value = Convert.ToInt32(row["pop3_port"]);
             this.chkPOP3UseSSL.Checked = row["pop3_usessl"].ToString().Equals("1");
             this.txtPassword.Text = row["email_password"].ToString();
+            this.txtDisplayName.Text = row["display_name"].ToString();
+            this.txtBadResponseMailSubject.Text = row["bad_response_mail_subject"].ToString();
+            this.txtBadResponseMailBody.Text = row["bad_response_mail_body"].ToString();
         }
 
         private void Control_ValueChanged(object sender, EventArgs e)
@@ -64,14 +61,19 @@ namespace EmailServer.UI
                 || Convert.ToInt32(this.numSMTPPort.Value) < 0
                 || string.IsNullOrEmpty(this.txtPOP3Address.Text)
                 || Convert.ToInt32(this.numPOP3Port.Value) < 0
-                || string.IsNullOrEmpty(this.txtPassword.Text))
+                || string.IsNullOrEmpty(this.txtPassword.Text)
+                || string.IsNullOrEmpty(this.txtDisplayName.Text)
+                || string.IsNullOrEmpty(this.txtBadResponseMailSubject.Text)
+                || string.IsNullOrEmpty(this.txtBadResponseMailBody.Text)
+                )
             {
                 MessageBox.Show("Please enter all the required fields");
                 return;
             }
 
-            Database.SaveConfiguration(Convert.ToInt32(this.numSeconds.Value), this.txtEmail.Text, this.txtSMTPAddress.Text, Convert.ToInt32(this.numSMTPPort.Value), this.chkSMTPUseSSL.Checked,
-                this.txtPOP3Address.Text, Convert.ToInt32(this.numPOP3Port.Value), this.chkPOP3UseSSL.Checked, this.txtPassword.Text);
+            Database.SaveConfiguration(Convert.ToInt32(this.numSeconds.Value), this.txtEmail.Text, this.txtSMTPAddress.Text, Convert.ToInt32(this.numSMTPPort.Value), 
+                this.chkSMTPUseSSL.Checked, this.txtPOP3Address.Text, Convert.ToInt32(this.numPOP3Port.Value), 
+                this.chkPOP3UseSSL.Checked, this.txtPassword.Text, this.txtDisplayName.Text, this.txtBadResponseMailSubject.Text, this.txtBadResponseMailBody.Text);
         }
 
         public void Pause()

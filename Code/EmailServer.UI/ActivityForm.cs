@@ -1,12 +1,6 @@
 ﻿using EmailServer.Core;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EmailServer.UI
@@ -15,6 +9,7 @@ namespace EmailServer.UI
     {
         private Worker worker;
         bool isRunning;
+        Timer timer;
 
         public ActivityForm()
         {
@@ -33,7 +28,6 @@ namespace EmailServer.UI
 
         public void Pause()
         {
-
             isRunning = false;
             EnableToolbar();
         }
@@ -58,7 +52,6 @@ namespace EmailServer.UI
             bool POP3UseSSL = row["pop3_usessl"].ToString().Equals("1");
             string Password = row["email_password"].ToString();
 
-
             if (worker == null)
                 worker = new Worker(Seconds, EmailAddress, Password, SMTPAddress, SMTPPort, SMTPUseSSL, POP3Address, POP3Port, POP3UseSSL);
             worker.Start();
@@ -71,6 +64,28 @@ namespace EmailServer.UI
         {
             MDI mdi = ((MDI)this.MdiParent);
             mdi.EnableToolbar(true, !isRunning, isRunning);
+        }
+
+        private void ActivityForm_Load(object sender, EventArgs e)
+        {
+            timer = new Timer();
+            timer.Interval = 1000;
+            timer.Tick += Timer_Tick;
+            timer.Enabled = true;
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            if (worker == null)
+                return;
+            MDI mdi = (MDI)this.MdiParent;
+            mdi.SetStatus(worker.Status);
+        }
+
+        private void ActivityForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(e.CloseReason != CloseReason.MdiFormClosing)
+                e.Cancel = true;
         }
     }
 }

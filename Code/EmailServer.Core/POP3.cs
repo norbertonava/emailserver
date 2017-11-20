@@ -1,10 +1,8 @@
 ﻿using OpenPop.Mime;
 using OpenPop.Pop3;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace EmailServer.Core
 {
@@ -59,17 +57,56 @@ namespace EmailServer.Core
             foreach (Message mes in newMessages)
             {
                 string body = GetBody(mes);
-                if (IsValidPhoneNumber(mes.Headers.Subject, body))
+                string phone_number = string.Empty;
+                if (IsValidPhoneNumber(mes.Headers.Subject, body, out phone_number))
                 {
-                    Database.SaveMessage("12345", mes.Headers.Subject, body, mes.Headers.From.MailAddress.Address, mes.Headers.DateSent);
+                    long id = Database.SaveMessage(phone_number, mes.Headers.Subject, body, mes.Headers.From.MailAddress.Address, mes.Headers.DateSent);
+
+                    foreach (MessagePart att in mes.FindAllAttachments())
+                    {
+                        Database.SaveAttachment(id, att.Body, att.FileName);
+                    }
+                }
+                else
+                {
+                    SMTP.SendBadResponse(mes.Headers.From.MailAddress.Address);
                 }
             }
         }
 
 
-        public static bool IsValidPhoneNumber(string subject, string body)
+        public static bool IsValidPhoneNumber(string subject, string body, out string phone_number)
         {
-            return true;
+            string text = subject + "\n" + body;
+
+            const string MatchPhonePattern = //@"\(?\d{3}\)?-? *\d{3}-? *-?\d{4}";
+            @"\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})";
+
+            Regex rx = new Regex(MatchPhonePattern, RegexOptions.Compiled | RegexOptions.IgnoreCase);
+
+            // Find matches.
+            MatchCollection matches = rx.Matches(text);
+
+            // Report the number of matches found.
+            int noOfMatches = matches.Count;
+
+
+            //Do something with the matches
+
+            foreach (Match match in matches)
+            {
+                //Do something with the matches
+                string tempPhoneNumber = match.Value.ToString().Replace(" ", string.Empty).Replace("(", string.Empty).Replace(")", string.Empty).Replace(".", string.Empty).Replace("-", string.Empty);
+
+                if (Database.IsValidPhoneNumber(tempPhoneNumber))
+                {
+                    phone_number = tempPhoneNumber;
+                    return true;
+                }
+            }
+
+            phone_number = string.Empty;
+            return false;
         }
 
         private static string GetBody(Message message)

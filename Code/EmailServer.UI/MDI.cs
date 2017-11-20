@@ -40,13 +40,6 @@ namespace EmailServer.UI
             activityForm.Show();
         }
 
-        private void configurationToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ConfigurationForm configurationForm = new ConfigurationForm();
-            configurationForm.MdiParent = this;
-            configurationForm.Show();
-        }
-
         public void EnableToolbar(bool saveButtonEnabled, bool startButtonEnabled, bool pauseButtonEnabled)
         {
             this.SaveButton.Enabled = saveButtonEnabled;
@@ -68,6 +61,40 @@ namespace EmailServer.UI
         {
             IForm form = (IForm)this.ActiveMdiChild;
             form.Save();
+        }
+
+        private void emailToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConfigurationForm configurationForm = new ConfigurationForm();
+            configurationForm.MdiParent = this;
+            configurationForm.Show();
+        }
+
+        private void usersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UserForm userForm = new UserForm();
+            userForm.MdiParent = this;
+            userForm.Show();
+        }
+
+        public void SetStatus(string status)
+        {
+            this.toolStripStatusLabel.Text = "Status: " + status;
+        }
+
+        private void cascadeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LayoutMdi(MdiLayout.Cascade);
+        }
+
+        private void tileVerticalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LayoutMdi(MdiLayout.TileVertical);
+        }
+
+        private void tileHorizontalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LayoutMdi(MdiLayout.TileHorizontal);
         }
     }
 }

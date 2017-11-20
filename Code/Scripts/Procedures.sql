@@ -11,9 +11,24 @@ SELECT 	fetch_seconds,
 		pop3_url, 
 		pop3_port, 
 		pop3_usessl,
-		email_password
+		email_password,
+        display_name,
+        bad_response_mail_subject,
+        bad_response_mail_body
 FROM	configuration
 WHERE 	id_configuration = 1;
+
+END;
+//
+
+DELIMITER //
+
+CREATE PROCEDURE GetUsers()
+BEGIN
+
+SELECT 	phone_number,
+        date_modified
+FROM	user;
 
 END;
 //
@@ -28,7 +43,10 @@ CREATE PROCEDURE SaveConfiguration(		p_fetch_seconds int(11),
 										p_pop3_url varchar(500),
 										p_pop3_port int(11),
 										p_pop3_usessl int(11),
-										p_email_password varchar(45))
+										p_email_password varchar(45),
+                                        p_display_name varchar(256),
+                                        p_bad_response_mail_subject varchar(256),
+										p_bad_response_mail_body longtext)
 BEGIN
 	
     DELETE FROM configuration
@@ -44,7 +62,11 @@ BEGIN
 	pop3_url,
 	pop3_port,
 	pop3_usessl,
-	email_password)
+	email_password,
+    display_name,
+	bad_response_mail_subject,
+	bad_response_mail_body    
+    )
 	VALUES
 	(1,
 	p_fetch_seconds,
@@ -55,7 +77,10 @@ BEGIN
 	p_pop3_url,
 	p_pop3_port,
 	p_pop3_usessl,
-	p_email_password);
+	p_email_password,
+    p_display_name,
+    p_bad_response_mail_subject,
+	p_bad_response_mail_body);
 END;
 //
 
@@ -68,14 +93,16 @@ CREATE PROCEDURE SaveMessage(	p_phone_number varchar(55),
 								p_date_sent datetime)
 BEGIN
 
-	DECLARE p_id_message INT(11);
+	DECLARE p_id_message BIGINT;
 	
     SET p_id_message = (select max(id_message) from message);
     
     if(isnull(p_id_message) = 1)
     then
-		SET p_id_message = 1;
+		SET p_id_message = 0;
     end if;
+    
+    SET p_id_message = p_id_message  + 1;
     
 	INSERT INTO message
 	(id_message,
@@ -94,6 +121,90 @@ BEGIN
 	now(),
 	p_date_sent);
 
+    SELECT p_id_message;
+END;
+//
+
+
+DELIMITER //
+
+CREATE PROCEDURE IsPhoneNumberValid(	p_phone_number varchar(55))
+BEGIN
+
+	SELECT COUNT(1) As Exist
+    FROM user
+    WHERE phone_number = p_phone_number;
     
+END;
+//
+
+DELIMITER //
+
+CREATE PROCEDURE SaveAttachment(p_id_message int(11),
+								  p_data 	longblob,
+								  p_file_name varchar(500))
+BEGIN
+
+	DECLARE p_id_attachment BIGINT;
+	
+    SET p_id_attachment = (select max(id_attachment) from attachment);
+    
+    if(isnull(p_id_attachment) = 1)
+    then
+		SET p_id_attachment = 0;
+    end if;
+    
+    SET p_id_attachment = p_id_attachment + 1;
+    SELECT p_id_attachment;
+	INSERT INTO attachment	(id_attachment,
+							id_message,
+							data,
+							file_name)
+	VALUES	(p_id_attachment,
+			p_id_message,
+			p_data,
+			p_file_name);
+
+    
+END;
+//
+
+
+DELIMITER //
+
+CREATE PROCEDURE SaveUser(p_phone_number varchar(50))
+BEGIN
+
+	DECLARE p_id INT(11);
+	
+    SET p_id = (select 1 from user where phone_number = p_phone_number);
+    
+    if(isnull(p_id) = 1)
+    then
+		INSERT INTO user
+		(phone_number,
+		`date_modified`)
+		VALUES
+		(p_phone_number,
+		now());		
+    end if;
+
+END;
+//
+
+DELIMITER //
+
+CREATE PROCEDURE SaveLogEntry(  p_action varchar(200),
+								p_data longtext)
+BEGIN
+
+INSERT INTO log (action,
+				data,
+				date)
+				VALUES
+				(p_action,
+				p_data,
+				now());
+
 END;
 //
