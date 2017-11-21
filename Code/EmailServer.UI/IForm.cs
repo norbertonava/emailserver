@@ -1,9 +1,10 @@
 ﻿namespace EmailServer.UI
 {
-    interface IForm
+    public interface IForm
     {
         void Start();
         void Pause();
         void Save();
+        void EnableToolbar(bool save, bool start, bool pause);
     }
 }

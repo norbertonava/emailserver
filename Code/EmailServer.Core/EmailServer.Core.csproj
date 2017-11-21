@@ -48,11 +48,10 @@
   <ItemGroup>
     <Compile Include="Database.cs" />
     <Compile Include="Log.cs" />
-    <Compile Include="Message.cs" />
+    <Compile Include="LogAction.cs" />
     <Compile Include="POP3.cs" />
     <Compile Include="SMTP.cs" />
     <Compile Include="WMySqlCommand.cs" />
-    <Compile Include="Worker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

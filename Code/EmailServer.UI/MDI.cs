@@ -30,7 +30,7 @@ namespace EmailServer.UI
 
         private void activityToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            activityForm.BringToFront();
         }
 
         private void MDI_Load(object sender, EventArgs e)
@@ -49,6 +49,8 @@ namespace EmailServer.UI
 
         private void PauseButton_Click(object sender, EventArgs e)
         {
+            IForm form = (IForm)this.ActiveMdiChild;
+            form.Pause();
         }
 
         private void StartButton_Click(object sender, EventArgs e)
@@ -95,6 +97,13 @@ namespace EmailServer.UI
         private void tileHorizontalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LayoutMdi(MdiLayout.TileHorizontal);
+        }
+
+        private void safeListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SafeListForm safeListForm = new SafeListForm();
+            safeListForm.MdiParent = this;
+            safeListForm.Show();
         }
     }
 }

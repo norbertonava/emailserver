@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetConfiguration">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetConfigurationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetConfigurationResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveConfiguration">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="fetch_seconds" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="smtp_url" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="smtp_port" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="smtp_usessl" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="pop3_url" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pop3_port" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pop3_usessl" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="email_password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="display_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bad_response_mail_subject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bad_response_mail_body" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveConfigurationResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMaxLogId">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMaxLogIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetMaxLogIdResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLogInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="log_id" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLogInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLogInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FetchPOP3Fetch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="hostname" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="port" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="useSsl" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FetchPOP3FetchResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UserExists">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phone_number" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserExistsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UserExistsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveSafeList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phone_number" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sender_mail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveSafeListResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSafeList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sender_mail" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSafeListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSafeListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phone_number" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveUserResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetUsers">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetUsersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUsersResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetConfigurationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetConfiguration" />
+  </wsdl:message>
+  <wsdl:message name="GetConfigurationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetConfigurationResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveConfigurationSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveConfiguration" />
+  </wsdl:message>
+  <wsdl:message name="SaveConfigurationSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveConfigurationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMaxLogIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMaxLogId" />
+  </wsdl:message>
+  <wsdl:message name="GetMaxLogIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMaxLogIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLogInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLogInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetLogInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLogInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="FetchPOP3FetchSoapIn">
+    <wsdl:part name="parameters" element="tns:FetchPOP3Fetch" />
+  </wsdl:message>
+  <wsdl:message name="FetchPOP3FetchSoapOut">
+    <wsdl:part name="parameters" element="tns:FetchPOP3FetchResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserExistsSoapIn">
+    <wsdl:part name="parameters" element="tns:UserExists" />
+  </wsdl:message>
+  <wsdl:message name="UserExistsSoapOut">
+    <wsdl:part name="parameters" element="tns:UserExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveSafeListSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveSafeList" />
+  </wsdl:message>
+  <wsdl:message name="SaveSafeListSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveSafeListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSafeListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSafeList" />
+  </wsdl:message>
+  <wsdl:message name="GetSafeListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSafeListResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveUserSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveUser" />
+  </wsdl:message>
+  <wsdl:message name="SaveUserSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUsers" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUsersResponse" />
+  </wsdl:message>
+  <wsdl:portType name="RemoteAdminSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConfiguration">
+      <wsdl:input message="tns:GetConfigurationSoapIn" />
+      <wsdl:output message="tns:GetConfigurationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveConfiguration">
+      <wsdl:input message="tns:SaveConfigurationSoapIn" />
+      <wsdl:output message="tns:SaveConfigurationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxLogId">
+      <wsdl:input message="tns:GetMaxLogIdSoapIn" />
+      <wsdl:output message="tns:GetMaxLogIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLogInfo">
+      <wsdl:input message="tns:GetLogInfoSoapIn" />
+      <wsdl:output message="tns:GetLogInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FetchPOP3Fetch">
+      <wsdl:input message="tns:FetchPOP3FetchSoapIn" />
+      <wsdl:output message="tns:FetchPOP3FetchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserExists">
+      <wsdl:input message="tns:UserExistsSoapIn" />
+      <wsdl:output message="tns:UserExistsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveSafeList">
+      <wsdl:input message="tns:SaveSafeListSoapIn" />
+      <wsdl:output message="tns:SaveSafeListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSafeList">
+      <wsdl:input message="tns:GetSafeListSoapIn" />
+      <wsdl:output message="tns:GetSafeListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveUser">
+      <wsdl:input message="tns:SaveUserSoapIn" />
+      <wsdl:output message="tns:SaveUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <wsdl:input message="tns:GetUsersSoapIn" />
+      <wsdl:output message="tns:GetUsersSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RemoteAdminSoap" type="tns:RemoteAdminSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConfiguration">
+      <soap:operation soapAction="http://tempuri.org/GetConfiguration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveConfiguration">
+      <soap:operation soapAction="http://tempuri.org/SaveConfiguration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxLogId">
+      <soap:operation soapAction="http://tempuri.org/GetMaxLogId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLogInfo">
+      <soap:operation soapAction="http://tempuri.org/GetLogInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchPOP3Fetch">
+      <soap:operation soapAction="http://tempuri.org/FetchPOP3Fetch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserExists">
+      <soap:operation soapAction="http://tempuri.org/UserExists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSafeList">
+      <soap:operation soapAction="http://tempuri.org/SaveSafeList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSafeList">
+      <soap:operation soapAction="http://tempuri.org/GetSafeList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveUser">
+      <soap:operation soapAction="http://tempuri.org/SaveUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <soap:operation soapAction="http://tempuri.org/GetUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RemoteAdminSoap12" type="tns:RemoteAdminSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConfiguration">
+      <soap12:operation soapAction="http://tempuri.org/GetConfiguration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveConfiguration">
+      <soap12:operation soapAction="http://tempuri.org/SaveConfiguration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaxLogId">
+      <soap12:operation soapAction="http://tempuri.org/GetMaxLogId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLogInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetLogInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchPOP3Fetch">
+      <soap12:operation soapAction="http://tempuri.org/FetchPOP3Fetch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserExists">
+      <soap12:operation soapAction="http://tempuri.org/UserExists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSafeList">
+      <soap12:operation soapAction="http://tempuri.org/SaveSafeList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSafeList">
+      <soap12:operation soapAction="http://tempuri.org/GetSafeList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveUser">
+      <soap12:operation soapAction="http://tempuri.org/SaveUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <soap12:operation soapAction="http://tempuri.org/GetUsers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RemoteAdmin">
+    <wsdl:port name="RemoteAdminSoap" binding="tns:RemoteAdminSoap">
+      <soap:address location="http://192.168.1.68:86/WebServices/RemoteAdmin.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RemoteAdminSoap12" binding="tns:RemoteAdminSoap12">
+      <soap12:address location="http://192.168.1.68:86/WebServices/RemoteAdmin.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -32,9 +32,16 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>server.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -58,6 +65,11 @@
     <Compile Include="ConfigurationForm.Designer.cs">
       <DependentUpon>ConfigurationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\RemoteAdmin\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="IForm.cs" />
     <Compile Include="MDI.cs">
       <SubType>Form</SubType>
@@ -65,8 +77,16 @@
     <Compile Include="MDI.Designer.cs">
       <DependentUpon>MDI.cs</DependentUpon>
     </Compile>
+    <Compile Include="Process\FileLog.cs" />
+    <Compile Include="Process\Worker.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SafeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SafeList.Designer.cs">
+      <DependentUpon>SafeList.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,9 +112,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SafeList.resx">
+      <DependentUpon>SafeList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserForm.resx">
       <DependentUpon>UserForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Connected Services\RemoteAdmin\RemoteAdmin.wsdl" />
+    <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -109,15 +134,25 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="server.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Connected Services\RemoteAdmin\RemoteAdmin.disco" />
+    <None Include="Connected Services\RemoteAdmin\configuration91.svcinfo" />
+    <None Include="Connected Services\RemoteAdmin\configuration.svcinfo" />
+    <None Include="Connected Services\RemoteAdmin\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Images\pause.png" />
     <Content Include="Images\play.png" />
     <Content Include="Images\stop.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EmailServer.Core\EmailServer.Core.csproj">
-      <Project>{E9C43795-2198-448C-A702-543F27D2142B}</Project>
-      <Name>EmailServer.Core</Name>
-    </ProjectReference>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\RemoteAdmin\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

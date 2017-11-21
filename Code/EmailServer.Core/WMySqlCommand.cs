@@ -52,20 +52,9 @@ namespace EmailServer.Core
             MySqlDbType dbTyp = dbType;
             object val = value;
 
-            if (val is DateTime)
-            {
-                DateTime date = (DateTime)value;
-                val = new DateTime(date.Year, date.Month, date.Day, 0, 0, 0, 0);
-            }
-
             if (dbType == MySqlDbType.Guid)
             {
                 dbTyp = MySqlDbType.VarChar;
-                string guid = val.ToString();
-                //if (guid.Length < 1)
-                //{
-                //    return;
-                //}
             }
 
             m_SqlCmd.Parameters.Add(name, dbTyp).Value = val;

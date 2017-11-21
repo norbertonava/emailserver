@@ -1,7 +1,7 @@
-﻿using System;
+﻿using EmailServer.UI.Process;
+using System;
 using System.Data;
 using System.Windows.Forms;
-using EmailServer.Core;
 
 namespace EmailServer.UI
 {
@@ -16,41 +16,49 @@ namespace EmailServer.UI
 
         private void ConfigurationForm_Load(object sender, EventArgs e)
         {
-            DataTable config = Database.GetConfiguration();
-            if (config.Rows.Count == 0)
-                return;
+            try
+            {
+                DataTable config = null;
 
-            DataRow row = config.Rows[0];
+                using (RemoteAdmin.RemoteAdminSoapClient client = new RemoteAdmin.RemoteAdminSoapClient())
+                {
+                    config = client.GetConfiguration();
+                }
 
-            this.numSeconds.Value = Convert.ToInt32(row["fetch_seconds"]);
-            this.txtEmail.Text = row["email"].ToString();
-            this.txtSMTPAddress.Text = row["smtp_url"].ToString();
-            this.numSMTPPort.Value = Convert.ToInt32(row["smtp_port"]);
-            this.chkSMTPUseSSL.Checked = row["smtp_usessl"].ToString().Equals("1");
-            this.txtPOP3Address.Text = row["pop3_url"].ToString();
-            this.numPOP3Port.Value = Convert.ToInt32(row["pop3_port"]);
-            this.chkPOP3UseSSL.Checked = row["pop3_usessl"].ToString().Equals("1");
-            this.txtPassword.Text = row["email_password"].ToString();
-            this.txtDisplayName.Text = row["display_name"].ToString();
-            this.txtBadResponseMailSubject.Text = row["bad_response_mail_subject"].ToString();
-            this.txtBadResponseMailBody.Text = row["bad_response_mail_body"].ToString();
+                if (config.Rows.Count == 0)
+                    return;
+
+                DataRow row = config.Rows[0];
+
+                this.numSeconds.Value = Convert.ToInt32(row["fetch_seconds"]);
+                this.txtEmail.Text = row["email"].ToString();
+                this.txtSMTPAddress.Text = row["smtp_url"].ToString();
+                this.numSMTPPort.Value = Convert.ToInt32(row["smtp_port"]);
+                this.chkSMTPUseSSL.Checked = row["smtp_usessl"].ToString().Equals("1");
+                this.txtPOP3Address.Text = row["pop3_url"].ToString();
+                this.numPOP3Port.Value = Convert.ToInt32(row["pop3_port"]);
+                this.chkPOP3UseSSL.Checked = row["pop3_usessl"].ToString().Equals("1");
+                this.txtPassword.Text = row["email_password"].ToString();
+                this.txtDisplayName.Text = row["display_name"].ToString();
+                this.txtBadResponseMailSubject.Text = row["bad_response_mail_subject"].ToString();
+                this.txtBadResponseMailBody.Text = row["bad_response_mail_body"].ToString();
+                hasChanges = false;
+            }
+            catch (Exception ex)
+            {
+                FileLog.SaveEntryToTextFile(ex.Message, ex);
+            }
         }
 
         private void Control_ValueChanged(object sender, EventArgs e)
         {
             hasChanges = true;
-            EnableToolbar();
+            EnableToolbar(this.hasChanges, false, false);
         }
 
         private void ConfigurationForm_Activated(object sender, EventArgs e)
         {
-            EnableToolbar();
-        }
-
-        private void EnableToolbar()
-        {
-            MDI mdi = ((MDI)this.MdiParent);
-            mdi.EnableToolbar(this.hasChanges, false, false);
+            EnableToolbar(this.hasChanges, false, false);
         }
 
         public void Save()
@@ -70,10 +78,21 @@ namespace EmailServer.UI
                 MessageBox.Show("Please enter all the required fields");
                 return;
             }
-
-            Database.SaveConfiguration(Convert.ToInt32(this.numSeconds.Value), this.txtEmail.Text, this.txtSMTPAddress.Text, Convert.ToInt32(this.numSMTPPort.Value), 
-                this.chkSMTPUseSSL.Checked, this.txtPOP3Address.Text, Convert.ToInt32(this.numPOP3Port.Value), 
-                this.chkPOP3UseSSL.Checked, this.txtPassword.Text, this.txtDisplayName.Text, this.txtBadResponseMailSubject.Text, this.txtBadResponseMailBody.Text);
+            try
+            {
+                using (RemoteAdmin.RemoteAdminSoapClient client = new RemoteAdmin.RemoteAdminSoapClient())
+                {
+                    client.SaveConfiguration(Convert.ToInt32(this.numSeconds.Value), this.txtEmail.Text, this.txtSMTPAddress.Text, Convert.ToInt32(this.numSMTPPort.Value),
+                    this.chkSMTPUseSSL.Checked, this.txtPOP3Address.Text, Convert.ToInt32(this.numPOP3Port.Value),
+                    this.chkPOP3UseSSL.Checked, this.txtPassword.Text, this.txtDisplayName.Text, this.txtBadResponseMailSubject.Text, this.txtBadResponseMailBody.Text);
+                }
+                this.hasChanges = false;
+                MessageBox.Show("Changes were saved. Must restart application.");
+            }
+            catch (Exception e)
+            {
+                FileLog.SaveEntryToTextFile(e.Message, e);
+            }
         }
 
         public void Pause()
@@ -86,9 +105,19 @@ namespace EmailServer.UI
             throw new NotImplementedException();
         }
 
-        public void IFormSave()
+        public void EnableToolbar(bool save, bool start, bool pause)
         {
-            throw new NotImplementedException();
+            MDI mdi = ((MDI)this.MdiParent);
+            mdi.EnableToolbar(save, start, pause);
+        }
+
+        private void ConfigurationForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (hasChanges)
+            {
+                DialogResult dr = MessageBox.Show("Do you want to close and discard changes?", "Exit", MessageBoxButtons.OKCancel);
+                e.Cancel = dr == DialogResult.Cancel;
+            }
         }
     }
 }

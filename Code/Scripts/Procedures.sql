@@ -169,10 +169,24 @@ BEGIN
 END;
 //
 
-
 DELIMITER //
 
 CREATE PROCEDURE SaveUser(p_phone_number varchar(50))
+BEGIN
+
+	INSERT INTO user
+	(phone_number,
+	date_modified)
+	VALUES
+	(p_phone_number,
+	now());		
+
+END;
+//
+
+DELIMITER //
+
+CREATE PROCEDURE UserExists(p_phone_number varchar(50))
 BEGIN
 
 	DECLARE p_id INT(11);
@@ -181,12 +195,9 @@ BEGIN
     
     if(isnull(p_id) = 1)
     then
-		INSERT INTO user
-		(phone_number,
-		`date_modified`)
-		VALUES
-		(p_phone_number,
-		now());		
+		select false as exist;
+	else
+		select true as exist;
     end if;
 
 END;
@@ -205,6 +216,125 @@ INSERT INTO log (action,
 				(p_action,
 				p_data,
 				now());
+
+END;
+//
+
+DELIMITER //
+
+CREATE PROCEDURE GetMaxLogId()
+BEGIN
+
+	DECLARE p_id_log BIGINT;
+	
+    SET p_id_log = (SELECT MAX(id_log) FROM log);
+    
+    if(isnull(p_id_log) = 1)
+    then
+		set p_id_log = 1;
+    end if;	
+    
+    select p_id_log as id_log;
+END;
+//
+
+DELIMITER //
+
+CREATE PROCEDURE GetLogData(p_id_log BIGINT)
+BEGIN
+
+	SELECT id_log, action, data, date
+    FROM log
+    WHERE id_log > p_id_log;
+
+END;
+//
+
+DELIMITER //
+
+CREATE PROCEDURE GetSafeList(p_sender_mail	varchar(500))
+BEGIN
+
+	if(p_sender_mail= '')
+    then
+		SELECT phone_number,
+			sender_mail,
+			token,
+			active,
+			active_date
+		FROM safe_list;
+	else
+		SELECT phone_number,
+			sender_mail,
+			token,
+			active,
+			active_date
+		FROM safe_list
+        where sender_mail = p_sender_mail;    
+    end if;
+    
+END;
+//
+
+DELIMITER //
+
+CREATE PROCEDURE IsAlreadyInSafeList(p_sender_mail	varchar(500))
+BEGIN
+
+    select phone_number AS p_phone_number
+    from safe_list 
+    where sender_mail = p_sender_mail
+    AND active;
+    
+END;
+//
+
+DELIMITER //
+
+CREATE PROCEDURE ActivateSafeList(p_sender_mail	varchar(500),
+								p_phone_number varchar(50))
+BEGIN
+	UPDATE safe_list
+		SET	active = true,
+			active_date = now()
+	WHERE phone_number = p_phone_number 
+	AND sender_mail = p_sender_mail;
+END;
+//
+
+DELIMITER //
+
+CREATE PROCEDURE SaveSafeList( 	p_phone_number varchar(55),
+								p_sender_mail	varchar(500),
+								p_token		varchar(10))
+BEGIN
+
+	DECLARE p_id INT(11);
+	
+    SET p_id = (select 1 from safe_list where phone_number = p_phone_number and sender_mail = p_sender_mail);
+    
+    if(isnull(p_id) = 1)
+    then
+		INSERT INTO safe_list
+		(phone_number,
+		sender_mail,
+		token,
+		active,
+		active_date)
+		VALUES
+		(p_phone_number,
+		p_sender_mail,
+		p_token,
+		false,
+		null);
+	else
+		UPDATE safe_list
+			SET	token = p_token,
+				active = false,
+				active_date = null
+		WHERE phone_number = p_phone_number 
+        AND sender_mail = p_sender_mail;
+    end if;
 
 END;
 //

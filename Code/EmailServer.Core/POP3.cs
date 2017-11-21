@@ -3,13 +3,16 @@ using OpenPop.Pop3;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
+using System;
+using System.Data;
 
 namespace EmailServer.Core
 {
-    class POP3
+    public class POP3
     {
-        public static void Fetch(string hostname, int port, bool useSsl, string username, string password, List<string> seenUids)
+        public static void Fetch(string hostname, int port, bool useSsl, string username, string password/*, List<string> seenUids*/)
         {
+            List<string> seenUids = new List<string>();
             // Create a list we can return with all new messages
             List<Message> newMessages = new List<Message>();
 
@@ -58,7 +61,7 @@ namespace EmailServer.Core
             {
                 string body = GetBody(mes);
                 string phone_number = string.Empty;
-                if (IsValidPhoneNumber(mes.Headers.Subject, body, out phone_number))
+                if (IsValidPhoneNumber(mes.Headers.Subject, body, out phone_number) || IsInSafeList(mes.Headers.Subject, body, out phone_number, mes.Headers.From.MailAddress.Address))
                 {
                     long id = Database.SaveMessage(phone_number, mes.Headers.Subject, body, mes.Headers.From.MailAddress.Address, mes.Headers.DateSent);
 
@@ -74,6 +77,37 @@ namespace EmailServer.Core
             }
         }
 
+        private static bool IsInSafeList(string subject, string body, out string phone_number, string sender_mail)
+        {
+            bool exists = false;
+            phone_number = string.Empty;
+
+            DataTable dt = Database.IsAlreadyInSafeList(sender_mail);
+            exists = Convert.ToBoolean(dt.Rows[0]["exists"]);
+
+            //It's already in a safe list
+            if (exists)
+            {
+                phone_number = dt.Rows[0]["p_phone_number"].ToString();
+                return true;
+            }
+
+            //Check all tokens
+            dt = Database.GetSafeList(sender_mail);
+
+            foreach (DataRow row in dt.Rows)
+            {
+                string token = string.Format("#{0}#", row["token"].ToString());
+                if (subject.Contains(token) || body.Contains(token))
+                {
+                    phone_number = row["phone_number"].ToString();
+                    Database.ActivateSafeList(phone_number, sender_mail);
+                    return true;
+                }
+            }
+
+            return false;
+        }
 
         public static bool IsValidPhoneNumber(string subject, string body, out string phone_number)
         {
@@ -87,15 +121,8 @@ namespace EmailServer.Core
             // Find matches.
             MatchCollection matches = rx.Matches(text);
 
-            // Report the number of matches found.
-            int noOfMatches = matches.Count;
-
-
-            //Do something with the matches
-
             foreach (Match match in matches)
             {
-                //Do something with the matches
                 string tempPhoneNumber = match.Value.ToString().Replace(" ", string.Empty).Replace("(", string.Empty).Replace(")", string.Empty).Replace(".", string.Empty).Replace("-", string.Empty);
 
                 if (Database.IsValidPhoneNumber(tempPhoneNumber))

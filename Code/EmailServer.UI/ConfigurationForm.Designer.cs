@@ -305,6 +305,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Configuration";
             this.Activated += new System.EventHandler(this.ConfigurationForm_Activated);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ConfigurationForm_FormClosing);
             this.Load += new System.EventHandler(this.ConfigurationForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numSeconds)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPOP3Port)).EndInit();

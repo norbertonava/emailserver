@@ -28,68 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Action = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.gridLog = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLog)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // gridLog
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Date,
-            this.Action,
-            this.Data});
-            this.dataGridView1.Location = new System.Drawing.Point(13, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(686, 226);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // Date
-            // 
-            this.Date.HeaderText = "Date";
-            this.Date.Name = "Date";
-            this.Date.ReadOnly = true;
-            // 
-            // Action
-            // 
-            this.Action.HeaderText = "Action";
-            this.Action.Name = "Action";
-            this.Action.ReadOnly = true;
-            // 
-            // Data
-            // 
-            this.Data.HeaderText = "Data";
-            this.Data.Name = "Data";
-            this.Data.ReadOnly = true;
+            this.gridLog.AllowUserToAddRows = false;
+            this.gridLog.AllowUserToDeleteRows = false;
+            this.gridLog.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridLog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridLog.Location = new System.Drawing.Point(13, 12);
+            this.gridLog.Name = "gridLog";
+            this.gridLog.ReadOnly = true;
+            this.gridLog.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridLog.Size = new System.Drawing.Size(846, 236);
+            this.gridLog.TabIndex = 0;
+            this.gridLog.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.gridLog_DataBindingComplete);
             // 
             // ActivityForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(711, 260);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(871, 260);
+            this.Controls.Add(this.gridLog);
             this.Name = "ActivityForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Activity";
             this.Activated += new System.EventHandler(this.ActivityForm_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ActivityForm_FormClosing);
             this.Load += new System.EventHandler(this.ActivityForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLog)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Action;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Data;
+        private System.Windows.Forms.DataGridView gridLog;
     }
 }

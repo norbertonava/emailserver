@@ -61,6 +61,7 @@
             this.txtPhonNumber.Name = "txtPhonNumber";
             this.txtPhonNumber.Size = new System.Drawing.Size(179, 20);
             this.txtPhonNumber.TabIndex = 2;
+            this.txtPhonNumber.TextChanged += new System.EventHandler(this.txtPhonNumber_TextChanged);
             // 
             // UserForm
             // 
@@ -73,6 +74,8 @@
             this.Name = "UserForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Users";
+            this.Activated += new System.EventHandler(this.UserForm_Activated);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UserForm_FormClosing);
             this.Load += new System.EventHandler(this.UserForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.userGrid)).EndInit();
             this.ResumeLayout(false);

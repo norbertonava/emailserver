@@ -31,10 +31,104 @@ namespace EmailServer.Core
             }
             catch(Exception e)
             {
-                SaveLogEntry("Error", string.Format("{0}:{1}", e.Message, e.StackTrace));
+                SaveLogEntry(LogAction.ERROR, string.Format("{0}:{1}", e.Message, e.StackTrace));
+                throw new Exception("An error ocurred while accesing the database, please refer to the log.");
             }
 
             return true;
+        }
+
+        public static DataTable GetSafeList(string sender_mail)
+        {
+            DataTable dt = null;
+            try
+            {
+                using (WMySqlCommand sqlCmd = new WMySqlCommand(GetConnectionString(), "GetSafeList"))
+                {
+                    sqlCmd.AddParameter("p_sender_mail", MySqlDbType.VarChar, sender_mail);
+                    DataSet ds = sqlCmd.Execute();
+                    ds.Tables[0].TableName = "SafeList";
+                    dt = ds.Tables["SafeList"];
+                }
+            }
+            catch (Exception e)
+            {
+                SaveLogEntry(LogAction.ERROR, string.Format("{0}:{1}", e.Message, e.StackTrace));
+                throw new Exception("An error ocurred while accesing the database, please refer to the log.");
+            }
+            return dt;
+        }
+
+        public static void SaveSafeList(string phone_number, string sender_mail, string token)
+        {
+            try
+            {
+                using (WMySqlCommand sqlCmd = new WMySqlCommand(GetConnectionString(), "SaveSafeList"))
+                {
+                    sqlCmd.AddParameter("p_phone_number", MySqlDbType.VarChar, phone_number);
+                    sqlCmd.AddParameter("p_sender_mail", MySqlDbType.VarChar, sender_mail);
+                    sqlCmd.AddParameter("p_token", MySqlDbType.VarChar, token);
+
+                    sqlCmd.Execute();
+                }
+            }
+            catch (Exception e)
+            {
+                SaveLogEntry(LogAction.ERROR, string.Format("{0}:{1}", e.Message, e.StackTrace));
+                throw new Exception("An error ocurred while accesing the database, please refer to the log.");
+            }
+        }
+
+        public static void ActivateSafeList(string phone_number, string sender_mail)
+        {
+            try
+            {
+                using (WMySqlCommand sqlCmd = new WMySqlCommand(GetConnectionString(), "ActivateSafeList"))
+                {
+                    sqlCmd.AddParameter("p_phone_number", MySqlDbType.VarChar, phone_number);
+                    sqlCmd.AddParameter("p_sender_mail", MySqlDbType.VarChar, sender_mail);
+
+                    sqlCmd.Execute();
+                }
+            }
+            catch (Exception e)
+            {
+                SaveLogEntry(LogAction.ERROR, string.Format("{0}:{1}", e.Message, e.StackTrace));
+                throw new Exception("An error ocurred while accesing the database, please refer to the log.");
+            }
+        }
+
+        public static DataTable IsAlreadyInSafeList(string sender_mail)
+        {
+            DataTable dt = null;
+
+            try
+            {
+                using (WMySqlCommand sqlCmd = new WMySqlCommand(GetConnectionString(), "IsAlreadyInSafeList"))
+                {
+                    sqlCmd.AddParameter("p_sender_mail", MySqlDbType.VarChar, sender_mail);
+                    dt = sqlCmd.Execute().Tables[0];
+                    dt.Columns.Add(new DataColumn("exists", typeof(bool)));
+
+                    if (dt.Rows.Count > 0)
+                    {
+                        dt.Rows[0]["exists"] = true;
+                    }
+                    else
+                    {
+                        DataRow row = dt.NewRow();
+                        row["exists"] = false;
+                        dt.Rows.Add(row);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                SaveLogEntry(LogAction.ERROR, string.Format("{0}:{1}", e.Message, e.StackTrace));
+                throw new Exception("An error ocurred while accesing the database, please refer to the log.");
+            }
+
+            return dt;
         }
 
         public static long SaveMessage(string phone_number, string title, string body, string sender_mail, DateTime date_sent)
@@ -53,12 +147,78 @@ namespace EmailServer.Core
 
                     messageId = Convert.ToInt64(dt.Rows[0]["p_id_message"]);
                 }
+
+                SaveLogEntry(LogAction.SAVING_EMAIL, string.Format("From:{0}, To:{1}", sender_mail, phone_number));
             }
             catch (Exception e)
             {
-                SaveLogEntry("Error", string.Format("{0}:{1}", e.Message, e.StackTrace));
+                SaveLogEntry(LogAction.ERROR, string.Format("{0}:{1}", e.Message, e.StackTrace));
+                throw new Exception("An error ocurred while accesing the database, please refer to the log.");
             }
             return messageId;
+        }
+
+        public static long GetMaxLogId()
+        {
+            long log_id = 0;
+
+            try
+            {
+                using (WMySqlCommand sqlCmd = new WMySqlCommand(GetConnectionString(), "GetMaxLogId"))
+                {
+                    DataTable dt = sqlCmd.Execute().Tables[0];
+                    log_id = Convert.ToInt64(dt.Rows[0]["id_log"]);
+                }
+            }
+            catch (Exception e)
+            {
+                SaveLogEntry(LogAction.ERROR, string.Format("{0}:{1}", e.Message, e.StackTrace));
+                throw new Exception("An error ocurred while accesing the database, please refer to the log.");
+            }
+
+            return log_id;
+        }
+
+        public static bool UserExists(string phone_number)
+        {
+            bool exists = false;
+
+            try
+            {
+                using (WMySqlCommand sqlCmd = new WMySqlCommand(GetConnectionString(), "UserExists"))
+                {
+                    sqlCmd.AddParameter("p_phone_number", MySqlDbType.VarChar, phone_number);
+                    DataTable dt = sqlCmd.Execute().Tables[0];
+                    exists = Convert.ToBoolean(dt.Rows[0]["exist"]);
+                }
+            }
+            catch (Exception e)
+            {
+                SaveLogEntry(LogAction.ERROR, string.Format("{0}:{1}", e.Message, e.StackTrace));
+                throw new Exception("An error ocurred while accesing the database, please refer to the log.");
+            }
+
+            return exists;
+        }
+
+        public static DataTable GetLogInfo(long id_log)
+        {
+            DataTable dt = null;
+            try
+            {
+                using (WMySqlCommand sqlCmd = new WMySqlCommand(GetConnectionString(), "GetLogData"))
+                {
+                    sqlCmd.AddParameter("p_id_log", MySqlDbType.Int64, id_log);
+                    dt = sqlCmd.Execute().Tables[0];
+                }
+            }
+            catch (Exception e)
+            {
+                SaveLogEntry(LogAction.ERROR, string.Format("{0}:{1}", e.Message, e.StackTrace));
+                throw new Exception("An error ocurred while accesing the database, please refer to the log.");
+            }
+
+            return dt;
         }
 
         public static void SaveAttachment(long message_id, byte[] data, string file_name)
@@ -76,7 +236,8 @@ namespace EmailServer.Core
             }
             catch (Exception e)
             {
-                SaveLogEntry("Error", string.Format("{0}:{1}", e.Message, e.StackTrace));
+                SaveLogEntry(LogAction.ERROR, string.Format("{0}:{1}", e.Message, e.StackTrace));
+                throw new Exception("An error ocurred while accesing the database, please refer to the log.");
             }
         }
 
@@ -89,10 +250,13 @@ namespace EmailServer.Core
                     sqlCmd.AddParameter("p_phone_number", MySqlDbType.VarChar, phone_number);
                     sqlCmd.Execute();
                 }
+
+                SaveLogEntry(LogAction.SAVING_USER, string.Format("User:{0}", phone_number));
             }
             catch (Exception e)
             {
-                SaveLogEntry("Error", string.Format("{0}:{1}", e.Message, e.StackTrace));
+                SaveLogEntry(LogAction.ERROR, string.Format("{0}:{1}", e.Message, e.StackTrace));
+                throw new Exception("An error ocurred while accesing the database, please refer to the log.");
             }
         }
 
@@ -110,7 +274,8 @@ namespace EmailServer.Core
             }
             catch (Exception e)
             {
-                SaveLogEntry("Error", string.Format("{0}:{1}", e.Message, e.StackTrace));
+                SaveLogEntry(LogAction.ERROR, string.Format("{0}:{1}", e.Message, e.StackTrace));
+                throw new Exception("An error ocurred while accesing the database, please refer to the log.");
             }
             return dt;
         }
@@ -129,7 +294,8 @@ namespace EmailServer.Core
             }
             catch (Exception e)
             {
-                SaveLogEntry("Error", string.Format("{0}:{1}", e.Message, e.StackTrace));
+                SaveLogEntry(LogAction.ERROR, string.Format("{0}:{1}", e.Message, e.StackTrace));
+                throw new Exception("An error ocurred while accesing the database, please refer to the log.");
             }
             return dt;
         }
@@ -157,21 +323,33 @@ namespace EmailServer.Core
 
                     sqlCmd.Execute();
                 }
+
+                SaveLogEntry(LogAction.SAVING_CONFIG, "Saving configuration");
             }
             catch (Exception e)
             {
-                SaveLogEntry("Error", string.Format("{0}:{1}", e.Message, e.StackTrace));
+                SaveLogEntry(LogAction.ERROR, string.Format("{0}:{1}", e.Message, e.StackTrace));
+                throw new Exception("An error ocurred while accesing the database, please refer to the log.");
             }
         }
 
         public static void SaveLogEntry(string action, string data)
         {
-            using (WMySqlCommand sqlCmd = new WMySqlCommand(GetConnectionString(), "SaveLogEntry"))
+            try
             {
-                sqlCmd.AddParameter("p_action", MySqlDbType.VarChar, action);
-                sqlCmd.AddParameter("p_data", MySqlDbType.LongText, data);
-                sqlCmd.Execute();
+                using (WMySqlCommand sqlCmd = new WMySqlCommand(GetConnectionString(), "SaveLogEntry"))
+                {
+                    sqlCmd.AddParameter("p_action", MySqlDbType.VarChar, action);
+                    sqlCmd.AddParameter("p_data", MySqlDbType.LongText, data);
+                    sqlCmd.Execute();
+                }
+            }
+            catch(Exception e)
+            {
+                Log.SaveEntryToTextFile(e.Message, e);
+                throw e;
             }
         }
+
     }
 }
